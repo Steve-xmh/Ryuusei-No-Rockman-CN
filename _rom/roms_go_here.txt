@@ -1,0 +1,5 @@
+请把日版的三个游戏 ROM 以以下方式命名后放入此文件夹：
+
+天马：pegasus.nds
+青龙：dragon.nds
+雄狮：leo.nds
