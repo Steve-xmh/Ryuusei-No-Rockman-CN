@@ -105,7 +105,7 @@ print('正在编译 ARM9 代码')
 
 print('正在编译天马版代码')
 run_armips([
-    os.path.join(asm_path, 'pegasus', 'arm9.asm'),
+    os.path.join(asm_path, 'pegasus', '_main.asm'),
     '-sym', os.path.join(temp_path, 'workspace', 'pegasus.sym'),
     '-strequ', 'TEMP', os.path.join(temp_path, 'workspace', 'pegasus')
 ])

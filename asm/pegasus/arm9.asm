@@ -2,6 +2,26 @@
 .thumb
 .open TEMP+"/arm9.bin", 0x02000000
 
+; 过场动画的逐字打印函数
+; Function to print a string in the game's text window
+OriginalPrintFontConditionStart equ 0x0201B158
+OriginalPrintFontConditionEnd equ 0x0201B192
+
+; 过场动画的逐字打印函数 的前面的一个判断
+; Function to print a string in the game's text window
+OriginalAdditionalConditionStart equ 0x0201B114
+OriginalAdditionalConditionEnd equ 0x0201B130
+
+; 某些小字体的常用打印函数
+; Function containing the code to print a string in the game's text window
+OriginalPrintAnotherFontConditionStart equ 0x02020060
+OriginalPrintAnotherFontConditionEnd equ 0x0202007A
+
+; 过场动画的瞬间打印的函数
+; Function to print a string in the game's text window instantly
+OriginalPrintInstantFontConditionStart equ 0x0201B254
+OriginalPrintInstantFontConditionEnd equ 0x0201B2A2
+
 ; 分配可用代码空间
 .org 0x020D4B98 + 0x20 * 2 // 字体间的空位，用来放代码 和缓存
   .region 0x20 * (0x1E3 - 2), 0x12
@@ -37,16 +57,122 @@ Font12x12Zero:
 FontEncodingZero:
     .dw 0x3f00
 
-
-// .\tools\armips.exe .\asm\pegasus\arm9.asm -strequ TEMP .\_temp\workspace\pegasus
-
 .include "asm/pegasus/nitro.asm"
-.include "asm/pegasus/text_hooks.asm"
-.include "asm/pegasus/text_utils.asm"
-.include "asm/pegasus/text_cache.asm"
-.include "asm/common/text.asm"
-.include "asm/common/text_input.asm"
 .include "asm/common/scripts.asm"
+.include "asm/common/text.asm"
+.include "asm/common/text_cache.asm"
+.include "asm/common/text_hooks.asm"
+.include "asm/common/text_input.asm"
+.include "asm/common/text_utils.asm"
+
+; 似乎开始显示显存字体时会被执行
+; 可以用来重置我们自己的字体缓存
+; Seems to be executed when displaying the video memory font
+; Can be used to reset our own font cache
+.org 0x0202F3F0
+    push {r4-r6, lr}
+    bl CopyFontHook
+
+; 逆向出来的函数们（和 0xE4 相关的东西）
+; sub_200A830 疑似是检测当前脚本位置是否还有控制指令
+; sub_2009CCC 是测量脚本长度的函数
+; sub_20099E4 疑似是拷贝脚本内容的函数
+; sub_200A538 是从字库编码到脚本编码的转换
+; sub_201C3B8 疑似是解析脚本然后复制小字体的子模的函数
+; sub_201B0BC 梦　开　始　的　地　方（大雾） —— 打印剧情文本的函数
+; sub_201B864 打印水平两个按钮文字的函数
+; sub_201B99C 疑似是打印剧情文本的函数？
+; sub_201FA30 疑似是脚本解析的函数
+; sub_20107D0 疑似是从字库编码到脚本编码的转换
+; sub_2009AAC 疑似是拷贝脚本内容的函数（且进行了目标位置大小限制）
+; sub_2010798 疑似是将脚本编码转换成 ASCII 编码（可能？）的函数
+; sub_2176B60 尚未探明
+; sub_2176BA4 尚未探明
+; sub_20202D8 疑似和显存字库有关
+; sub_215BB8C 和地名显示有关
+; sub_2009908 和读取内嵌脚本有关
+; sub_2195D70 战斗时 Custom 页面的卡名打印 overlay9_0006
+; sub_201FAC8 鸣谢画面时调用的文字打印函数
+
+.org 0x02009908
+.area 0x0200991E-., 0x00
+  push {lr}
+  bl Script_RedirectScriptPositionHook
+  pop {pc}
+.endarea
+
+; 
+.org 0x0201FA5E
+.area 0x0201FA76-. , 0x00
+  mov r0, r5
+  bl ReadScript_extended
+  ldr r1, [r6]
+  add r0, r1
+  
+  mov r1, 0x1
+  strh r1, [r5, #0x28]
+.endarea
+
+; sub_201B99C
+.org 0x0201B9C4
+.area 0x0201B9EC-., 0x00
+  mov r0, r5
+  bl ReadScript_extended
+  ldr r1, [r4]
+  add r0, r1
+  str r0, [r4]
+
+  mov r0, 0x1
+  strh r0, [r5, #0x28]
+
+  mov r0, r5
+  bl 0x0201E554
+.endarea
+
+; sub_201B864
+.org 0x0201B88C
+.area 0x0201B8B4-., 0x00
+  mov r0, r5
+  bl ReadScript_extended
+  ldr r1, [r4]
+  add r0, r1
+  str r0, [r4]
+
+  mov r0, 0x1
+  strh r0, [r5, #0x28]
+
+  mov r0, r5
+  bl 0x0201E554
+.endarea
+
+; 获取脚本长度
+.org 0x02009CE2
+.area 0x02009CFA-. , 0x00
+  mov r0, r2
+  push {lr}
+  bl Script_GetLength
+  pop {pc}
+.endarea
+
+.org 0x0200A558
+.area 0x0200A56A-. , 0x00
+  bl Script_FontEncodeToScriptEncodeHookLoop
+.endarea
+
+; 和战斗卡脚本读取相关的函数
+; 经检查发现还会用来打印输入文字文本
+; sub_20202D8
+.org 0x0202030C
+.area 0x02020326-. , 0x00
+  bl sub_20202D8_hook
+  b 0x02020326
+.endarea
+
+.org 0x0201FAF8
+.area 0x0201FB18-. , 0x00
+  bl sub_201FAF8_hook
+  b 0x0201FB18
+.endarea
 
 .org 0x0200917A
 .area 0x02009182-. , 0x00
@@ -103,103 +229,5 @@ TransformInputToTableHook:
   pop {r1-r7, pc}
 .endautoregion
 */
-
-.close
-
-.open TEMP+"/overlay/overlay_0023.bin",readu32(TEMP+"/y9.bin", 23 * 0x20 + 0x4)
-.thumb
-
-; 写入纯数字显存字体相关的函数
-.org 0x021B56EC
-.area 0x021B56F4-. , 0x00
-  bl Script_WriteCardIdHook
-.endarea
-
-; 显示当前已选中卡片的名字的函数
-.org 0x021B57B8
-.area 0x021B57BC-., 0x00
-  bl Script_WriteSelectedCardNameHook
-.endarea
-
-.close
-
-.open TEMP+"/overlay/overlay_0002.bin",readu32(TEMP+"/y9.bin", 2 * 0x20 + 0x4)
-.thumb
-
-.org 0x0215BCE4
-  .dw Script_0D5BA4
-
-; sub_217AD00
-; 在文件夹页面的显示卡片攻击值的的函数
-.org 0x0217ADA8
-.area 0x0217ADC0-., 0x00
-  bl Script_CustomWriteCardDamageHook
-.endarea
-
-.org 0x0217AE3A
-.area 0x0217AE4A-., 0x00
-  bl Script_CustomWriteCardMarkHook
-.endarea
-
-; sub_2176B60
-; 疑似解码输入内容的函数
-; 0x02108F8C
-; 0x021C5D28
-; 0x02113E58
-; 0x0211433E
-; .org 0x02176B6E
-; .area 0x02176B94-., 0x00
-;   bl sub_2176B60_hook
-;   b 0x02176B94
-; .pool
-; .endarea
-
-.close
-
-
-.open TEMP+"/overlay/overlay_0006.bin",readu32(TEMP+"/y9.bin", 6 * 0x20 + 0x4)
-.thumb
-
-; sub_2195D70 战斗时 Custom 页面的卡名打印 overlay9_0006
-.org 0x02195E98
-  .dw Script_0D65CC
-.org 0x02195E9C
-  .dw Script_0D4BD0
-; sub_2198254 战斗时上屏的候选卡名
-.org 0x02198370
-  .dw Script_0D65CC
-.org 0x02198374
-  .dw Script_0D4BD0
-; sub_2198498 上屏右上角的病毒名称
-.org 0x02198604
-  .dw Script_0D70A4
-.org 0x02198608
-  .dw Script_0D7C6C
-
-.close
-
-.open TEMP+"/overlay/overlay_0016.bin",readu32(TEMP+"/y9.bin", 16 * 0x20 + 0x4)
-.thumb
-
-.org 0x021B4D16
-.area 0x021B4D20-., 0x00
-  bl Script_CustomMenuWriteCardDamageHook
-.endarea
-
-.close
-
-.open TEMP+"/overlay/overlay_0018.bin",readu32(TEMP+"/y9.bin", 18 * 0x20 + 0x4)
-.thumb
-
-.org 0x021B5574
-  .dw Script_0D5520
-
-.close
-
-.open TEMP+"/overlay/overlay_0026.bin",readu32(TEMP+"/y9.bin", 26 * 0x20 + 0x4)
-.thumb
-.org 0x021B83D8
-  .dw Script_0D65CC
-  .dw Script_0D4BD0
 
 .close

@@ -1,4 +1,6 @@
+; NEF Symbols dumped from CrystalTile2
 ; 从 CrystalTile2 生成的 NEF 符号清单中生成的汇编位置信息
+
 .org 0x02000000
 HW_MAIN_MEM:
 .org 0x02000800

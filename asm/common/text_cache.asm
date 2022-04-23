@@ -1,6 +1,17 @@
 ; 字库缓存，用于减少文件系统的 IO 操作带来的卡顿延迟
 ; TODO: 另外三个字体的缓存
 
+; Modify these number to adjust font cache size.
+; Number can be not equal at all, but have to be larger than 1.
+; The larger the number, the faster the game can display the same character.
+; 修改这些数字可以调整字体缓存大小。
+; 数字可以不完全相等，但必须大于 1。
+; 将这些数字设置得更大，游戏就能更快地显示相同的字符。
+Font0_CacheSize equ 128
+Font1_CacheSize equ 128
+Font2_CacheSize equ 128
+Font3_CacheSize equ 128
+
 .thumb
 
 .autoregion
@@ -442,18 +453,11 @@ Font2_ResetVRAMCache:
     .endautoregion
 .endmacro
 
-FontCache 0x20, 128, Font0FileVar, Font8x8Zero ; FontCache_Font_CacheArea_00000000
-FontCache 0x40, 128, Font1FileVar, Font8x16Zero ; FontCache_Font_CacheArea_00000001
-FontCache 0x40, 128, Font2FileVar, Font8x16BoldZero ; FontCache_Font_CacheArea_00000002
+FontCache 0x20, Font0_CacheSize, Font0FileVar, Font8x8Zero ; FontCache_Font_CacheArea_00000000
+FontCache 0x40, Font1_CacheSize, Font1FileVar, Font8x16Zero ; FontCache_Font_CacheArea_00000001
+FontCache 0x40, Font2_CacheSize, Font2FileVar, Font8x16BoldZero ; FontCache_Font_CacheArea_00000002
 
-; 缓存区域
-; 因为 12x12 的字体多了一个字宽缓存
-; 加 4 是为了存储这个字的编码
-; 加 4 是为了存储这个字的宽度
-; 0x80 就是一个字形的大小了
-; TODO: 有 BUG，在使用的缓存超出缓存区域时，会出现溢出
 .autoregion
-Font3_CacheSize equ 128
 .align
 Font3_CacheArea:
     .dw Font3_CacheSize ; 缓存大小
