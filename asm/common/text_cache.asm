@@ -1,12 +1,13 @@
+
+; Font cache, used to reduce file system IO operation delay
 ; 字库缓存，用于减少文件系统的 IO 操作带来的卡顿延迟
-; TODO: 另外三个字体的缓存
 
 ; Modify these number to adjust font cache size.
 ; Number can be not equal at all, but have to be larger than 1.
 ; The larger the number, the faster the game can display the same character.
 ; 修改这些数字可以调整字体缓存大小。
 ; 数字可以不完全相等，但必须大于 1。
-; 将这些数字设置得更大，游戏就能更快地显示相同的字符。
+; 这些数字设置得越大，游戏就能更快地显示相同的字符。
 Font0_CacheSize equ 128
 Font1_CacheSize equ 128
 Font2_CacheSize equ 128
@@ -442,7 +443,7 @@ Font2_ResetVRAMCache:
 .macro FontCache, graphSize, cacheSize, fontFileVar, fontDest
     .autoregion
     ; 缓存区域定义宏
-    .align ; 使用 stmia 和 ldmia 指令时，要确保读写的地址是 4 的倍数，否则会有一点点小问题出现
+    .align ; 使用 stmia 和 ldmia 指令时，要确保读写的地址是 4 的倍数，否则会有数据读写对齐问题出现
     Font_CacheArea:
         .dw cacheSize ; 缓存大小
         .dw graphSize ; #0x4 字形大小
