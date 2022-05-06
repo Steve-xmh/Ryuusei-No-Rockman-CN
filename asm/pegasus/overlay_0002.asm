@@ -33,11 +33,19 @@
 ; 0x021C5D28
 ; 0x02113E58
 ; 0x0211433E
-; .org 0x02176B6E
-; .area 0x02176B94-., 0x00
-;   bl sub_2176B60_hook
-;   b 0x02176B94
-; .pool
-; .endarea
+.org 0x02176B6E
+.area 0x02176B94-., 0x00
+  bl sub_2176B60_hook
+  b 0x02176B94
+.pool
+.endarea
+
+
+.org 0x02176BE2
+.area 0x02176BEE-., 0x00
+  bl sub_2176BA4_hook
+  b 0x02176BEE
+.pool
+.endarea
 
 .close

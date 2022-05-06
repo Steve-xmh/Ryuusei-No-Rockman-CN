@@ -250,18 +250,31 @@ Script_ScriptEncodeToFontEncode:
 ; r0 = 脚本指针
 Script_FontEncodeToScriptEncodeHookLoop:
   push {r1-r7, lr}
-  ldr r2, =0x1E3
-  cmp r7, r2
-  bcs @@InExtendedEncode
-  cmp r7, #0xE4
-  bcs @@InOriginalExtendedEncode
+  ; .msg "SFETSEHL r0 = %r0% r7 = %r7%"
+  ; ldr r2, =0x1E3
+  ; cmp r7, r2
+  ; bcs @@InExtendedEncode
+  cmp r7, #0xD0 ; cmp r7, #0xE4
+  bcs @@InExtendedEncode ; bcs @@InOriginalExtendedEncode
   ; 0-0xE3
   strb r7, [r0]
   add r0, 1
   b @@End
 @@InExtendedEncode:
-  ; TODO
-  b @@InExtendedEncode
+  sub r7, 0xD0
+  mov r2, 0xD0
+  mov r3, r2
+@@Loop:
+  cmp r7, 0xE4
+  bcc @@Finished
+  add r2, 0x1
+  sub r7, 0xE4
+  b @@Loop
+@@Finished:
+  strb r2, [r0]
+  strb r7, [r0, #0x1]
+  add r0, 2
+  b @@End
 @@InOriginalExtendedEncode:
   mov r2, 0xE4
   strb r2, [r0]
@@ -352,5 +365,31 @@ sub_201FAF8_hook:
   mov r0, r5
   bl 0x0201E554
   pop {r0-r7,pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+sub_2176BA4_hook:
+  push {r3-r5,lr}
+  mov r3, r0
+  mov r4, r1
+  
+  mov r0, r2
+  ; .msg "SHook %r0%"
+  bl Script_ScriptEncodeToFontEncode
+  ; .msg "SHookR %r0% %r1%"
+  strh r0, [r4]
+  add r2, r1
+  cmp r0, 0
+  beq @@End
+  
+  mov r6, 1
+@@End:
+  
+  mov r1, r4
+  mov r0, r3
+  add r1, 0x2
+  pop {r3-r5,pc}
 .pool
 .endautoregion

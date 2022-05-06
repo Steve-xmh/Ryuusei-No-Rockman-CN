@@ -11,6 +11,7 @@ OriginalAdditionalConditionStart equ 0x201b114
 OriginalAdditionalConditionEnd equ 0x201b130
 
 // 某些小字体的常用打印函数
+// sub_202002C
 OriginalPrintAnotherFontConditionStart equ 0x02020060
 OriginalPrintAnotherFontConditionEnd equ 0x0202007A
 

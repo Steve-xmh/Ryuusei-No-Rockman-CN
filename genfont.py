@@ -129,6 +129,14 @@ def main():
         os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-copy.tbl'),
         os.path.join(pydir, 'scripts', 'font3_width.bin')
     )
+    # 直接将昴和 467 号字符替换
+    f.gen_character('昴', 12)
+    f.table[467] = f.table[-1]
+    f.table.pop()
+    f.character_graphs[467] = f.character_graphs[-1]
+    f.character_graphs.pop()
+    f.widths[467] = f.widths[-1]
+    f.widths.pop()
     # 俩空格
     f.gen_character(' ', 12)
     f.gen_character('　', 12)
@@ -214,6 +222,14 @@ def main():
         os.path.join(pydir, '_workspace', 'fonts', 'font2.bin'),
         os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-copy.tbl')
     )
+    # 直接将昴和 467 号字符替换
+    replace_or_append('昴')
+    f.table[467] = f.table[-1]
+    f.table.pop()
+    f.character_graphs[467] = f.character_graphs[-1]
+    f.character_graphs.pop()
+    f.widths[467] = f.widths[-1]
+    f.widths.pop()
     # 俩空格
     f.gen_character(' ', 16)
     f.gen_character('　', 16)
@@ -271,6 +287,14 @@ def main():
         os.path.join(pydir, '_workspace', 'fonts', 'font1.bin'),
         os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-copy.tbl')
     )
+    # 直接将昴和 467 号字符替换
+    replace_or_append('昴')
+    f.table[467] = f.table[-1]
+    f.table.pop()
+    f.character_graphs[467] = f.character_graphs[-1]
+    f.character_graphs.pop()
+    f.widths[467] = f.widths[-1]
+    f.widths.pop()
     # 俩空格
     f.gen_character(' ', 16)
     f.gen_character('　', 16)

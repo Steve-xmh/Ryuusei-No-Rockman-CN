@@ -98,6 +98,7 @@
 
 	mov r0, r5
 	bl ReadScript_extended
+    ; .msg "OPAFCHook r0 = %r0% r5 = %r5%"
 	
 	mov r1, 0x1
 	strh r1, [r5, #0x28]

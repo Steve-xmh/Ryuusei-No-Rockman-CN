@@ -24,31 +24,31 @@ OriginalPrintInstantFontConditionEnd equ 0x0201B2A2
 
 ; 分配可用代码空间
 .org 0x020D4B98 + 0x20 * 2 // 字体间的空位，用来放代码 和缓存
-  .region 0x20 * (0x1E3 - 2), 0x12
+  .region 0x20 * (0x1E3 - 8), 0x12
   .endregion
 .org 0x020D8798 + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
-  .region 0x40 * (0x1E3 - 2), 0x34
+  .region 0x40 * (0x1E3 - 8), 0x34
   .endregion
 .org 0x020E0F98 + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
-  .region 0x40 * (0x1E3 - 2), 0x56
+  .region 0x40 * (0x1E3 - 8), 0x56
   .endregion
 .org 0x020E9798 + 0x80 * 8 // 原主字体位置，现在拿来放代码 和缓存
-  .region 0x80 * (0x100 - 2), 0x78
+  .region 0x80 * (0x1E3 - 8), 0x78
   .endregion
 
 ; 字符缓存位置
 .org 0x020D09EC + 1 // 12x12 字符的字符宽度数据，对应原本的 0 字符
 FontWidthZero:
-  .fill 0x1, 0xFF
+  .fill 0x1, 0x21
 .org 0x020D4B98 + 0x20 // 8x8 小字符的缓存位置，对应原本的 0 字符
 Font8x8Zero:
-    .fill 0x20, 0xFF
+    .fill 0x20, 0x43
 .org 0x020D8798 + 0x40 // 8x16 细字符的缓存位置，对应原本的 0 字符
 Font8x16Zero:
-    .fill 0x40, 0xFF
+    .fill 0x40, 0x65
 .org 0x020E0F98 + 0x40 // 8x16 粗字符的缓存位置，对应原本的 0 字符
 Font8x16BoldZero:
-    .fill 0x40, 0xFF
+    .fill 0x40, 0x87
 .org 0x020E9798 + 0x80 // 12x12 字符的缓存位置，对应原本的 0 字符（实际占用了 16x16 的尺寸）
 Font12x12Zero:
     ; .fill 0x80, 0xFF
@@ -73,6 +73,14 @@ FontEncodingZero:
     push {r4-r6, lr}
     bl CopyFontHook
 
+; sub_200BF94 是玩家名字的默认值被写入的函数
+;     0x20F8E98 是姓氏
+;     0x20F8E9E 是名字
+
+.org 0x20F8E9E
+  .dh 0x1D3
+  .dh 0x1E5
+
 ; 逆向出来的函数们（和 0xE4 相关的东西）
 ; sub_200A830 疑似是检测当前脚本位置是否还有控制指令
 ; sub_2009CCC 是测量脚本长度的函数
@@ -86,13 +94,31 @@ FontEncodingZero:
 ; sub_20107D0 疑似是从字库编码到脚本编码的转换
 ; sub_2009AAC 疑似是拷贝脚本内容的函数（且进行了目标位置大小限制）
 ; sub_2010798 疑似是将脚本编码转换成 ASCII 编码（可能？）的函数
-; sub_2176B60 尚未探明
-; sub_2176BA4 尚未探明
+; sub_2176B60 将输入文字编码转换回脚本编码的函数
+; sub_2176BA4 是输入文字时转换输入内容到字体编码的函数，并返回是否为空
 ; sub_20202D8 疑似和显存字库有关
 ; sub_215BB8C 和地名显示有关
 ; sub_2009908 和读取内嵌脚本有关
 ; sub_2195D70 战斗时 Custom 页面的卡名打印 overlay9_0006
 ; sub_201FAC8 鸣谢画面时调用的文字打印函数
+; sub_202002C 也是打印小字体和大字体的函数
+
+.autoregion
+.align
+; 拦截正常的文件系统初始化函数
+; 在这里初始化我们需要的东西
+Fake_FS_Init:
+  push {lr}
+  blx FS_Init
+  .msg "Ryuusei No Rockman 1 CN Patch by SteveXMH!"
+  .msg "Special thanks to:"
+  .msg "  - Enler"
+  .msg "  - Prof. 9"
+  pop {pc}
+.endautoregion
+
+.org 0x02012B14
+  bl Fake_FS_Init
 
 .org 0x02009908
 .area 0x0200991E-., 0x00
