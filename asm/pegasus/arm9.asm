@@ -60,6 +60,7 @@ FontEncodingZero:
 .include "asm/pegasus/nitro.asm"
 .include "asm/common/scripts.asm"
 .include "asm/common/text.asm"
+.include "asm/common/dx.asm"
 .include "asm/common/text_cache.asm"
 .include "asm/common/text_hooks.asm"
 .include "asm/common/text_input.asm"
@@ -79,7 +80,7 @@ FontEncodingZero:
 
 .org 0x20F8E9E
   .dh 0x1D3
-  .dh 0x1E5
+  .dh 0x1E5 ; 0xE6 + 0xFF
 
 ; 逆向出来的函数们（和 0xE4 相关的东西）
 ; sub_200A830 疑似是检测当前脚本位置是否还有控制指令
@@ -236,24 +237,5 @@ Fake_FS_Init:
   blx lr
 .pool
 .endautoregion
-
-/*
-.autoregion
-.align
-TransformInputToTableHook:
-  push {r1-r7, lr}
-  // r1 要保存的位置
-  // r4 输入上下文
-  // r7 原输入编码
-
-  mov r0, r4
-  // mov r1, r1
-  bl TransformInputToTable_extended
-  add r1, r0
-  mov r0, r1
-
-  pop {r1-r7, pc}
-.endautoregion
-*/
 
 .close

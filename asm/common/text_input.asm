@@ -64,51 +64,6 @@ struct_v4 是一个输入上下文，其中比较重要的位移变量：
  */
 
 .autoregion
-.align
-// 将玩家的数据编码转换成码表编码，并写入到指定位置
-// 参数 r0: 输入上下文
-// 参数 r1: 需要转换保存的指针位置
-TransformInputToTable_extended:
-  push {r1-r7, lr}
-  
-  ldrh r7, [r0, #0x1C] // 输入编码
-  
-  mov r6, 0x1
-  mov r5, r7
-  cmp r7, 0xD0
-  blt @@NotInSecondTable
-  ldr r6, =0x1E3
-  cmp r7, r6
-  bhs @@OutOfRange
-
-  sub r5, 0xD0
-  mov r4, 0xD0 // 0xD0 - 1
-@@ModNumber: // 求余数，取编码 % 0xD0 的余数
-  cmp r5, 0xE4
-  bcc @@ModFinished
-  add r4, 0x1
-  sub r5, 0xE4
-  b @@ModNumber
-@@ModFinished:
-  // r5 是余数（低字节），r4 高字节
-  strb r4, [r1]
-  add r1, 0x1
-  mov r6, 0x2
-  b @@NotInSecondTable
-@@OutOfRange:
-  sub r5, #0xFF
-  strb r5, [r1]
-  mov r6, 0x2
-  b @@End
-@@NotInSecondTable:
-  strb r5, [r1]
-@@End:
-  mov r0, r6
-  pop {r1-r7, pc}
-  .pool
-.endautoregion
-
-.autoregion
 ; sub_2176B60
 ; 将字库编码转换回脚本编码的函数钩子
 .align
@@ -122,12 +77,13 @@ sub_2176B60_hook:
   cmp r7, r0
   beq @@IsEnd
   mov r0, r1
+  ; .msg "Font2Script ScriptPointer = %r0% FontEncode = %r7%"
   bl Script_FontEncodeToScriptEncodeHookLoop
   mov r1, r0
   b @@End
 @@IsEnd:
   sub r7, #0xFF
-  strh r7, [r1]
+  strb r7, [r1]
   add r1, 0x2
 @@End:
   pop {r0, pc}

@@ -251,11 +251,13 @@ Script_ScriptEncodeToFontEncode:
 Script_FontEncodeToScriptEncodeHookLoop:
   push {r1-r7, lr}
   ; .msg "SFETSEHL r0 = %r0% r7 = %r7%"
-  ; ldr r2, =0x1E3
-  ; cmp r7, r2
-  ; bcs @@InExtendedEncode
-  cmp r7, #0xD0 ; cmp r7, #0xE4
-  bcs @@InExtendedEncode ; bcs @@InOriginalExtendedEncode
+  ldr r2, =0x1E3
+  cmp r7, r2
+  bcs @@InExtendedEncode
+  cmp r7, #0xE4
+  bcs @@InOriginalExtendedEncode
+  cmp r7, #0xD0
+  bcs @@InExtendedEncode
   ; 0-0xE3
   strb r7, [r0]
   add r0, 1
@@ -278,7 +280,7 @@ Script_FontEncodeToScriptEncodeHookLoop:
 @@InOriginalExtendedEncode:
   mov r2, 0xE4
   strb r2, [r0]
-  sub r7, r2
+  sub r7, 0xE4
   strb r7, [r0, #0x1]
   add r0, 2
 @@End:
@@ -376,9 +378,9 @@ sub_2176BA4_hook:
   mov r4, r1
   
   mov r0, r2
-  ; .msg "SHook %r0%"
+  ; .msg "Script2Font %r0%"
   bl Script_ScriptEncodeToFontEncode
-  ; .msg "SHookR %r0% %r1%"
+  .msg "Script2FontR ScriptPointer %r2% -> FontEncode %r0% Length %r1%"
   strh r0, [r4]
   add r2, r1
   cmp r0, 0
