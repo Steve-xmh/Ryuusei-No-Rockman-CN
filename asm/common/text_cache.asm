@@ -12,6 +12,7 @@ Font0_CacheSize equ 128
 Font1_CacheSize equ 128
 Font2_CacheSize equ 128
 Font3_CacheSize equ 128
+Font2_VramCacheSize equ 128
 
 .thumb
 
@@ -420,11 +421,8 @@ Font2_LoadCharacterToVRAM:
 .align
 @Font2VramCachePointer:
     .dw 0
-.endautoregion
-.autoregion
-.align
 @Font2VramCache:
-    .fill 0xFF, 128 * 2 ; 128 个字的缓存
+    .fill 0xFF, Font2_VramCacheSize * 2 ; 128 个字的缓存
 .endautoregion
 
 .autoregion
@@ -433,7 +431,10 @@ Font2_ResetVRAMCache:
     push {r0-r7, lr}
     ldr r0, =@Font2VramCachePointer
     mov r1, 0
-    ldr r2, =0x104
+    str r1, [r0]
+    ldr r0, =@Font2VramCache
+    mov r1, 0xFF
+    ldr r2, =Font2_VramCacheSize * 2
     blx MI_CpuFill8
     pop {r0-r7, pc}
 .pool

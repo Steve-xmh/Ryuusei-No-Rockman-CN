@@ -161,6 +161,7 @@ ReadScript_extended:
   // 返回值：r0 字符编码长度，1 或 2
   // r5 = 文字打印上下文结构指针
   push {r1-r7, lr}
+  .msg "ReadScript Context = 0x%r0%"
   // 我怕了 bl 指令了（）就先推到栈里存着了（）
   push {r0}
   mov r5, r0

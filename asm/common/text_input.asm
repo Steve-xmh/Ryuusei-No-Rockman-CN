@@ -84,6 +84,8 @@ sub_2176B60_hook:
 @@IsEnd:
   sub r7, #0xFF
   strb r7, [r1]
+  mov r0, 0
+  strb r0, [r1, #0x1]
   add r1, 0x2
 @@End:
   pop {r0, pc}

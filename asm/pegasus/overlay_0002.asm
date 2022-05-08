@@ -46,4 +46,11 @@
 	b 0x02176BEE
 .endarea
 
+// Walk through NPCs
+// 穿过 NPC
+.org 0x02173A8E
+	bl	field_walkThroughNPC
+.org 0x02173A16
+	bl	field_walkThroughNPCStop
+	
 .close

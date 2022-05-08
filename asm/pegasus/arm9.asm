@@ -24,38 +24,38 @@ OriginalPrintInstantFontConditionEnd equ 0x0201B2A2
 
 ; 分配可用代码空间
 .org 0x020D4B98 + 0x20 * 2 // 字体间的空位，用来放代码 和缓存
-  .region 0x20 * (0x1E3 - 8), 0x12
-  .endregion
+	.region 0x20 * (0x1E3 - 8), 0x12
+	.endregion
 .org 0x020D8798 + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
-  .region 0x40 * (0x1E3 - 8), 0x34
-  .endregion
+	.region 0x40 * (0x1E3 - 8), 0x34
+	.endregion
 .org 0x020E0F98 + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
-  .region 0x40 * (0x1E3 - 8), 0x56
-  .endregion
+	.region 0x40 * (0x1E3 - 8), 0x56
+	.endregion
 .org 0x020E9798 + 0x80 * 8 // 原主字体位置，现在拿来放代码 和缓存
-  .region 0x80 * (0x1E3 - 8), 0x78
-  .endregion
+	.region 0x80 * (0x1E3 - 8), 0x78
+	.endregion
 
 ; 字符缓存位置
 .org 0x020D09EC + 1 // 12x12 字符的字符宽度数据，对应原本的 0 字符
 FontWidthZero:
-  .fill 0x1, 0x21
+	.fill 0x1, 0x21
 .org 0x020D4B98 + 0x20 // 8x8 小字符的缓存位置，对应原本的 0 字符
 Font8x8Zero:
-    .fill 0x20, 0x43
+		.fill 0x20, 0x43
 .org 0x020D8798 + 0x40 // 8x16 细字符的缓存位置，对应原本的 0 字符
 Font8x16Zero:
-    .fill 0x40, 0x65
+		.fill 0x40, 0x65
 .org 0x020E0F98 + 0x40 // 8x16 粗字符的缓存位置，对应原本的 0 字符
 Font8x16BoldZero:
-    .fill 0x40, 0x87
+		.fill 0x40, 0x87
 .org 0x020E9798 + 0x80 // 12x12 字符的缓存位置，对应原本的 0 字符（实际占用了 16x16 的尺寸）
 Font12x12Zero:
-    ; .fill 0x80, 0xFF
-    .import "asm/common/cache_mark_16x16.bin"
+		; .fill 0x80, 0xFF
+		.import "asm/common/cache_mark_16x16.bin"
 .org 0x020F9928 // 代码中的一段码表数据，可能用来处理文字输入了
 FontEncodingZero:
-    .dw 0x3f00
+		.dw 0x3f00
 
 .include "asm/pegasus/nitro.asm"
 .include "asm/common/scripts.asm"
@@ -71,16 +71,16 @@ FontEncodingZero:
 ; Seems to be executed when displaying the video memory font
 ; Can be used to reset our own font cache
 .org 0x0202F3F0
-    push {r4-r6, lr}
-    bl CopyFontHook
+		push {r4-r6, lr}
+		bl CopyFontHook
 
 ; sub_200BF94 是玩家名字的默认值被写入的函数
 ;     0x20F8E98 是姓氏
 ;     0x20F8E9E 是名字
 
 .org 0x20F8E9E
-  .dh 0x1D3
-  .dh 0x1E5 ; 0xE6 + 0xFF
+	.dh 0x1D3
+	.dh 0x1E5 ; 0xE6 + 0xFF
 
 ; 逆向出来的函数们（和 0xE4 相关的东西）
 ; sub_200A830 疑似是检测当前脚本位置是否还有控制指令
@@ -109,81 +109,98 @@ FontEncodingZero:
 ; 拦截正常的文件系统初始化函数
 ; 在这里初始化我们需要的东西
 Fake_FS_Init:
-  push {lr}
-  blx FS_Init
-  .msg "Ryuusei No Rockman 1 CN Patch by SteveXMH!"
-  .msg "Special thanks to:"
-  .msg "  - Enler"
-  .msg "  - Prof. 9"
-  pop {pc}
+	push {lr}
+	blx FS_Init
+	.msg "Ryuusei No Rockman 1 CN Patch by SteveXMH!"
+	.msg "Special thanks to:"
+	.msg "  - Enler"
+	.msg "  - Prof. 9"
+	pop {pc}
+.endautoregion
+
+.org 0x02020094
+	bl Debug_ScriptError
+
+.autoregion
+.align
+Debug_ScriptError:
+	cmp r1, r0
+	bls @@Return
+	.msg "Script Error!"
+	.msg "Script overflowed with %r1% bytes"
+	.msg "Allocated %r0% bytes"
+	.msg "Script Context address: 0x%r5%"
+	b .
+@@Return:
+	blx lr
 .endautoregion
 
 .org 0x02012B14
-  bl Fake_FS_Init
+	bl Fake_FS_Init
 
 .org 0x02009908
 .area 0x0200991E-., 0x00
-  push {lr}
-  bl Script_RedirectScriptPositionHook
-  pop {pc}
+	push {lr}
+	bl Script_RedirectScriptPositionHook
+	pop {pc}
 .endarea
 
 ; 
 .org 0x0201FA5E
 .area 0x0201FA76-. , 0x00
-  mov r0, r5
-  bl ReadScript_extended
-  ldr r1, [r6]
-  add r0, r1
-  
-  mov r1, 0x1
-  strh r1, [r5, #0x28]
+	mov r0, r5
+	bl ReadScript_extended
+	ldr r1, [r6]
+	add r0, r1
+	
+	mov r1, 0x1
+	strh r1, [r5, #0x28]
 .endarea
 
 ; sub_201B99C
 .org 0x0201B9C4
 .area 0x0201B9EC-., 0x00
-  mov r0, r5
-  bl ReadScript_extended
-  ldr r1, [r4]
-  add r0, r1
-  str r0, [r4]
+	mov r0, r5
+	bl ReadScript_extended
+	ldr r1, [r4]
+	add r0, r1
+	str r0, [r4]
 
-  mov r0, 0x1
-  strh r0, [r5, #0x28]
+	mov r0, 0x1
+	strh r0, [r5, #0x28]
 
-  mov r0, r5
-  bl 0x0201E554
+	mov r0, r5
+	bl 0x0201E554
 .endarea
 
 ; sub_201B864
 .org 0x0201B88C
 .area 0x0201B8B4-., 0x00
-  mov r0, r5
-  bl ReadScript_extended
-  ldr r1, [r4]
-  add r0, r1
-  str r0, [r4]
+	mov r0, r5
+	bl ReadScript_extended
+	ldr r1, [r4]
+	add r0, r1
+	str r0, [r4]
 
-  mov r0, 0x1
-  strh r0, [r5, #0x28]
+	mov r0, 0x1
+	strh r0, [r5, #0x28]
 
-  mov r0, r5
-  bl 0x0201E554
+	mov r0, r5
+	bl 0x0201E554
 .endarea
 
 ; 获取脚本长度
 .org 0x02009CE2
 .area 0x02009CFA-. , 0x00
-  mov r0, r2
-  push {lr}
-  bl Script_GetLength
-  pop {pc}
+	mov r0, r2
+	push {lr}
+	bl Script_GetLength
+	pop {pc}
 .endarea
 
 .org 0x0200A558
 .area 0x0200A56A-. , 0x00
-  bl Script_FontEncodeToScriptEncodeHookLoop
+	bl Script_FontEncodeToScriptEncodeHookLoop
 .endarea
 
 ; 和战斗卡脚本读取相关的函数
@@ -191,50 +208,50 @@ Fake_FS_Init:
 ; sub_20202D8
 .org 0x0202030C
 .area 0x02020326-. , 0x00
-  bl sub_20202D8_hook
-  b 0x02020326
+	bl sub_20202D8_hook
+	b 0x02020326
 .endarea
 
 .org 0x0201FAF8
 .area 0x0201FB18-. , 0x00
-  bl sub_201FAF8_hook
-  b 0x0201FB18
+	bl sub_201FAF8_hook
+	b 0x0201FB18
 .endarea
 
 .org 0x0200917A
 .area 0x02009182-. , 0x00
-  bl @ReadScriptToVramHook
+	bl @ReadScriptToVramHook
 .endarea
 
 .org 0x02009A68
 .area 0x02009A9C-., 0x00
-  push {lr}
-  bl GetFontGraphAddressHook
-  pop {pc}
+	push {lr}
+	bl GetFontGraphAddressHook
+	pop {pc}
 .endarea
 
 .autoregion
 .align
 @ReadScriptToVramHook:
-  ldr r5, =0x020D25CC
-  cmp r0, r5
-  beq @@Script_20D25CC
-  ldr r5, =0x020D0BD0
-  cmp r0, r5
-  beq @@Script_20D0BD0
+	ldr r5, =0x020D25CC
+	cmp r0, r5
+	beq @@Script_20D25CC
+	ldr r5, =0x020D0BD0
+	cmp r0, r5
+	beq @@Script_20D0BD0
 @@NotModifiedScript:
-  b @@NotModifiedScript
+	b @@NotModifiedScript
 @@Script_20D25CC: ; 普通战斗卡脚本 20D25CC
-  ldr r0, =Script_0D65CC
-  b @@End
+	ldr r0, =Script_0D65CC
+	b @@End
 @@Script_20D0BD0: ; 我们的太阳联动脚本 20D0BD0
-  ldr r0, =Script_0D4BD0
+	ldr r0, =Script_0D4BD0
 @@End:
-  mov r5, r0
-  mov r6, r1
-  mov r7, r2
-  mov r4, r3
-  blx lr
+	mov r5, r0
+	mov r6, r1
+	mov r7, r2
+	mov r4, r3
+	blx lr
 .pool
 .endautoregion
 

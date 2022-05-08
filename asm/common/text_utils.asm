@@ -245,7 +245,7 @@ Script_ScriptEncodeToFontEncode:
 .align
 ; 将输入的字库编码转换成脚本编码
 ; 如果字库编码范围在 0xE4 - 0x1E3 之间，则转换成 0xE4 + 字库编码（确保兼容）
-; 如果字库编码范围在 0x1E3 或者更大，则转换成 0xD0 + 字库编码
+; 如果字库编码范围在 0xD0 - 0xE3, 0x1E3 或者更大，则转换成 0xD0 + 字库编码
 ; r7 = 字库编码
 ; r0 = 脚本指针
 Script_FontEncodeToScriptEncodeHookLoop:
