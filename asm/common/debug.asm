@@ -45,9 +45,18 @@ Debug_LoadArchive:
 	mov r6, r2
 	push {r0-r7, lr}
 	
+	lsr r0, r2, #0x10
+	cmp r0, #0x4
+	beq @@IsLoadingMessBin
+	; ldr r0, [sp, #0x8 + 0x4*12]
+	; .msg "Loading archive 0x%r2% to 0x%r1%, caller 0x%r0%"
+	b @@End
+@@IsLoadingMessBin:
+	lsl r2, #0x10
+	lsr r2, #0x10
 	ldr r0, [sp, #0x8 + 0x4*12]
-	.msg "Loading archive 0x%r2% to 0x%r1%, caller 0x%r0%"
-	
+	.msg "Loading script 0x%r2% to 0x%r1%, caller 0x%r0%"
+@@End:
 	pop {r0-r7, pc}
 .endautoregion
 

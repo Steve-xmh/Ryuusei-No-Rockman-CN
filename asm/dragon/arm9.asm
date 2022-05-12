@@ -23,39 +23,39 @@ OriginalPrintInstantFontConditionStart equ 0x0201B254
 OriginalPrintInstantFontConditionEnd equ 0x0201B2A2
 
 ; 分配可用代码空间
-.org 0x020D4B9C + 0x20 * 2 // 字体间的空位，用来放代码 和缓存
+.org 0x020D4BBC + 0x20 * 2 // 字体间的空位，用来放代码 和缓存
 	.region 0x20 * (0x1E3 - 8), 0x12
-	.endregion
-.org 0x020D879C + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
-	.region 0x40 * (0x1E3 - 8), 0x34
-	.endregion
-.org 0x020E0F9C + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
+    .endregion
+.org 0x020D87DC + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
+    .region 0x40 * (0x1E3 - 2), 0x34
+    .endregion
+.org 0x020E0FDC + 0x40 * 2// 字体间的空位，用来放代码 和缓存
 	.region 0x40 * (0x1E3 - 8), 0x56
-	.endregion
-.org 0x020E979C + 0x80 * 2 // 原主字体位置，现在拿来放代码 和缓存
+    .endregion
+.org 0x020E981C + 0x80 * 2// 原主字体位置，现在拿来放代码 和缓存
 	.region 0x80 * (0x1E3 - 8), 0x78
-	.endregion
+    .endregion
 
 ; 字符缓存位置
 .org 0x020D09F0 + 1 // 12x12 字符的字符宽度数据，对应原本的 0 字符
 FontWidthZero:
-	.fill 0x1, 0x21
-.org 0x020D4B9C + 0x20 // 8x8 小字符的缓存位置，对应原本的 0 字符
+  .fill 0x1, 0xFF
+.org 0x020D4BBC // 8x8 小字符的缓存位置，对应原本的 0 字符
 Font8x8Zero:
-		.fill 0x20, 0x43
-.org 0x020D879C + 0x40 // 8x16 细字符的缓存位置，对应原本的 0 字符
+    .fill 0x20, 0xFF
+.org 0x020D87DC // 8x16 细字符的缓存位置，对应原本的 0 字符
 Font8x16Zero:
-		.fill 0x40, 0x65
-.org 0x020E0F9C + 0x40 // 8x16 粗字符的缓存位置，对应原本的 0 字符
+    .fill 0x40, 0xFF
+.org 0x020E0FDC // 8x16 粗字符的缓存位置，对应原本的 0 字符
 Font8x16BoldZero:
-		.fill 0x40, 0x87
-.org 0x020E979C + 0x80 // 12x12 字符的缓存位置，对应原本的 0 字符（实际占用了 16x16 的尺寸）
+    .fill 0x40, 0xFF
+.org 0x020E981C // 12x12 字符的缓存位置，对应原本的 0 字符（实际占用了 16x16 的尺寸）
 Font12x12Zero:
 		; .fill 0x80, 0xFF
 		.import "asm/common/cache_mark_16x16.bin"
 .org 0x020F992C // 代码中的一段码表数据，可能用来处理文字输入了
 FontEncodingZero:
-		.dw 0x3f00
+    .dw 0x3f00
 
 .include "asm/dragon/nitro.asm"
 .include "asm/common/scripts.asm"
