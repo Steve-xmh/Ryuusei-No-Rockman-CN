@@ -18,12 +18,12 @@
 
 ; sub_217AD00
 ; 在文件夹页面的显示卡片攻击值的的函数
-.org 0x0217ADA0
-.area 0x0217ADB8-., 0x00
+.org 0x0217ADA4
+.area 0x0217ADBC-., 0x00
 	bl Script_CustomWriteCardDamageHook
 .endarea
 
-.org 0x0217AE32
+.org 0x0217AE2E
 .area 0x0217AE42-., 0x00
 	bl Script_CustomWriteCardMarkHook
 .endarea
