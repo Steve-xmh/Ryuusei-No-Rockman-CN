@@ -13,6 +13,8 @@ tpl_arm9_path = os.path.join(pydir, 'tpl_arm9')
 original_tbl_path = os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-cn.tbl')
 workspace_tpl_path = os.path.join(pydir, '_workspace', 'mess_out_tpl')
 
+FONT_2_SIZE = 12
+
 # 所有日语的平假名和片假名
 jp_hiragana_and_katakana = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン"
 
@@ -48,13 +50,13 @@ def check_file(file_path: str):
                 char_texts.add(result[0])
 
 def calc_chunk_size(character: str) -> int:
-    font = get_or_create_font(12)
+    font = get_or_create_font(FONT_2_SIZE)
     (width, height) = font.getsize(character)
     width += 1
     return math.ceil(width / 8)
 
 def gen_two_half_graph(character: str, bold = False) -> 'list[bytes]':
-    font = get_or_create_font(12)
+    font = get_or_create_font(FONT_2_SIZE)
     (width, height) = font.getsize(character)
     width += 1
     chunk_width = math.ceil(width / 8)
@@ -65,10 +67,10 @@ def gen_two_half_graph(character: str, bold = False) -> 'list[bytes]':
     draw = ImageDraw.Draw(img)
     draw.fontmode = "1" # 点阵字体，而非矢量
     offset_x = math.floor((img_width - width) / 2)
-    draw.text(         (1 + offset_x, 1), character, 127, font=font)
-    if bold: draw.text((2 + offset_x, 1), character, 127, font=font)
-    draw.text(         (0 + offset_x, 0), character, 0, font=font)
-    if bold: draw.text((1 + offset_x, 0), character, 0, font=font)
+    draw.text(         (1 + offset_x, 2), character, 127, font=font)
+    if bold: draw.text((2 + offset_x, 2), character, 127, font=font)
+    draw.text(         (0 + offset_x, 1), character, 0, font=font)
+    if bold: draw.text((1 + offset_x, 1), character, 0, font=font)
     graphs = []
     for cx in range(chunk_width):
         pixels = []
@@ -130,7 +132,7 @@ def main():
         os.path.join(pydir, 'scripts', 'font3_width.bin')
     )
     # 直接将昴和 467 号字符替换
-    f.gen_character('昴', 12)
+    f.gen_character('昴', FONT_2_SIZE)
     f.table[467] = f.table[-1]
     f.table.pop()
     f.character_graphs[467] = f.character_graphs[-1]
@@ -138,8 +140,8 @@ def main():
     f.widths[467] = f.widths[-1]
     f.widths.pop()
     # 俩空格
-    f.gen_character(' ', 12)
-    f.gen_character('　', 12)
+    f.gen_character(' ', FONT_2_SIZE)
+    f.gen_character('　', FONT_2_SIZE)
 
     # 嵌入美版字体
     fontus = {}
@@ -164,13 +166,13 @@ def main():
 
     for c in f.table: # 重新生成已有汉字
         if len(c) == 1 and ord(c) in range(0x4E00, 0x9FFF) and (not c in jp_hiragana_and_katakana):
-            f.gen_character(c, 12)
+            f.gen_character(c, FONT_2_SIZE)
     for c in rr:
         m = wide_r.match(c)
         if m:
-            f.gen_character(m[0], 12)
+            f.gen_character(m[0], FONT_2_SIZE)
         elif len(c) == 1 and not (c in f.table):
-            f.gen_character(c, 12)
+            f.gen_character(c, FONT_2_SIZE)
     f.dump_table(os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-cn.tbl'))
     f.save_to_bin(os.path.join(pydir, 'fonts', 'font3.bin'))
     f.dump_widths(os.path.join(pydir, 'fonts', 'font3_width.bin'))

@@ -8,7 +8,7 @@ Script_0D4BD0:
 .endautoregion
 
 .autoregion
-; 普通战斗卡脚本 0x020D25CC CC 25 0D 02
+; 战斗卡脚本 0x020D25CC CC 25 0D 02
 .align
 Script_0D65CC:
 .import "_temp/tpl_arm9/0D65CC.msg"

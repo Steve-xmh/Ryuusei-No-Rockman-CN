@@ -6,95 +6,95 @@ script 0 rnr1 {
 	end
 }
 script 1 rnr1 {
-	"加农炮"
+	"{加农炮}"
 	end
 }
 script 2 rnr1 {
-	"加强加农炮"
+	"{加强加农炮}"
 	end
 }
 script 3 rnr1 {
-	"重型加农炮"
+	"{重型加农炮}"
 	end
 }
 script 4 rnr1 {
-	"等离子枪１"
+	"{等离子枪}１"
 	end
 }
 script 5 rnr1 {
-	"等离子枪２"
+	"{等离子枪}２"
 	end
 }
 script 6 rnr1 {
-	"等离子枪３"
+	"{等离子枪}３"
 	end
 }
 script 7 rnr1 {
-	"加特林１"
+	"{加特林}１"
 	end
 }
 script 8 rnr1 {
-	"加特林２"
+	"{加特林}２"
 	end
 }
 script 9 rnr1 {
-	"加特林３"
+	"{加特林}３"
 	end
 }
 script 10 rnr1 {
-	"空气炮"
+	"{空气炮}"
 	end
 }
 script 11 rnr1 {
-	"追踪导弹１"
+	"{追踪导弹}１"
 	end
 }
 script 12 rnr1 {
-	"追踪导弹２"
+	"{追踪导弹}２"
 	end
 }
 script 13 rnr1 {
-	"追踪导弹３"
+	"{追踪导弹}３"
 	end
 }
 script 14 rnr1 {
-	"爆裂炸弹１"
+	"{爆裂炸弹}１"
 	end
 }
 script 15 rnr1 {
-	"爆裂炸弹２"
+	"{爆裂炸弹}２"
 	end
 }
 script 16 rnr1 {
-	"爆裂炸弹３"
+	"{爆裂炸弹}３"
 	end
 }
 script 17 rnr1 {
-	"冰之落石１"
+	"{冰之落石}１"
 	end
 }
 script 18 rnr1 {
-	"冰之落石２"
+	"{冰之落石}２"
 	end
 }
 script 19 rnr1 {
-	"冰之落石３"
+	"{冰之落石}３"
 	end
 }
 script 20 rnr1 {
-	"眩晕之拳"
+	"{眩晕之拳}"
 	end
 }
 script 21 rnr1 {
-	"毒之拳"
+	"{毒之拳}"
 	end
 }
 script 22 rnr1 {
-	"冷冻之拳"
+	"{冷冻之拳}"
 	end
 }
 script 23 rnr1 {
-	"剑"
+	"{剑}"
 	end
 }
 script 24 rnr1 {
@@ -510,35 +510,35 @@ script 126 rnr1 {
 	end
 }
 script 127 rnr1 {
-	"狗命要紧１０"
+	"{生命恢复}１０"
 	end
 }
 script 128 rnr1 {
-	"狗命要紧３０"
+	"{生命恢复}３０"
 	end
 }
 script 129 rnr1 {
-	"リカバリー５０"
+	"{生命恢复}５０"
 	end
 }
 script 130 rnr1 {
-	"{生命恢复８０}"
+	"{生命恢复}８０"
 	end
 }
 script 131 rnr1 {
-	"リカバリー１２０"
+	"{生命恢复}１２０"
 	end
 }
 script 132 rnr1 {
-	"リカバリー１５０"
+	"{生命恢复}１５０"
 	end
 }
 script 133 rnr1 {
-	"リカバリー２００"
+	"{生命恢复}２００"
 	end
 }
 script 134 rnr1 {
-	"リカバリー３００"
+	"{生命恢复}３００"
 	end
 }
 script 135 rnr1 {
@@ -602,7 +602,7 @@ script 149 rnr1 {
 	end
 }
 script 150 rnr1 {
-	"欧拉力量＋１０"
+	"{力量}＋１０"
 	end
 }
 script 151 rnr1 {

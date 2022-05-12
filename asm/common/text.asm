@@ -139,6 +139,96 @@ int __fastcall sub_201B21C(struct_a1 *a1)
   .dw 0
 .endautoregion
 
+
+.autoregion
+.align
+ReadScript_Init:
+  push {r0-r7, lr}
+
+  // 初始化文件对象
+  // 0x0209842C void FS_InitFile( FSFile *p_file );
+  // 打开文件
+  // 0x020980DC BOOL FS_OpenFile( FSFile *p_file, const char *path );
+  
+  // 8x8 字库
+  ldr r0,=Font0FileVar
+  blx FS_InitFile
+  // ldr r0,=Font0FileVar
+  ldr r1,=@Font0FileName
+  blx FS_OpenFile
+  
+  cmp r0,#1
+  beq @@LoadFont1
+  
+  .msg "Failed to open datbin/fonts/font0.bin!"
+  b .
+  
+@@LoadFont1:
+
+  // 8x16 细字库
+  ldr r0,=Font1FileVar
+  blx FS_InitFile
+  // ldr r0,=Font1FileVar
+  ldr r1,=@Font1FileName
+  blx FS_OpenFile
+  
+  cmp r0,#1
+  beq @@LoadFont2
+  
+  .msg "Failed to open datbin/fonts/font1.bin!"
+  b .
+  
+@@LoadFont2:
+
+  // 8x16 粗字库
+  ldr r0,=Font2FileVar
+  blx FS_InitFile
+  // ldr r0,=Font2FileVar
+  ldr r1,=@Font2FileName
+  blx FS_OpenFile
+
+  cmp r0,#1
+  beq @@LoadFont3
+  
+  .msg "Failed to open datbin/fonts/font2.bin!"
+  b .
+  
+@@LoadFont3:
+
+  // 16x16 字库
+  ldr r0,=Font3FileVar
+  blx FS_InitFile
+  // ldr r0,=Font3FileVar
+  ldr r1,=@Font3FileName
+  blx FS_OpenFile
+  
+  cmp r0,#1
+  beq @@LoadFont3Width
+  
+  .msg "Failed to open datbin/fonts/font3.bin!"
+  b .
+  
+@@LoadFont3Width:
+
+  // 16x16 字库宽度表
+  ldr r0,=Font3WidthFileVar
+  blx FS_InitFile
+  // ldr r0,=Font3WidthFileVar
+  ldr r1,=@Font3WidthFileName
+  blx FS_OpenFile
+  
+  cmp r0,#1
+  beq @@End
+  
+  .msg "Failed to open datbin/fonts/font3_width.bin!"
+  b .
+  
+@@End:
+
+  pop {r0-r7, pc}
+.pool
+.endautoregion
+
 .autoregion
 .align
 
@@ -161,65 +251,23 @@ ReadScript_extended:
   // 返回值：r0 字符编码长度，1 或 2
   // r5 = 文字打印上下文结构指针
   push {r1-r7, lr}
-  .msg "ReadScript Context = 0x%r0%"
+  ; .msg "ReadScript Context = 0x%r0%"
   // 我怕了 bl 指令了（）就先推到栈里存着了（）
   push {r0}
   mov r5, r0
   
   // 检查字体是否初始化
-  ldr r6, =@FontFileLoadedVar
-  ldr r6, [r6]
-  cmp r6,0x0
-  bne @@LoadCharacter_Loaded
+  ; ldr r6, =@FontFileLoadedVar
+  ; ldr r6, [r6]
+  ; cmp r6,0x0
+  ; bne @@LoadCharacter_Loaded
 
   // 尚未初始化，开始打开字库
 
-  // 初始化文件对象
-  // 0x0209842C void FS_InitFile( FSFile *p_file );
-  // 打开文件
-  // 0x020980DC BOOL FS_OpenFile( FSFile *p_file, const char *path );
-
-  // 8x8 字库
-  ldr r0,=Font0FileVar
-  blx FS_InitFile
-  // ldr r0,=Font0FileVar
-  ldr r1,=@Font0FileName
-  blx FS_OpenFile
-
-  // 8x16 细字库
-  ldr r0,=Font1FileVar
-  blx FS_InitFile
-  // ldr r0,=Font1FileVar
-  ldr r1,=@Font1FileName
-  blx FS_OpenFile
-
-  // 8x16 粗字库
-  ldr r0,=Font2FileVar
-  blx FS_InitFile
-  // ldr r0,=Font2FileVar
-  ldr r1,=@Font2FileName
-  blx FS_OpenFile
-
-  // 16x16 字库
-  ldr r0,=Font3FileVar
-  blx FS_InitFile
-  // ldr r0,=Font3FileVar
-  ldr r1,=@Font3FileName
-  blx FS_OpenFile
-
-  // 16x16 字库宽度表
-  ldr r0,=Font3WidthFileVar
-  blx FS_InitFile
-  // ldr r0,=Font3WidthFileVar
-  ldr r1,=@Font3WidthFileName
-  blx FS_OpenFile
-
-  // TODO: 打开失败的处理
-
-@@Success:
-  ldr r1,=@FontFileLoadedVar
-  mov r0, 0x1
-  str r0, [r1]
+; @@Success:
+  ; ldr r1,=@FontFileLoadedVar
+  ; mov r0, 0x1
+  ; str r0, [r1]
   
 @@LoadCharacter_Loaded:
   // 检测指向的编码是否在 0xD0 - 0xE4 之间，有则进入第二码表

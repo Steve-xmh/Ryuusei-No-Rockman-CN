@@ -222,7 +222,7 @@ script 56 rnr1 {
 	end
 }
 script 57 rnr1 {
-	"てんぼうだいの電波"
+	"观景台的电波"
 	end
 }
 script 58 rnr1 {
@@ -494,7 +494,7 @@ script 129 rnr1 {
 	end
 }
 script 130 rnr1 {
-	"きかんしゃの電脳"
+	"火车的电脑"
 	end
 }
 script 131 rnr1 {

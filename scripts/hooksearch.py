@@ -1,36 +1,45 @@
 from io import SEEK_SET
-import os
+import os, sys
+import re
 
-original_areas = [
-    ['OriginalPrintFontCondition', 0x0201B158, 0x0201B192],
-    ['OriginalAdditionalCondition', 0x0201B114, 0x0201B130],
-    ['OriginalPrintAnotherFontCondition', 0x02020060, 0x0202007A],
-    ['OriginalPrintInstantFontCondition', 0x0201B254, 0x0201B2A2],
-]
+input_bin_file = sys.argv[-4]
+input_asm_file = sys.argv[-3]
+base_address = int(sys.argv[-2], 16)
+target_bin_file = sys.argv[-1]
 
-with open('_workspace/pegasus/arm9.dec', 'rb') as r:
-    for hook in original_areas:
-        hook[1] -= 0x02000000
-        hook[2] -= 0x02000000
-        hook[2] -= hook[1]
-        assert hook[2] > 0
-        assert hook[1] > 0
-        r.seek(hook[1], SEEK_SET)
-        hook.append(r.read(hook[2]))
+org_regexp = re.compile(r'^\s*\.org\s+(0x[0-9a-fA-F]+)')
 
-print(original_areas)
-
-def search_arm9(file: str):
-    print('Searching', file)
-    with open(file, 'rb') as r:
-        data = r.read()
-    for hook in original_areas:
-        findresult = data.find(hook[3])
-        if findresult != -1:
-            print(hook[0] + 'Start', 'equ', hex(findresult + 0x02000000))
-            print(hook[0] + 'End', 'equ', hex(findresult + hook[2] + 0x02000000))
-        else:
-            print(hook[0], 'can\'t find data')
-
-search_arm9('_workspace/dragon/arm9.dec')
-search_arm9('_workspace/leo/arm9.dec')
+with open(input_bin_file, 'rb') as binf:
+    with open(target_bin_file, 'rb') as tbinf:
+        with open(input_asm_file, 'r', encoding='utf8') as asmf:
+            for line in asmf:
+                matched = org_regexp.match(line)
+                if matched:
+                    org_address = int(matched.group(1), 16)
+                    print(line)
+                    binf.seek(org_address - base_address, SEEK_SET)
+                    data = binf.read(16)
+                    # search in target file
+                    tbinf.seek(0, SEEK_SET)
+                    cursor = 0
+                    results = []
+                    while True:
+                        chunk_ = tbinf.read(1)
+                        if len(chunk_) == 0:
+                            break
+                        b = chunk_[0]
+                        if data[cursor] == b:
+                            cursor += 1
+                            if cursor == len(data):
+                                target_pos = tbinf.tell() - len(data) + base_address
+                                distance = target_pos - org_address
+                                if abs(distance) < 0x1000:
+                                    results.append((target_pos, abs(distance)))
+                                cursor = 0
+                        else:
+                            cursor = 0
+                    if len(results) > 0:
+                        results.sort(key=lambda x: x[1])
+                        print('\tfound at:', hex(results[0][0]))
+                        print('\tdistance:', hex(results[0][1]))
+                        

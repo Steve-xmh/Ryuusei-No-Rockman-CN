@@ -106,15 +106,27 @@ class Font:
             for c in self.table:
                 def increase_counter():
                     nonlocal counter
-                    counter += 1
-                    if counter < 0xFF and (counter & 0xFF) >= 0xD0:
-                        counter = 0xD000
-                    elif (counter & 0xFF) >= 0xE4:
-                        if counter >= 0xD000:
-                            counter += 0x0100
-                            counter = counter & 0xFF00
-                        else:
-                            counter = 0xD000
+                    left = (counter & 0xFF00) >> 8
+                    right = counter & 0xFF
+                    if left == 0:
+                        right += 1
+                        if right == 0xD0:
+                            left = 0xD0
+                            right = 0
+                    elif left == 0xD0 and right == 0x13:
+                        left = 0xE4
+                        right = 0
+                    elif left == 0xE4:
+                        right += 1
+                        if right > 0xFF:
+                            left = 0xD1
+                            right = 0x30
+                    else:
+                        right += 1
+                        if right == 0xE4:
+                            left += 1
+                            right = 0
+                    counter = (left << 8) | right
                 def get_hex(x):
                     hex_counter = hex(x)[2:]
                     if x < 0x100:

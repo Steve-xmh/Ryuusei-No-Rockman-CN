@@ -32,7 +32,7 @@ OriginalPrintInstantFontConditionEnd equ 0x0201B2A2
 .org 0x020E0F98 + 0x40 * 2 // 字体间的空位，用来放代码 和缓存
 	.region 0x40 * (0x1E3 - 8), 0x56
 	.endregion
-.org 0x020E9798 + 0x80 * 8 // 原主字体位置，现在拿来放代码 和缓存
+.org 0x020E9798 + 0x80 * 2 // 原主字体位置，现在拿来放代码 和缓存
 	.region 0x80 * (0x1E3 - 8), 0x78
 	.endregion
 
@@ -60,6 +60,8 @@ FontEncodingZero:
 .include "asm/pegasus/nitro.asm"
 .include "asm/common/scripts.asm"
 .include "asm/common/text.asm"
+.include "asm/common/debug.asm"
+.include "asm/common/init.asm"
 .include "asm/common/dx.asm"
 .include "asm/common/text_cache.asm"
 .include "asm/common/text_hooks.asm"
@@ -73,6 +75,12 @@ FontEncodingZero:
 .org 0x0202F3F0
 		push {r4-r6, lr}
 		bl CopyFontHook
+
+; 调试用
+; 捕获尚未 Hook 的脚本位置
+.org 0x02008E92
+	bl Debug_GetScriptPos
+	
 
 ; sub_200BF94 是玩家名字的默认值被写入的函数
 ;     0x20F8E98 是姓氏
@@ -92,9 +100,9 @@ FontEncodingZero:
 ; sub_201B864 打印水平两个按钮文字的函数
 ; sub_201B99C 疑似是打印剧情文本的函数？
 ; sub_201FA30 疑似是脚本解析的函数
-; sub_20107D0 疑似是从字库编码到脚本编码的转换
+; sub_20107D0 疑似是从字库编码到脚本编码的转换，被用在了邮件上
 ; sub_2009AAC 疑似是拷贝脚本内容的函数（且进行了目标位置大小限制）
-; sub_2010798 疑似是将脚本编码转换成 ASCII 编码（可能？）的函数
+; sub_2010798 是将脚本编码转换成 ASCII 编码的函数，被用在了邮件发送的函数
 ; sub_2176B60 将输入文字编码转换回脚本编码的函数
 ; sub_2176BA4 是输入文字时转换输入内容到字体编码的函数，并返回是否为空
 ; sub_20202D8 疑似和显存字库有关
@@ -104,36 +112,11 @@ FontEncodingZero:
 ; sub_201FAC8 鸣谢画面时调用的文字打印函数
 ; sub_202002C 也是打印小字体和大字体的函数
 
-.autoregion
-.align
-; 拦截正常的文件系统初始化函数
-; 在这里初始化我们需要的东西
-Fake_FS_Init:
-	push {lr}
-	blx FS_Init
-	.msg "Ryuusei No Rockman 1 CN Patch by SteveXMH!"
-	.msg "Special thanks to:"
-	.msg "  - Enler"
-	.msg "  - Prof. 9"
-	pop {pc}
-.endautoregion
+.org 0x02012C1E
+	bl Debug_LoadArchive
 
 .org 0x02020094
 	bl Debug_ScriptError
-
-.autoregion
-.align
-Debug_ScriptError:
-	cmp r1, r0
-	bls @@Return
-	.msg "Script Error!"
-	.msg "Script overflowed with %r1% bytes"
-	.msg "Allocated %r0% bytes"
-	.msg "Script Context address: 0x%r5%"
-	b .
-@@Return:
-	blx lr
-.endautoregion
 
 .org 0x02012B14
 	bl Fake_FS_Init
@@ -220,7 +203,7 @@ Debug_ScriptError:
 
 .org 0x0200917A
 .area 0x02009182-. , 0x00
-	bl @ReadScriptToVramHook
+	bl ReadScriptToVramHook
 .endarea
 
 .org 0x02009A68
@@ -230,29 +213,14 @@ Debug_ScriptError:
 	pop {pc}
 .endarea
 
-.autoregion
-.align
-@ReadScriptToVramHook:
-	ldr r5, =0x020D25CC
-	cmp r0, r5
-	beq @@Script_20D25CC
-	ldr r5, =0x020D0BD0
-	cmp r0, r5
-	beq @@Script_20D0BD0
-@@NotModifiedScript:
-	b @@NotModifiedScript
-@@Script_20D25CC: ; 普通战斗卡脚本 20D25CC
-	ldr r0, =Script_0D65CC
-	b @@End
-@@Script_20D0BD0: ; 我们的太阳联动脚本 20D0BD0
-	ldr r0, =Script_0D4BD0
-@@End:
-	mov r5, r0
-	mov r6, r1
-	mov r7, r2
-	mov r4, r3
-	blx lr
-.pool
-.endautoregion
+.org 0x02010798
+	push {lr}
+	bl sub_2010798_hook
+	pop {pc}
+
+.org 0x020107D0
+	push {lr}
+	bl sub_20107D0_hook
+	pop {pc}
 
 .close

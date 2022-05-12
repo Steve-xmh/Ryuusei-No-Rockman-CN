@@ -111,13 +111,13 @@ run_armips([
 ])
 print('正在编译青龙版代码')
 run_armips([
-    os.path.join(asm_path, 'dragon', 'arm9.asm'),
+    os.path.join(asm_path, 'dragon', '_main.asm'),
     '-sym', os.path.join(temp_path, 'workspace', 'dragon.sym'),
     '-strequ', 'TEMP', os.path.join(temp_path, 'workspace', 'dragon')
 ])
 print('正在编译雄狮版代码')
 run_armips([
-    os.path.join(asm_path, 'leo', 'arm9.asm'),
+    os.path.join(asm_path, 'leo', '_main.asm'),
     '-sym', os.path.join(temp_path, 'workspace', 'leo.sym'),
     '-strequ', 'TEMP', os.path.join(temp_path, 'workspace', 'leo')
 ])

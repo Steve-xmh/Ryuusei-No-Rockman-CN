@@ -395,3 +395,116 @@ sub_2176BA4_hook:
   pop {r3-r5,pc}
 .pool
 .endautoregion
+
+.autoregion
+.align
+; 用于将脚本编码转换为 ASCII 编码的函数
+; r0 = 未知
+; r1 = 脚本位置
+; r2 = 目标写入位置
+; r3 = 最大写入长度
+; 返回值
+; r0 = 转码的文字数量
+sub_2010798_hook:
+  push {r1-r7,lr}
+  mov r7, 0
+  mov r4, r1
+@@Loop:
+  ldrb r6, [r4]
+  cmp r6, 0xE6
+  beq @@End
+  cmp r3, 0
+  beq @@End
+  
+  mov r0, r4
+  bl Script_ScriptEncodeToFontEncode
+  cmp r0, 0xE4
+  bcs @@InExtendedEncode
+  ldr r6, =0x02106A98
+  b @@LoopEnd
+@@InExtendedEncode:
+  sub r0, 0xE4
+  ldr r6, =0x02106B7C
+@@LoopEnd:
+  ldrb r0, [r6, r0]
+  strb r0, [r2]
+  add r4, r1
+  add r7, 1
+  add r2, 1
+  sub r3, 1
+  b @@Loop
+@@End:
+  mov r0, r7
+  pop {r1-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+; 将字库编码转换成脚本编码
+; 参数
+; r1 = 字库编码
+; r2 = 写入脚本位置
+; 返回值
+; r0 = 已写入的字节数量
+sub_20107D0_hook:
+  push {r3-r7,lr}
+  ldr r0, =0x02106C6C
+  lsl r1, 1
+  ldrh r1, [r0, r1]
+  mov r0, 2
+  cmp r1, 0xE4
+  bcs @@InOriginalEncode
+  cmp r1, 0xD0
+  bcs @@InExtendedEncode
+  strb r1, [r2]
+  mov r0, 1
+  b @@End
+@@InOriginalEncode:
+  mov r3, 0xE4
+  strb r3, [r2]
+  sub r1, 0xE4
+  strb r1, [r2, #1]
+  b @@End
+@@InExtendedEncode:
+  mov r3, 0xD0
+  strb r3, [r2]
+  sub r1, 0xD0
+  strb r1, [r2, #1]
+@@End:
+  pop {r3-r7,lr}
+.pool
+.endautoregion
+
+.autoregion
+.align
+ReadScriptToVramHook:
+; 天马版
+	ldr r5, =0x020D25CC
+	cmp r0, r5
+	beq @@Script_20D25CC
+	ldr r5, =0x020D0BD0
+	cmp r0, r5
+	beq @@Script_20D0BD0
+; 青龙版
+	ldr r5, =0x020D25D0
+	cmp r0, r5
+	beq @@Script_20D25CC
+	ldr r5, =0x020D0BD0
+	cmp r0, r5
+	beq @@Script_20D0BD0
+@@NotModifiedScript:
+	b @@NotModifiedScript
+@@Script_20D25CC: ; 普通战斗卡脚本 20D25CC
+	ldr r0, =Script_0D65CC
+	b @@End
+@@Script_20D0BD0: ; 我们的太阳联动脚本 20D0BD0
+	ldr r0, =Script_0D4BD0
+@@End:
+	mov r5, r0
+	mov r6, r1
+	mov r7, r2
+	mov r4, r3
+	blx lr
+.pool
+.endautoregion
