@@ -43,22 +43,14 @@ def unpack_nds(nds_file: str, dest_dir: str):
 sfarctool_path = os.path.join(tools_path, 'sfarctool.exe')
 
 
-def unpack_archive(bin_file: str, dest_dir: str, decompress: bool = False):
+def unpack_archive(bin_file: str, dest_dir: str):
     print('正在解包 SFA 归档文件', bin_file, '到', dest_dir)
-    if decompress:
-        subprocess.run([
-            sfarctool_path,
-            '-x', '-d',
-            '-i', bin_file,
-            '-o', dest_dir,
-        ]).check_returncode()
-    else:
-        subprocess.run([
-            sfarctool_path,
-            '-x',
-            '-i', bin_file,
-            '-o', dest_dir,
-        ]).check_returncode()
+    subprocess.run([
+        sfarctool_path,
+        '-x', '-d',
+        '-i', bin_file,
+        '-o', dest_dir,
+    ]).check_returncode()
 
 
 pixelpet_path = os.path.join(tools_path, 'pixelpet.exe')

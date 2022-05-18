@@ -101,27 +101,42 @@ def hex_to_bytes(data: str) -> bytes:
         result.append(int(d, 16))
     return bytes(result)
 
+def read_json(path: str):
+    with open(path, 'r', encoding='utf8') as r:
+        return json.load(r)
+
 def main():
     print('正在加载原始码表')
     load_tbl(os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-copy.tbl'))
 
     print('正在统计所需字形')
-    check_dir(workspace_tpl_path)
     check_dir(tpl_arm9_path)
+    arm9chars = set(char_texts)
+    check_dir(workspace_tpl_path)
     check_dir(tpl_path)
 
     def filter_spaces(c: str):
         return not (c in [' ', '\t', '\n', '', '\\', '[', ']'])
+    
+    def sort_chars(c: str):
+        # return c
+        if len(c) == 1:
+            if c in arm9chars:
+                return '0' + c
+            else:
+                return '1' + c
+        else:
+            return '\uFFFF' + c
 
     r = list(char_texts)
-    r.sort()
     r = list(filter(filter_spaces, r))
 
-    rr = list(filter(lambda x: not (x in tbl_char_texts), r))
-    rr.sort(key=lambda x: len(x))
+    rr = list(set(filter(lambda x: not (x in tbl_char_texts), r)))
+    rr.sort(key=sort_chars)
 
     print('所需字形数量', len(r)) 
     print('所需生成字形数量', len(rr)) 
+    print(rr)
     print('正在生成所需字形')
 
     # 12x12
@@ -144,25 +159,11 @@ def main():
     f.gen_character('　', FONT_2_SIZE)
 
     # 嵌入美版字体
+    fontus_raw = read_json(os.path.join(pydir, 'scripts', 'font12_12_us.json'))
     fontus = {}
-    with open(os.path.join(pydir, 'scripts', 'font12_12_us.json'), 'r', encoding='utf8') as r:
-        fontus = json.load(r)
-        for c in fontus['characters']:
-            char = chr(c[0])
-            if (not (char in f.table)) and (char in rr):
-                f.table.append(chr(c[0]))
-                f.widths.append(c[1])
-                imgdata = hex_to_bytes(c[2])
-                transformed = [0 for x in range(16*16)]
-                for y in range(12):
-                    for x in range(12):
-                        pass
-                        ix = math.floor(x / 8)
-                        iy = math.floor(y / 8)
-                        px = x % 8
-                        py = y % 8
-                        transformed[iy * 128 + ix * 64 + py * 8 + px] = imgdata[y * 12 + x]
-                f.character_graphs.append(bytes(transformed))
+    for c in fontus_raw['characters']:
+        char = chr(c[0])
+        fontus[char] = c
 
     for c in f.table: # 重新生成已有汉字
         if len(c) == 1 and ord(c) in range(0x4E00, 0x9FFF) and (not c in jp_hiragana_and_katakana):
@@ -171,6 +172,21 @@ def main():
         m = wide_r.match(c)
         if m:
             f.gen_character(m[0], FONT_2_SIZE)
+        elif c in fontus:
+            c = fontus[c]
+            f.table.append(chr(c[0]))
+            f.widths.append(c[1])
+            imgdata = hex_to_bytes(c[2])
+            transformed = [0 for x in range(16*16)]
+            for y in range(12):
+                for x in range(12):
+                    pass
+                    ix = math.floor(x / 8)
+                    iy = math.floor(y / 8)
+                    px = x % 8
+                    py = y % 8
+                    transformed[iy * 128 + ix * 64 + py * 8 + px] = imgdata[y * 12 + x]
+            f.character_graphs.append(bytes(transformed))
         elif len(c) == 1 and not (c in f.table):
             f.gen_character(c, FONT_2_SIZE)
     f.dump_table(os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-cn.tbl'))
@@ -236,12 +252,12 @@ def main():
     f.gen_character(' ', 16)
     f.gen_character('　', 16)
     for c in f.table: # 重新生成已有汉字
-        if len(c) == 1 and ord(c) in range(0x4E00, 0x9FFF) and (not c in jp_hiragana_and_katakana):
+        if len(c) == 1 and ord(c) in range(0x4E00, 0x9FFF):
             replace_or_append(c)
     for c in rr:
         if not (c in f.table):
             replace_or_append(c)
-    
+    print(f.table)
     f.save_to_bin(os.path.join(pydir, 'fonts', 'font2.bin'))
 
     gb2312 = Font(1, 2)

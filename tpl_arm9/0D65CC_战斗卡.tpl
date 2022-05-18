@@ -2,7 +2,7 @@
 @size 256
 
 script 0 rnr1 {
-	"洛克破坏炮"
+	"{洛克暴击炮}"
 	end
 }
 script 1 rnr1 {
@@ -10,7 +10,7 @@ script 1 rnr1 {
 	end
 }
 script 2 rnr1 {
-	"{加强加农炮}"
+	"{强化加农炮}"
 	end
 }
 script 3 rnr1 {
@@ -42,55 +42,55 @@ script 9 rnr1 {
 	end
 }
 script 10 rnr1 {
-	"{空气炮}"
+	"{空气散弹}"
 	end
 }
 script 11 rnr1 {
-	"{追踪导弹}１"
+	"{雷达导弹}１"
 	end
 }
 script 12 rnr1 {
-	"{追踪导弹}２"
+	"{雷达导弹}２"
 	end
 }
 script 13 rnr1 {
-	"{追踪导弹}３"
+	"{雷达导弹}３"
 	end
 }
 script 14 rnr1 {
-	"{爆裂炸弹}１"
+	"{高温球}１"
 	end
 }
 script 15 rnr1 {
-	"{爆裂炸弹}２"
+	"{高温球}２"
 	end
 }
 script 16 rnr1 {
-	"{爆裂炸弹}３"
+	"{高温球}３"
 	end
 }
 script 17 rnr1 {
-	"{冰之落石}１"
+	"{冰陨石}１"
 	end
 }
 script 18 rnr1 {
-	"{冰之落石}２"
+	"{冰陨石}２"
 	end
 }
 script 19 rnr1 {
-	"{冰之落石}３"
+	"{冰陨石}３"
 	end
 }
 script 20 rnr1 {
-	"{眩晕之拳}"
+	"{眩晕拳套}"
 	end
 }
 script 21 rnr1 {
-	"{毒之拳}"
+	"{毒素拳套}"
 	end
 }
 script 22 rnr1 {
-	"{冷冻之拳}"
+	"{冻结拳套}"
 	end
 }
 script 23 rnr1 {
@@ -98,895 +98,895 @@ script 23 rnr1 {
 	end
 }
 script 24 rnr1 {
-	"宽剑"
+	"{阔剑}"
 	end
 }
 script 25 rnr1 {
-	"长剑"
+	"{长剑}"
 	end
 }
 script 26 rnr1 {
-	"炎之斩"
+	"{龙炎斩}"
 	end
 }
 script 27 rnr1 {
-	"水之斩"
+	"{水月斩}"
 	end
 }
 script 28 rnr1 {
-	"雷之斩"
+	"{雷鸣斩}"
 	end
 }
 script 29 rnr1 {
-	"木之斩"
+	"{大树斩}"
 	end
 }
 script 30 rnr1 {
-	"破坏之刃"
+	"{突破军刀}"
 	end
 }
 script 31 rnr1 {
-	"地面电波１"
+	"{震地波}１"
 	end
 }
 script 32 rnr1 {
-	"地面电波２"
+	"{震地波}２"
 	end
 }
 script 33 rnr1 {
-	"地面电波３"
+	"{震地波}３"
 	end
 }
 script 34 rnr1 {
-	"穿透攻击１"
+	"{喷射攻击}１"
 	end
 }
 script 35 rnr1 {
-	"穿透攻击２"
+	"{喷射攻击}２"
 	end
 }
 script 36 rnr1 {
-	"穿透攻击３"
+	"{喷射攻击}３"
 	end
 }
 script 37 rnr1 {
-	"抛瓦炸弹１"
+	"{强力炸弹}１"
 	end
 }
 script 38 rnr1 {
-	"抛瓦炸弹２"
+	"{强力炸弹}２"
 	end
 }
 script 39 rnr1 {
-	"抛瓦炸弹３"
+	"{强力炸弹}３"
 	end
 }
 script 40 rnr1 {
-	"幽灵之息１"
+	"{幽灵脉冲}１"
 	end
 }
 script 41 rnr1 {
-	"幽灵之息２"
+	"{幽灵脉冲}２"
 	end
 }
 script 42 rnr1 {
-	"幽灵之息３"
+	"{幽灵脉冲}３"
 	end
 }
 script 43 rnr1 {
-	"狂热摩托１"
+	"{引火环}１"
 	end
 }
 script 44 rnr1 {
-	"狂热摩托２"
+	"{引火环}２"
 	end
 }
 script 45 rnr1 {
-	"狂热摩托３"
+	"{引火环}３"
 	end
 }
 script 46 rnr1 {
-	"定时炸弹１"
+	"{计时炸弹}１"
 	end
 }
 script 47 rnr1 {
-	"定时炸弹２"
+	"{计时炸弹}２"
 	end
 }
 script 48 rnr1 {
-	"定时炸弹３"
+	"{计时炸弹}３"
 	end
 }
 script 49 rnr1 {
-	"炎之火箭弹１"
+	"{火焰火箭筒}１"
 	end
 }
 script 50 rnr1 {
-	"炎之火箭弹２"
+	"{火焰火箭筒}２"
 	end
 }
 script 51 rnr1 {
-	"炎之火箭弹３"
+	"{火焰火箭筒}３"
 	end
 }
 script 52 rnr1 {
-	"火焰喷射１"
+	"{焰尾喷枪}１"
 	end
 }
 script 53 rnr1 {
-	"火焰喷射２"
+	"{焰尾喷枪}２"
 	end
 }
 script 54 rnr1 {
-	"火焰喷射３"
+	"{焰尾喷枪}３"
 	end
 }
 script 55 rnr1 {
-	"宽频电波１"
+	"{宽阔水浪}１"
 	end
 }
 script 56 rnr1 {
-	"宽频电波２"
+	"{宽阔水浪}２"
 	end
 }
 script 57 rnr1 {
-	"宽频电波３"
+	"{宽阔水浪}３"
 	end
 }
 script 58 rnr1 {
-	"螃蟹泡弹１"
+	"{束缚泡泡}１"
 	end
 }
 script 59 rnr1 {
-	"螃蟹泡弹２"
+	"{束缚泡泡}２"
 	end
 }
 script 60 rnr1 {
-	"螃蟹泡弹３"
+	"{束缚泡泡}３"
 	end
 }
 script 61 rnr1 {
-	"绿色墨汁"
+	"{绿色墨汁}"
 	end
 }
 script 62 rnr1 {
-	"蓝色墨汁"
+	"{蓝色墨汁}"
 	end
 }
 script 63 rnr1 {
-	"紫色墨汁"
+	"{紫色墨汁}"
 	end
 }
 script 64 rnr1 {
-	"没得雨下１"
+	"{黏稠雨}１"
 	end
 }
 script 65 rnr1 {
-	"没得雨下２"
+	"{黏稠雨}２"
 	end
 }
 script 66 rnr1 {
-	"没得雨下３"
+	"{黏稠雨}３"
 	end
 }
 script 67 rnr1 {
-	"雷公打太鼓１"
+	"{云朵射击}１"
 	end
 }
 script 68 rnr1 {
-	"雷公打太鼓２"
+	"{云朵射击}２"
 	end
 }
 script 69 rnr1 {
-	"雷公打太鼓３"
+	"{云朵射击}３"
 	end
 }
 script 70 rnr1 {
-	"雷电球１"
+	"{雷电球}１"
 	end
 }
 script 71 rnr1 {
-	"雷电球２"
+	"{雷电球}２"
 	end
 }
 script 72 rnr1 {
-	"雷电球３"
+	"{雷电球}３"
 	end
 }
 script 73 rnr1 {
-	"波尔蒂之眼１"
+	"{伏特眼}１"
 	end
 }
 script 74 rnr1 {
-	"波尔蒂之眼２"
+	"{伏特眼}２"
 	end
 }
 script 75 rnr1 {
-	"波尔蒂之眼３"
+	"{伏特眼}３"
 	end
 }
 script 76 rnr1 {
-	"萤火虫之源１"
+	"{萤火踢}１"
 	end
 }
 script 77 rnr1 {
-	"萤火虫之源２"
+	"{萤火踢}２"
 	end
 }
 script 78 rnr1 {
-	"萤火虫之源３"
+	"{萤火踢}３"
 	end
 }
 script 79 rnr1 {
-	"巨无霸铁锤１"
+	"{巨型榔头}１"
 	end
 }
 script 80 rnr1 {
-	"巨无霸铁锤２"
+	"{巨型榔头}２"
 	end
 }
 script 81 rnr1 {
-	"巨无霸铁锤３"
+	"{巨型榔头}３"
 	end
 }
 script 82 rnr1 {
-	"莫伽长枪１"
+	"{蓬头长枪}１"
 	end
 }
 script 83 rnr1 {
-	"莫伽长枪２"
+	"{蓬头长枪}２"
 	end
 }
 script 84 rnr1 {
-	"莫伽长枪３"
+	"{蓬头长枪}３"
 	end
 }
 script 85 rnr1 {
-	"浣熊之术１"
+	"{变化之术}１"
 	end
 }
 script 86 rnr1 {
-	"浣熊之术２"
+	"{变化之术}２"
 	end
 }
 script 87 rnr1 {
-	"浣熊之术３"
+	"{变化之术}３"
 	end
 }
 script 88 rnr1 {
-	"火神种子１"
+	"{种子火神炮}１"
 	end
 }
 script 89 rnr1 {
-	"火神种子２"
+	"{种子火神炮}２"
 	end
 }
 script 90 rnr1 {
-	"火神种子３"
+	"{种子火神炮}３"
 	end
 }
 script 91 rnr1 {
-	"勇者之剑１"
+	"{勇士剑}１"
 	end
 }
 script 92 rnr1 {
-	"勇者之剑２"
+	"{勇士剑}２"
 	end
 }
 script 93 rnr1 {
-	"勇者之剑３"
+	"{勇士剑}３"
 	end
 }
 script 94 rnr1 {
-	"垃圾方块１"
+	"{废品方块}１"
 	end
 }
 script 95 rnr1 {
-	"垃圾方块２"
+	"{废品方块}２"
 	end
 }
 script 96 rnr1 {
-	"垃圾方块３"
+	"{废品方块}３"
 	end
 }
 script 97 rnr1 {
-	"同步钩１"
+	"{同步勾拳}１"
 	end
 }
 script 98 rnr1 {
-	"同步钩２"
+	"{同步勾拳}２"
 	end
 }
 script 99 rnr1 {
-	"同步钩３"
+	"{同步勾拳}３"
 	end
 }
 script 100 rnr1 {
-	"劲歌热舞"
+	"{力量之歌}"
 	end
 }
 script 101 rnr1 {
-	"震撼之歌"
+	"{战栗之歌}"
 	end
 }
 script 102 rnr1 {
-	"幻象之歌"
+	"{幻觉之歌}"
 	end
 }
 script 103 rnr1 {
-	"摩艾弹幕１"
+	"{摩艾坠落}１"
 	end
 }
 script 104 rnr1 {
-	"摩艾弹幕２"
+	"{摩艾坠落}２"
 	end
 }
 script 105 rnr1 {
-	"摩艾弹幕３"
+	"{摩艾坠落}３"
 	end
 }
 script 106 rnr1 {
-	"巨人战斧１"
+	"{大型斧头}１"
 	end
 }
 script 107 rnr1 {
-	"巨人战斧２"
+	"{大型斧头}２"
 	end
 }
 script 108 rnr1 {
-	"巨人战斧３"
+	"{大型斧头}３"
 	end
 }
 script 109 rnr1 {
-	"魔法水晶１"
+	"{魔法水晶}１"
 	end
 }
 script 110 rnr1 {
-	"魔法水晶２"
+	"{魔法水晶}２"
 	end
 }
 script 111 rnr1 {
-	"魔法水晶３"
+	"{魔法水晶}３"
 	end
 }
 script 112 rnr1 {
-	"黑洞１"
+	"{黑洞}１"
 	end
 }
 script 113 rnr1 {
-	"黑洞２"
+	"{黑洞}２"
 	end
 }
 script 114 rnr1 {
-	"黑洞３"
+	"{黑洞}３"
 	end
 }
 script 115 rnr1 {
-	"狂热之剑１"
+	"{狂战士之剑}１"
 	end
 }
 script 116 rnr1 {
-	"狂热之剑２"
+	"{狂战士之剑}２"
 	end
 }
 script 117 rnr1 {
-	"狂热之剑３"
+	"{狂战士之剑}３"
 	end
 }
 script 118 rnr1 {
-	"绿色爆破"
+	"{绿色暴击炮}"
 	end
 }
 script 119 rnr1 {
-	"寒冰爆破"
+	"{冰块暴击炮}"
 	end
 }
 script 120 rnr1 {
-	"剧毒爆破"
+	"{毒素暴击炮}"
 	end
 }
 script 121 rnr1 {
-	"飓风之舞"
+	"{台风之舞}"
 	end
 }
 script 122 rnr1 {
-	"干扰冲拳"
+	"{干扰拳击}"
 	end
 }
 script 123 rnr1 {
-	"干扰机枪"
+	"{干扰机关枪}"
 	end
 }
 script 124 rnr1 {
-	"引敌之哨"
+	"{口哨}"
 	end
 }
 script 125 rnr1 {
-	"ボムライザー"
+	"{炸弹爆发}"
 	end
 }
 script 126 rnr1 {
-	"シラハドリ"
+	"{空手接白刃}"
 	end
 }
 script 127 rnr1 {
-	"{生命恢复}１０"
+	"{回复}１０"
 	end
 }
 script 128 rnr1 {
-	"{生命恢复}３０"
+	"{回复}３０"
 	end
 }
 script 129 rnr1 {
-	"{生命恢复}５０"
+	"{回复}５０"
 	end
 }
 script 130 rnr1 {
-	"{生命恢复}８０"
+	"{回复}８０"
 	end
 }
 script 131 rnr1 {
-	"{生命恢复}１２０"
+	"{回复}１２０"
 	end
 }
 script 132 rnr1 {
-	"{生命恢复}１５０"
+	"{回复}１５０"
 	end
 }
 script 133 rnr1 {
-	"{生命恢复}２００"
+	"{回复}２００"
 	end
 }
 script 134 rnr1 {
-	"{生命恢复}３００"
+	"{回复}３００"
 	end
 }
 script 135 rnr1 {
-	"バリア"
+	"{防护罩}"
 	end
 }
 script 136 rnr1 {
-	"バリア１００"
+	"{防护罩}１００"
 	end
 }
 script 137 rnr1 {
-	"バリア２００"
+	"{防护罩}２００"
 	end
 }
 script 138 rnr1 {
-	"オーラ"
+	"{气场}"
 	end
 }
 script 139 rnr1 {
-	"インビジブル"
+	"{隐形}"
 	end
 }
 script 140 rnr1 {
-	"セイレイノイカリ"
+	"{精灵之怒}"
 	end
 }
 script 141 rnr1 {
-	"ドクリンゴ"
+	"{毒苹果}"
 	end
 }
 script 142 rnr1 {
-	"ウラギリノススメ"
+	"{背叛的劝诱}"
 	end
 }
 script 143 rnr1 {
-	"ギガマイン"
+	"{千兆地雷}"
 	end
 }
 script 144 rnr1 {
-	"クサムラステージ"
+	"{草丛地台}"
 	end
 }
 script 145 rnr1 {
-	"アイスステージ"
+	"{冰块地台}"
 	end
 }
 script 146 rnr1 {
-	"グラビティステージ"
+	"{重力地台}"
 	end
 }
 script 147 rnr1 {
-	"ゼツエンステージ"
+	"{绝缘地台}"
 	end
 }
 script 148 rnr1 {
-	"ホーリーパネル"
+	"{神圣板块}"
 	end
 }
 script 149 rnr1 {
-	"マヒプラス"
+	"{附加麻痹}"
 	end
 }
 script 150 rnr1 {
-	"{力量}＋１０"
+	"{攻击}＋１０"
 	end
 }
 script 151 rnr1 {
-	"タイヨウジュウ"
+	"{太阳枪}"
 	end
 }
 script 152 rnr1 {
-	"タイヨウジュウＶ２"
+	"{太阳枪}Ｖ２"
 	end
 }
 script 153 rnr1 {
-	"タイヨウジュウＶ３"
+	"{太阳枪}Ｖ３"
 	end
 }
 script 154 rnr1 {
-	"アンコクケン"
+	"{暗黑剑}"
 	end
 }
 script 155 rnr1 {
-	"アンコクケンＶ２"
+	"{暗黑剑}Ｖ２"
 	end
 }
 script 156 rnr1 {
-	"アンコクケンＶ３"
+	"{暗黑剑}Ｖ３"
 	end
 }
 script 157 rnr1 {
-	"アーシュラ"
+	"{阿什拉}"
 	end
 }
 script 158 rnr1 {
-	"アーシュラＶ２"
+	"{阿什拉}Ｖ２"
 	end
 }
 script 159 rnr1 {
-	"アーシュラＶ３"
+	"{阿什拉}Ｖ３"
 	end
 }
 script 160 rnr1 {
-	"トーベ"
+	"{托贝}"
 	end
 }
 script 161 rnr1 {
-	"トーベＶ２"
+	"{托贝}Ｖ２"
 	end
 }
 script 162 rnr1 {
-	"トーベＶ３"
+	"{托贝}Ｖ３"
 	end
 }
 script 163 rnr1 {
-	"オトフリート"
+	"{欧托弗利特}"
 	end
 }
 script 164 rnr1 {
-	"オトフリートＶ２"
+	"{欧托弗利特}Ｖ２"
 	end
 }
 script 165 rnr1 {
-	"オトフリートＶ３"
+	"{欧托弗利特}Ｖ３"
 	end
 }
 script 166 rnr1 {
-	"リザ"
+	"{莱萨}"
 	end
 }
 script 167 rnr1 {
-	"リザＶ２"
+	"{莱萨}Ｖ２"
 	end
 }
 script 168 rnr1 {
-	"リザＶ３"
+	"{莱萨}Ｖ３"
 	end
 }
 script 169 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 170 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 171 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 172 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 173 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 174 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 175 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 176 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 177 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 178 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 179 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 180 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 181 rnr1 {
-	"オックスファイア"
+	"{火焰公牛}"
 	end
 }
 script 182 rnr1 {
-	"オックスファイア[EX]"
+	"{火焰公牛}[EX]"
 	end
 }
 script 183 rnr1 {
-	"オックスファイア[SP]"
+	"{火焰公牛}[SP]"
 	end
 }
 script 184 rnr1 {
-	"キグナスウィング"
+	"{飞翼天鹅}"
 	end
 }
 script 185 rnr1 {
-	"キグナスウィング[EX]"
+	"{飞翼天鹅}[EX]"
 	end
 }
 script 186 rnr1 {
-	"キグナスウィング[SP]"
+	"{飞翼天鹅}[SP]"
 	end
 }
 script 187 rnr1 {
-	"ハープノート"
+	"{音符竖琴}"
 	end
 }
 script 188 rnr1 {
-	"ハープノート[EX]"
+	"{音符竖琴}[EX]"
 	end
 }
 script 189 rnr1 {
-	"ハープノート[SP]"
+	"{音符竖琴}[SP]"
 	end
 }
 script 190 rnr1 {
-	"リブラバランス"
+	"{平衡天秤}"
 	end
 }
 script 191 rnr1 {
-	"リブラバランス[EX]"
+	"{平衡天秤}[EX]"
 	end
 }
 script 192 rnr1 {
-	"リブラバランス[SP]"
+	"{平衡天秤}[SP]"
 	end
 }
 script 193 rnr1 {
-	"オヒュカスクイーン"
+	"{女王蛇夫}"
 	end
 }
 script 194 rnr1 {
-	"オヒュカスクイーン[EX]"
+	"{女王蛇夫}[EX]"
 	end
 }
 script 195 rnr1 {
-	"オヒュカスクイーン[SP]"
+	"{女王蛇夫}[SP]"
 	end
 }
 script 196 rnr1 {
-	"ジェミニスパーク"
+	"{火花双子}"
 	end
 }
 script 197 rnr1 {
-	"ジェミニスパーク[EX]"
+	"{火花双子}[EX]"
 	end
 }
 script 198 rnr1 {
-	"ジェミニスパーク[SP]"
+	"{火花双子}[SP]"
 	end
 }
 script 199 rnr1 {
-	"キャンサーバブル"
+	"{泡沫巨蟹}"
 	end
 }
 script 200 rnr1 {
-	"キャンサーバブル[EX]"
+	"{泡沫巨蟹}[EX]"
 	end
 }
 script 201 rnr1 {
-	"キャンサーバブル[SP]"
+	"{泡沫巨蟹}[SP]"
 	end
 }
 script 202 rnr1 {
-	"ウルフフォレスト"
+	"{森林野狼}"
 	end
 }
 script 203 rnr1 {
-	"ウルフフォレスト[EX]"
+	"{森林野狼}[EX]"
 	end
 }
 script 204 rnr1 {
-	"ウルフフォレスト[SP]"
+	"{森林野狼}[SP]"
 	end
 }
 script 205 rnr1 {
-	"クラウンサンダー"
+	"{雷电王冠}"
 	end
 }
 script 206 rnr1 {
-	"クラウンサンダー[EX]"
+	"{雷电王冠}[EX]"
 	end
 }
 script 207 rnr1 {
-	"クラウンサンダー[SP]"
+	"{雷电王冠}[SP]"
 	end
 }
 script 208 rnr1 {
-	"ペガサスマジック"
+	"{魔幻天马}"
 	end
 }
 script 209 rnr1 {
-	"ペガサスマジック[EX]"
+	"{魔幻天马}[EX]"
 	end
 }
 script 210 rnr1 {
-	"ペガサスマジック[SP]"
+	"{魔幻天马}[SP]"
 	end
 }
 script 211 rnr1 {
-	"レオキングダム"
+	"{王城雄狮}"
 	end
 }
 script 212 rnr1 {
-	"レオキングダム[EX]"
+	"{王城雄狮}[EX]"
 	end
 }
 script 213 rnr1 {
-	"レオキングダム[SP]"
+	"{王城雄狮}[SP]"
 	end
 }
 script 214 rnr1 {
-	"ドラゴンスカイ"
+	"{苍穹青龙}"
 	end
 }
 script 215 rnr1 {
-	"ドラゴンスカイ[EX]"
+	"{苍穹青龙}[EX]"
 	end
 }
 script 216 rnr1 {
-	"ドラゴンスカイ[SP]"
+	"{苍穹青龙}[SP]"
 	end
 }
 script 217 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 218 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 219 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 220 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 221 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 222 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 223 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 224 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 225 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 226 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 227 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 228 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 229 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 230 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 231 rnr1 {
-	"ペガサスマジック[GX]"
+	"{魔幻天马}[GX]"
 	end
 }
 script 232 rnr1 {
-	"アクア＋５０"
+	"{攻击}＋５０"
 	end
 }
 script 233 rnr1 {
-	"オックスタックル"
+	"{公牛阻截}"
 	end
 }
 script 234 rnr1 {
-	"ブレイクカウントボム"
+	"{破坏计时炸弹}"
 	end
 }
 script 235 rnr1 {
-	"ダークソード"
+	"{暗黑剑}"
 	end
 }
 script 236 rnr1 {
-	"レオキングダム[GX]"
+	"{王城雄狮}[GX]"
 	end
 }
 script 237 rnr1 {
-	"ファイア＋５０"
+	"{火焰}＋５０"
 	end
 }
 script 238 rnr1 {
-	"ジェミニサンダー"
+	"{双子雷电}"
 	end
 }
 script 239 rnr1 {
-	"ダークネスホール"
+	"{暗冥洞}"
 	end
 }
 script 240 rnr1 {
-	"ドリームオーラ"
+	"{梦幻气场}"
 	end
 }
 script 241 rnr1 {
-	"ドラゴンスカイ[GX]"
+	"{苍穹青龙}[GX]"
 	end
 }
 script 242 rnr1 {
-	"ウッド＋５０"
+	"{树木}＋５０"
 	end
 }
 script 243 rnr1 {
-	"ゴルゴンアイ"
+	"{戈尔贡之眼}"
 	end
 }
 script 244 rnr1 {
-	"デストロイミサイル"
+	"{毁灭导弹}"
 	end
 }
 script 245 rnr1 {
-	"ポイズンファラオ"
+	"{毒素法老王}"
 	end
 }
 script 246 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 247 rnr1 {
@@ -994,34 +994,34 @@ script 247 rnr1 {
 	end
 }
 script 248 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 249 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 250 rnr1 {
-	"アキ"
+	"够了"
 	end
 }
 script 251 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 252 rnr1 {
-	"Ｍフリーズ"
+	"Ｍ{冻结}"
 	end
 }
 script 253 rnr1 {
-	"Ａブレイザー"
+	"Ａ{烈火}"
 	end
 }
 script 254 rnr1 {
-	"Ｅサイクロン"
+	"Ｅ{旋风}"
 	end
 }
 script 255 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }

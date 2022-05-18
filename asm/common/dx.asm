@@ -9,7 +9,7 @@ field_walkThroughNPC:
 	push	r14
 
 	mov	r1,0x2
-	bl	0x02174408
+	bl	field_canWalk
 	cmp	r0,0x1
 	bne	@@canWalk
 
@@ -44,7 +44,7 @@ field_walkThroughNPCStop:
 	// Check if inside NPC
 	// r0 already set
 	mov	r1,0x2
-	bl	0x02174280
+	bl	field_isInNPC
 	cmp	r0,0x0
 	bne	@@end
 

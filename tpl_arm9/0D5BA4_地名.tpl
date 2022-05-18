@@ -5,7 +5,7 @@ script 0 rnr1 {
 	end
 }
 script 1 rnr1 {
-	"回音镇"
+	"{小玉镇}"
 	end
 }
 script 2 rnr1 {
@@ -19,15 +19,15 @@ script 3 rnr1 {
 	end
 }
 script 4 rnr1 {
-	"いいんちょうのへや"
+	"{班长的房间}"
 	end
 }
 script 5 rnr1 {
-	"ゴン太のへや"
+	"{刚太的房间}"
 	end
 }
 script 6 rnr1 {
-	"キザマロのへや"
+	"{兆麻吕的房间}"
 	end
 }
 script 7 rnr1 {
@@ -35,69 +35,69 @@ script 7 rnr1 {
 	end
 }
 script 8 rnr1 {
-	"观景台"
+	"{瞭望台}"
 	end
 }
 script 9 rnr1 {
 	end
 }
 script 10 rnr1 {
-	"アマケンがいかん"
+	"{天研室外}"
 	end
 }
 script 11 rnr1 {
-	"アマケンげんかん"
+	"{天研门口}"
 	end
 }
 script 12 rnr1 {
-	"かがくかん"
+	"{科学馆}"
 	end
 }
 script 13 rnr1 {
-	"けんきゅう室"
+	"{研究室}"
 	end
 }
 script 14 rnr1 {
-	"ぎじうちゅう"
+	"{模拟宇宙}"
 	end
 }
 script 15 rnr1 {
 	end
 }
 script 16 rnr1 {
-	"しょうめんげんかん"
+	"{正门门口}"
 	end
 }
 script 17 rnr1 {
-	"１Ｆろうか"
+	"１Ｆ{走廊}"
 	end
 }
 script 18 rnr1 {
-	"２Ｆろうか"
+	"２Ｆ{走廊}"
 	end
 }
 script 19 rnr1 {
-	"１－Ａ教室"
+	"１－Ａ{教室}"
 	end
 }
 script 20 rnr1 {
-	"１－Ｂ教室"
+	"１－Ｂ{教室}"
 	end
 }
 script 21 rnr1 {
-	"５－Ａ教室"
+	"５－Ａ{教室}"
 	end
 }
 script 22 rnr1 {
-	"５－Ｂ教室"
+	"５－Ｂ{教室}"
 	end
 }
 script 23 rnr1 {
-	"たいいくかん"
+	"{体育馆}"
 	end
 }
 script 24 rnr1 {
-	"ほうそう室"
+	"{广播室}"
 	end
 }
 script 25 rnr1 {
@@ -107,23 +107,23 @@ script 26 rnr1 {
 	end
 }
 script 27 rnr1 {
-	"ヤシブタウン"
+	"{谷涉镇}"
 	end
 }
 script 28 rnr1 {
-	"１０３デパート１Ｆ"
+	"１０３{百货}１Ｆ"
 	end
 }
 script 29 rnr1 {
-	"１０３デパートおくじょう"
+	"１０３{百货屋顶}"
 	end
 }
 script 30 rnr1 {
-	"イベントかいじょう"
+	"{活动会场}"
 	end
 }
 script 31 rnr1 {
-	"ミテイ"
+	"未定"
 	end
 }
 script 32 rnr1 {
@@ -133,50 +133,50 @@ script 33 rnr1 {
 	end
 }
 script 34 rnr1 {
-	"ドリームアイランド"
+	"{梦幻岛}"
 	end
 }
 script 35 rnr1 {
-	"ドリームこうえん"
+	"{梦幻公园}"
 	end
 }
 script 36 rnr1 {
-	"ゴミしゅうせきじょ"
+	"{垃圾堆场}"
 	end
 }
 script 37 rnr1 {
-	"はいきぶつおきば１"
+	"{废弃物存放处}１"
 	end
 }
 script 38 rnr1 {
-	"はいきぶつおきば２"
+	"{废弃物存放处}２"
 	end
 }
 script 39 rnr1 {
 	end
 }
 script 40 rnr1 {
-	"アイランドちか"
+	"{岛屿地下}"
 	end
 }
 script 41 rnr1 {
-	"サービスモジュール"
+	"{服务舱}"
 	end
 }
 script 42 rnr1 {
-	"くうちょうモジュール"
+	"{空调舱}"
 	end
 }
 script 43 rnr1 {
-	"はつでんモジュール"
+	"{发电舱}"
 	end
 }
 script 44 rnr1 {
-	"きょじゅうモジュール"
+	"{居住舱}"
 	end
 }
 script 45 rnr1 {
-	"だい２じっけんモジュール"
+	"{第}２{实验舱}"
 	end
 }
 script 46 rnr1 {
@@ -192,37 +192,37 @@ script 49 rnr1 {
 	end
 }
 script 50 rnr1 {
-	"コダマタウンの電波"
+	"{小玉镇的电波}"
 	end
 }
 script 51 rnr1 {
 	printPlayerName2
-	"のリビングの電波"
+	"家客厅的电波"
 	end
 }
 script 52 rnr1 {
 	printPlayerName2
-	"のへやの電波"
+	"房间的电波"
 	end
 }
 script 53 rnr1 {
-	"いいんちょうのへやの電波"
+	"{班长房间的电波}"
 	end
 }
 script 54 rnr1 {
-	"ゴン太のへやの電波"
+	"{刚太房间的电波}"
 	end
 }
 script 55 rnr1 {
-	"キザマロのへやの電波"
+	"{兆麻吕房间的电波}"
 	end
 }
 script 56 rnr1 {
-	"ＢＩＧＷＡＶＥの電波"
+	"ＢＩＧＷＡＶＥ{的电波}"
 	end
 }
 script 57 rnr1 {
-	"观景台的电波"
+	"{瞭望台的电波}"
 	end
 }
 script 58 rnr1 {
@@ -232,62 +232,62 @@ script 59 rnr1 {
 	end
 }
 script 60 rnr1 {
-	"アマケンがいかんの電波"
+	"{天研户外的电波}"
 	end
 }
 script 61 rnr1 {
-	"アマケンげんかんの電波"
+	"{天研门口的电波}"
 	end
 }
 script 62 rnr1 {
-	"かがくかんの電波"
+	"{科学馆的电波}"
 	end
 }
 script 63 rnr1 {
-	"けんきゅう室の電波"
+	"{研究室的电波}"
 	end
 }
 script 64 rnr1 {
-	"ぎじうちゅうの電波"
+	"{模拟宇宙的电波}"
 	end
 }
 script 65 rnr1 {
 	end
 }
 script 66 rnr1 {
-	"しょうめんげんかんの電波"
+	"{正门门口的电波}"
 	end
 }
 script 67 rnr1 {
-	"１Ｆろうかの電波"
+	"１Ｆ{走廊的电波}"
 	end
 }
 script 68 rnr1 {
-	"２Ｆろうかの電波"
+	"２Ｆ{ろうか的电波}"
 	end
 }
 script 69 rnr1 {
-	"１－Ａ教室の電波"
+	"１－Ａ{教室的电波}"
 	end
 }
 script 70 rnr1 {
-	"１－Ｂ教室の電波"
+	"１－Ｂ{教室的电波}"
 	end
 }
 script 71 rnr1 {
-	"５－Ａ教室の電波"
+	"５－Ａ{教室的电波}"
 	end
 }
 script 72 rnr1 {
-	"５－Ｂ教室の電波"
+	"５－Ｂ{教室的电波}"
 	end
 }
 script 73 rnr1 {
-	"たいいくかんの電波"
+	"{体育馆的电波}"
 	end
 }
 script 74 rnr1 {
-	"ほうそう室の電波"
+	"{广播室的电波}"
 	end
 }
 script 75 rnr1 {
@@ -297,23 +297,23 @@ script 76 rnr1 {
 	end
 }
 script 77 rnr1 {
-	"ヤシブタウンの電波"
+	"{谷涉镇的电波}"
 	end
 }
 script 78 rnr1 {
-	"１０３デパート１Ｆの電波"
+	"１０３{百货}１Ｆ{的电波}"
 	end
 }
 script 79 rnr1 {
-	"１０３デパートおくじょうの電波"
+	"１０３{百货屋顶的电波}"
 	end
 }
 script 80 rnr1 {
-	"イベントかいじょうの電波"
+	"{活动会场的电波}"
 	end
 }
 script 81 rnr1 {
-	"ミテイの電波"
+	"{未定的电波}"
 	end
 }
 script 82 rnr1 {
@@ -323,50 +323,50 @@ script 83 rnr1 {
 	end
 }
 script 84 rnr1 {
-	"ドリームアイランドの電波"
+	"{梦幻岛的电波}"
 	end
 }
 script 85 rnr1 {
-	"ドリームこうえんの電波"
+	"{梦幻公园的电波}"
 	end
 }
 script 86 rnr1 {
-	"ゴミしゅうせきじょの電波"
+	"{垃圾堆场的电波}"
 	end
 }
 script 87 rnr1 {
-	"はいきぶつおきば１の電波"
+	"{废弃物存放处}１{的电波}"
 	end
 }
 script 88 rnr1 {
-	"はいきぶつおきば２の電波"
+	"{废弃物存放处}２{的电波}"
 	end
 }
 script 89 rnr1 {
 	end
 }
 script 90 rnr1 {
-	"ドリームアイランドちかの電波"
+	"{梦幻岛地下的电波}"
 	end
 }
 script 91 rnr1 {
-	"サービスモジュールの電波"
+	"{服务舱的电波}"
 	end
 }
 script 92 rnr1 {
-	"くうちょうモジュールの電波"
+	"{空调舱的电波}"
 	end
 }
 script 93 rnr1 {
-	"はつでんモジュールの電波"
+	"{发电舱的电波}"
 	end
 }
 script 94 rnr1 {
-	"きょじゅうモジュールの電波"
+	"{居住舱的电波}"
 	end
 }
 script 95 rnr1 {
-	"だい２じっけんモジュール"
+	"{第２实验舱}"
 	end
 }
 script 96 rnr1 {
@@ -382,109 +382,109 @@ script 99 rnr1 {
 	end
 }
 script 100 rnr1 {
-	"トラックの電脳１"
+	"{卡车的电脑}１"
 	end
 }
 script 101 rnr1 {
-	"トラックの電脳２"
+	"{卡车的电脑}２"
 	end
 }
 script 102 rnr1 {
 	end
 }
 script 103 rnr1 {
-	"ぎじうちゅうの電脳１"
+	"{模拟宇宙的电脑}１"
 	end
 }
 script 104 rnr1 {
-	"ぎじうちゅうの電脳２"
+	"{模拟宇宙的电脑}２"
 	end
 }
 script 105 rnr1 {
-	"ぎじうちゅうの電脳３"
+	"{模拟宇宙的电脑}３"
 	end
 }
 script 106 rnr1 {
 	end
 }
 script 107 rnr1 {
-	"学校の電脳１"
+	"{学校的电脑}１"
 	end
 }
 script 108 rnr1 {
-	"学校の電脳２"
+	"{学校的电脑}２"
 	end
 }
 script 109 rnr1 {
-	"学校の電脳３"
+	"{学校的电脑}３"
 	end
 }
 script 110 rnr1 {
 	end
 }
 script 111 rnr1 {
-	"アナコンダロボの電脳１"
+	"{蟒蛇机器人的电脑}１"
 	end
 }
 script 112 rnr1 {
-	"アナコンダロボの電脳２"
+	"{蟒蛇机器人的电脑}２"
 	end
 }
 script 113 rnr1 {
-	"アナコンダロボの電脳３"
+	"{蟒蛇机器人的电脑}３"
 	end
 }
 script 114 rnr1 {
 	end
 }
 script 115 rnr1 {
-	"はいきぶつの電脳１"
+	"{废弃物的电脑}１"
 	end
 }
 script 116 rnr1 {
-	"はいきぶつの電脳２"
+	"{废弃物的电脑}２"
 	end
 }
 script 117 rnr1 {
-	"はいきぶつの電脳３"
+	"{废弃物的电脑}３"
 	end
 }
 script 118 rnr1 {
 	end
 }
 script 119 rnr1 {
-	"ステーションの電脳１"
+	"{空间站的电脑}１"
 	end
 }
 script 120 rnr1 {
-	"ステーションの電脳２"
+	"{空间站的电脑}２"
 	end
 }
 script 121 rnr1 {
-	"ステーションの電脳３"
+	"{空间站的电脑}３"
 	end
 }
 script 122 rnr1 {
-	"ステーションの電脳４"
+	"{空间站的电脑}４"
 	end
 }
 script 123 rnr1 {
-	"ラストステージ"
+	"{测试关卡}"
 	end
 }
 script 124 rnr1 {
 	end
 }
 script 125 rnr1 {
-	"うちゅうくうかんの電波１"
+	"{宇宙空间的电波}１"
 	end
 }
 script 126 rnr1 {
-	"うちゅうくうかんの電波２"
+	"{宇宙空间的电波}２"
 	end
 }
 script 127 rnr1 {
-	"うちゅうくうかんの電波３"
+	"{宇宙空间的电波}３"
 	end
 }
 script 128 rnr1 {
@@ -494,195 +494,195 @@ script 129 rnr1 {
 	end
 }
 script 130 rnr1 {
-	"火车的电脑"
+	"{火车头的电脑}"
 	end
 }
 script 131 rnr1 {
-	"ロケットの電脳"
+	"{火箭的电脑}"
 	end
 }
 script 132 rnr1 {
-	"じどうしゃの電脳"
+	"{汽车的电脑}"
 	end
 }
 script 133 rnr1 {
-	"てんじぶつの電脳"
+	"{展品的电脑}"
 	end
 }
 script 134 rnr1 {
-	"ピッチングマシンの電脳"
+	"{投球机器的电脑}"
 	end
 }
 script 135 rnr1 {
-	"じどうはんばいきの電脳"
+	"{自动贩卖机的电脑}"
 	end
 }
 script 136 rnr1 {
-	"パンダの電脳"
+	"{熊猫的电脑}"
 	end
 }
 script 137 rnr1 {
-	"カンバンの電脳"
+	"{广告牌的电脑}"
 	end
 }
 script 138 rnr1 {
-	"つくえの電脳"
+	"{书桌的电脑}"
 	end
 }
 script 139 rnr1 {
-	"ぶらさがりきの電脳"
+	"{悬挂器的电脑}"
 	end
 }
 script 140 rnr1 {
-	"けしょうだいの電脳"
+	"{梳妆台的电脑}"
 	end
 }
 script 141 rnr1 {
-	"きょじゅうモジュールの電脳"
+	"{居住舱的电脑}"
 	end
 }
 script 142 rnr1 {
-	"サービスモジュールの電脳"
+	"{服务舱的电脑}"
 	end
 }
 script 143 rnr1 {
-	"くうちょうモジュールの電脳"
+	"{空调舱的电脑}"
 	end
 }
 script 144 rnr1 {
-	"どうぞうの電脳"
+	"{铜像的电脑}"
 	end
 }
 script 145 rnr1 {
-	"ごみしょりじょうの電脳"
+	"{垃圾处理场的电脑}"
 	end
 }
 script 146 rnr1 {
-	"アマケンタワーの電脳"
+	"{天研塔的电脑}"
 	end
 }
 script 147 rnr1 {
-	"パラボラアンテナの電脳"
+	"{弧面天线的电脑}"
 	end
 }
 script 148 rnr1 {
-	"ディスプレイの電脳"
+	"{显示屏的电脑}"
 	end
 }
 script 149 rnr1 {
-	"こうちょうぞうの電脳"
+	"{校长像的电脑}"
 	end
 }
 script 150 rnr1 {
-	"１Ｆスピーカーの電脳"
+	"１Ｆ{扩音器的电脑}"
 	end
 }
 script 151 rnr1 {
-	"１－Ａの電脳"
+	"１－Ａ{的电脑}"
 	end
 }
 script 152 rnr1 {
-	"１－Ｂの電脳"
+	"１－Ｂ{的电脑}"
 	end
 }
 script 153 rnr1 {
-	"５－Ａの電脳"
+	"５－Ａ{的电脑}"
 	end
 }
 script 154 rnr1 {
-	"５－Ｂの電脳"
+	"５－Ｂ{的电脑}"
 	end
 }
 script 155 rnr1 {
-	"ピアノの電脳"
+	"{钢琴的电脑}"
 	end
 }
 script 156 rnr1 {
-	"モワイぞうの電脳"
+	"{摩歪像的电脑}"
 	end
 }
 script 157 rnr1 {
-	"おおがたビジョンの電脳"
+	"{大型宽屏的电脑}"
 	end
 }
 script 158 rnr1 {
-	"ようふくやの電脳"
+	"{洋装店的电脑}"
 	end
 }
 script 159 rnr1 {
-	"かいぞくせんの電脳"
+	"{海盗船的电脑}"
 	end
 }
 script 160 rnr1 {
-	"とうだいの電脳"
+	"{灯塔的电脑}"
 	end
 }
 script 161 rnr1 {
-	"ボートの電脳"
+	"{小船的电脑}"
 	end
 }
 script 162 rnr1 {
-	"うちゅうかんそくきの電脳"
+	"{宇宙观测机的电脑}"
 	end
 }
 script 163 rnr1 {
-	"イヌ小屋の電脳"
+	"{狗屋的电脑}"
 	end
 }
 script 164 rnr1 {
-	"れいぞうこの電脳"
+	"{冰箱的电脑}"
 	end
 }
 script 165 rnr1 {
-	"ゲームの電脳"
+	"{游戏的电脑}"
 	end
 }
 script 166 rnr1 {
-	"けんばいきの電脳"
+	"{售票机的电脑}"
 	end
 }
 script 167 rnr1 {
-	"スペースコロニーの電脳"
+	"{太空殖民地的电脑}"
 	end
 }
 script 168 rnr1 {
-	"２Ｆスピーカーの電脳"
+	"２Ｆ{扩音器的电脑}"
 	end
 }
 script 169 rnr1 {
-	"しょうめいの電脳"
+	"{照明灯的电脑}"
 	end
 }
 script 170 rnr1 {
-	"ビデオデッキの電脳"
+	"{录像机的电脑}"
 	end
 }
 script 171 rnr1 {
-	"クレープやの電脳"
+	"{可丽饼店的电脑}"
 	end
 }
 script 172 rnr1 {
-	"かがみの電脳"
+	"{镜子的电脑}"
 	end
 }
 script 173 rnr1 {
-	"モワイもんの電脳"
+	"{摩歪兽的电脑}"
 	end
 }
 script 174 rnr1 {
-	"リサイクルひんの電脳"
+	"{翻新品的电脑}"
 	end
 }
 script 175 rnr1 {
-	"クレーンの電脳"
+	"{起重机的电脑}"
 	end
 }
 script 176 rnr1 {
-	"うちゅうふくの電脳"
+	"{宇航服的电脑}"
 	end
 }
 script 177 rnr1 {
-	"じっけんモニターの電脳"
+	"{实验屏幕的电脑}"
 	end
 }
 script 178 rnr1 {

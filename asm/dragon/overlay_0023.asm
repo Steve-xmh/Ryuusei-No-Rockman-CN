@@ -14,4 +14,19 @@
   bl Script_WriteSelectedCardNameHook
 .endarea
 
+.org 0x021B519A ; 锁定文字缓存防止在不可见但使用中时被覆盖 普通战斗卡
+	bl sub_21B514C_hook_lock
+.org 0x021B5278
+	bl sub_21B514C_21B514C_21B5290_hook_unlock
+  
+.org 0x021B52DA ; 锁定文字缓存防止在不可见但使用中时被覆盖 EX 战斗卡
+	bl sub_21B5290_hook_lock
+.org 0x021B544C
+	bl sub_21B514C_21B514C_21B5290_hook_unlock
+
+.org 0x021B54AE ; 锁定文字缓存防止在不可见但使用中时被覆盖 GA 战斗卡
+	bl sub_21B5464_hook_lock
+.org 0x021B544C
+	bl sub_21B514C_21B514C_21B5290_hook_unlock
+
 .close

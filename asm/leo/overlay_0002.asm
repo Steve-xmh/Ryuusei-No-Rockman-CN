@@ -9,9 +9,8 @@
 .org 0x0218986A
 	mov r1, 0x8 ; 脚本内存的大小除以 1024
 
-.org 0x0218AA26
-	// .dw 0x0
-
+.org 0x0218A014
+	.dw Script_0D5520
 .org 0x0215BCE0
 	.dw Script_0D5BA4
 
@@ -48,9 +47,13 @@
 
 // Walk through NPCs
 // 穿过 NPC
-.org 0x02173A8E
-;	bl	field_walkThroughNPC
-.org 0x02173A16
-;	bl	field_walkThroughNPCStop
+.org 0x02174404
+field_canWalk:
+.org 0x0217427C
+field_isInNPC:
+.org 0x02173A8A
+	bl	field_walkThroughNPC
+.org 0x02173A12
+	bl	field_walkThroughNPCStop
 	
 .close

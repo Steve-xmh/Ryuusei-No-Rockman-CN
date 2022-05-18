@@ -9,12 +9,10 @@
 .org 0x0218986A
 	mov r1, 0x8 ; 脚本内存的大小除以 1024
 
-.org 0x0218AA26
-	// .dw 0x0
-
+.org 0x0218A014
+	.dw Script_0D5520
 .org 0x0215BCE4
 	.dw Script_0D5BA4
-.org 0x0215BCF4
 
 ; sub_217AD00
 ; 在文件夹页面的显示卡片攻击值的的函数
@@ -23,8 +21,8 @@
 	bl Script_CustomWriteCardDamageHook
 .endarea
 
-.org 0x0217AE2E
-.area 0x0217AE42-., 0x00
+.org 0x0217AE36
+.area 0x0217AE46-., 0x00
 	bl Script_CustomWriteCardMarkHook
 .endarea
 
@@ -49,10 +47,13 @@
 
 // Walk through NPCs
 // 穿过 NPC
-// TODO: 需要重写此处的代码，因为原代码只适用于天马版
+.org 0x02174404
+field_canWalk:
+.org 0x0217427C
+field_isInNPC:
 .org 0x02173A8A
-; 	bl	field_walkThroughNPC
+ 	bl	field_walkThroughNPC
 .org 0x02173A12
-; 	bl	field_walkThroughNPCStop
+ 	bl	field_walkThroughNPCStop
 	
 .close

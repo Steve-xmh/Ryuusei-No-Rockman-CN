@@ -50,7 +50,7 @@ script 11 rnr1 {
 	end
 }
 script 12 rnr1 {
-	"牛島"
+	"牛岛"
 	end
 }
 script 13 rnr1 {
@@ -66,11 +66,11 @@ script 15 rnr1 {
 	end
 }
 script 16 rnr1 {
-	"五陽田"
+	"五阳田"
 	end
 }
 script 17 rnr1 {
-	"ヘイジ"
+	"平次"
 	end
 }
 script 18 rnr1 {
@@ -78,7 +78,7 @@ script 18 rnr1 {
 	end
 }
 script 19 rnr1 {
-	"シンスケ"
+	"深佑"
 	end
 }
 script 20 rnr1 {
@@ -86,7 +86,7 @@ script 20 rnr1 {
 	end
 }
 script 21 rnr1 {
-	"道徳"
+	"道德"
 	end
 }
 script 22 rnr1 {
@@ -94,7 +94,7 @@ script 22 rnr1 {
 	end
 }
 script 23 rnr1 {
-	"ケン"
+	"健"
 	end
 }
 script 24 rnr1 {
@@ -110,7 +110,7 @@ script 26 rnr1 {
 	end
 }
 script 27 rnr1 {
-	"ＬＭ・シン"
+	"LM・新"
 	end
 }
 script 28 rnr1 {
@@ -122,411 +122,411 @@ script 29 rnr1 {
 	end
 }
 script 30 rnr1 {
-	"こいまち"
+	"恋町"
 	end
 }
 script 31 rnr1 {
-	"おとめ"
+	"乙女"
 	end
 }
 script 32 rnr1 {
-	"アツメ"
+	"炎热"
 	end
 }
 script 33 rnr1 {
-	"だい"
+	"代"
 	end
 }
 script 34 rnr1 {
-	"おんりょうじ"
+	"音量寺"
 	end
 }
 script 35 rnr1 {
-	"カイキ"
+	"怪奇"
 	end
 }
 script 36 rnr1 {
-	"うつかり"
+	"漫然"
 	end
 }
 script 37 rnr1 {
-	"シゲゾウ"
+	"茂蔵"
 	end
 }
 script 38 rnr1 {
-	"おうぞら"
+	"央空"
 	end
 }
 script 39 rnr1 {
-	"トビヒコ"
+	"飞彦"
 	end
 }
 script 40 rnr1 {
-	"アツメ"
+	"炎热"
 	end
 }
 script 41 rnr1 {
-	"よう"
+	"要"
 	end
 }
 script 42 rnr1 {
-	"まじうけ"
+	"真地承"
 	end
 }
 script 43 rnr1 {
-	"ぎゃるみ"
+	"嘉美"
 	end
 }
 script 44 rnr1 {
-	"イナカムラ"
+	"田村"
 	end
 }
 script 45 rnr1 {
-	"ハナコ"
+	"花子"
 	end
 }
 script 46 rnr1 {
-	"エディック"
+	"埃迪克"
 	end
 }
 script 47 rnr1 {
-	"サトゥ"
+	"萨图"
 	end
 }
 script 48 rnr1 {
-	"シトヤカ"
+	"温淑"
 	end
 }
 script 49 rnr1 {
-	"エミ"
+	"惠美"
 	end
 }
 script 50 rnr1 {
-	"ナニワ"
+	"何轮"
 	end
 }
 script 51 rnr1 {
-	"ウリツグ"
+	"卖继"
 	end
 }
 script 52 rnr1 {
-	"メズラシ"
+	"珍"
 	end
 }
 script 53 rnr1 {
-	"モトミ"
+	"元己"
 	end
 }
 script 54 rnr1 {
-	"がくぎょう"
+	"学业"
 	end
 }
 script 55 rnr1 {
-	"まなび"
+	"学美"
 	end
 }
 script 56 rnr1 {
-	"エドゥガワラ"
+	"艾德格瓦拉"
 	end
 }
 script 57 rnr1 {
-	"いっちょく"
+	"一直"
 	end
 }
 script 58 rnr1 {
-	"リー"
+	"李"
 	end
 }
 script 59 rnr1 {
-	"タナーカ"
+	"田中"
 	end
 }
 script 60 rnr1 {
-	"つらがまえ"
+	"颜构"
 	end
 }
 script 61 rnr1 {
-	"ミトレ"
+	"见惚"
 	end
 }
 script 62 rnr1 {
-	"クルスガワ"
+	"来栖川"
 	end
 }
 script 63 rnr1 {
-	"カオリ"
+	"香芳"
 	end
 }
 script 64 rnr1 {
-	"とりしま"
+	"取岛"
 	end
 }
 script 65 rnr1 {
-	"ふうき"
+	"风纪"
 	end
 }
 script 66 rnr1 {
-	"オオゴエ"
+	"大声"
 	end
 }
 script 67 rnr1 {
-	"ねっしょう"
+	"热唱"
 	end
 }
 script 68 rnr1 {
-	"フトコロ"
+	"布所"
 	end
 }
 script 69 rnr1 {
-	"ヒロシ"
+	"广士"
 	end
 }
 script 70 rnr1 {
-	"ハバタキ"
+	"羽举"
 	end
 }
 script 71 rnr1 {
-	"ウンカイ"
+	"云开"
 	end
 }
 script 72 rnr1 {
-	"ウシロムキ"
+	"后向"
 	end
 }
 script 73 rnr1 {
-	"カゲロウ"
+	"阴郎"
 	end
 }
 script 74 rnr1 {
-	"トイカケ"
+	"问答"
 	end
 }
 script 75 rnr1 {
-	"ハジメ"
+	"初"
 	end
 }
 script 76 rnr1 {
-	"ミチビキ"
+	"路导"
 	end
 }
 script 77 rnr1 {
-	"テラス"
+	"照"
 	end
 }
 script 78 rnr1 {
-	"オットト"
+	"文雅"
 	end
 }
 script 79 rnr1 {
-	"ウッカリーノ"
+	"糊涂"
 	end
 }
 script 80 rnr1 {
-	"シロクジ"
+	"四六时"
 	end
 }
 script 81 rnr1 {
-	"ネムル"
+	"困觉"
 	end
 }
 script 82 rnr1 {
-	"カラフキ"
+	"空拭"
 	end
 }
 script 83 rnr1 {
-	"くりん"
+	"洁净"
 	end
 }
 script 84 rnr1 {
-	"ほし"
+	"保志"
 	end
 }
 script 85 rnr1 {
-	"きゅうた"
+	"球太"
 	end
 }
 script 86 rnr1 {
-	"シャベクリ"
+	"话栗"
 	end
 }
 script 87 rnr1 {
-	"スベル"
+	"有滑"
 	end
 }
 script 88 rnr1 {
-	"イツモ"
+	"每常"
 	end
 }
 script 89 rnr1 {
-	"マチヒト"
+	"候人"
 	end
 }
 script 90 rnr1 {
-	"オモワク"
+	"思惑"
 	end
 }
 script 91 rnr1 {
-	"サグル"
+	"探寻"
 	end
 }
 script 92 rnr1 {
-	"モノモチ"
+	"物持"
 	end
 }
 script 93 rnr1 {
-	"ワルミ"
+	"和留美"
 	end
 }
 script 94 rnr1 {
-	"トイカケ"
+	"问答"
 	end
 }
 script 95 rnr1 {
-	"ヒメ"
+	"姫"
 	end
 }
 script 96 rnr1 {
-	"アタラシ"
+	"新屋"
 	end
 }
 script 97 rnr1 {
-	"リフォ"
+	"丽芙"
 	end
 }
 script 98 rnr1 {
-	"アタラシ"
+	"新屋"
 	end
 }
 script 99 rnr1 {
-	"リフォ"
+	"丽芙"
 	end
 }
 script 100 rnr1 {
-	"ショウドウ"
+	"正堂"
 	end
 }
 script 101 rnr1 {
-	"カイコ"
+	"海子"
 	end
 }
 script 102 rnr1 {
-	"オンネンジ"
+	"怨念寺"
 	end
 }
 script 103 rnr1 {
-	"タスケ"
+	"多助"
 	end
 }
 script 104 rnr1 {
-	"ほうむ"
+	"宝村"
 	end
 }
 script 105 rnr1 {
-	"イチロウ"
+	"一郎"
 	end
 }
 script 106 rnr1 {
-	"ほうむ"
+	"宝村"
 	end
 }
 script 107 rnr1 {
-	"ラン"
+	"兰"
 	end
 }
 script 108 rnr1 {
-	"オオバラ"
+	"大原"
 	end
 }
 script 109 rnr1 {
-	"ぐるめ"
+	"美食佳"
 	end
 }
 script 110 rnr1 {
-	"ものもち"
+	"物持"
 	end
 }
 script 111 rnr1 {
-	"ヨシコ"
+	"吉子"
 	end
 }
 script 112 rnr1 {
-	"キーング"
+	"王"
 	end
 }
 script 113 rnr1 {
-	"トイカケ"
+	"问答"
 	end
 }
 script 114 rnr1 {
-	"おおぞの"
+	"大园"
 	end
 }
 script 115 rnr1 {
-	"ソウジ"
+	"扫司"
 	end
 }
 script 116 rnr1 {
-	"ゲンバ"
+	"现场"
 	end
 }
 script 117 rnr1 {
-	"コウジ"
+	"工史"
 	end
 }
 script 118 rnr1 {
-	"挟見"
+	"挟见"
 	end
 }
 script 119 rnr1 {
-	"チヨキチ"
+	"千代吉"
 	end
 }
 script 120 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 121 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 122 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 123 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 124 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 125 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 126 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 127 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 128 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 129 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 130 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 131 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 132 rnr1 {
@@ -534,7 +534,7 @@ script 132 rnr1 {
 	end
 }
 script 133 rnr1 {
-	"ユリ子"
+	"百合子"
 	end
 }
 script 134 rnr1 {
@@ -542,23 +542,23 @@ script 134 rnr1 {
 	end
 }
 script 135 rnr1 {
-	"ナルオ"
+	"成夫"
 	end
 }
 script 136 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 137 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 138 rnr1 {
-	"ヘビ"
+	"蛇"
 	end
 }
 script 139 rnr1 {
-	"はかせ"
+	"博士"
 	end
 }
 script 140 rnr1 {
@@ -570,59 +570,59 @@ script 141 rnr1 {
 	end
 }
 script 142 rnr1 {
-	"へんきょうは"
+	"边境伯"
 	end
 }
 script 143 rnr1 {
-	"くライマー"
+	"雷默"
 	end
 }
 script 144 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 145 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 146 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 147 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 148 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 149 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 150 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 151 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 152 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 153 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 154 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 155 rnr1 {
-	"けつばん"
+	"空号"
 	end
 }
 script 156 rnr1 {

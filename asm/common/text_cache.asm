@@ -4,15 +4,17 @@
 
 ; Modify these number to adjust font cache size.
 ; Number can be not equal at all, but have to be larger than 1.
+; The only exception is `Font2_VramCacheSize' which must be smaller than 255
 ; The larger the number, the faster the game can display the same character.
 ; 修改这些数字可以调整字体缓存大小。
 ; 数字可以不完全相等，但必须大于 1。
+; 唯一一个例外是 Font2_VramCacheSize，不得大于 254
 ; 这些数字设置得越大，游戏就能更快地显示相同的字符。
 Font0_CacheSize equ 128
 Font1_CacheSize equ 128
 Font2_CacheSize equ 128
 Font3_CacheSize equ 128
-Font2_VramCacheSize equ 128
+Font2_VramCacheSize equ 254
 
 .thumb
 
@@ -357,37 +359,30 @@ Font3_LoadCharacterFromCacheOrRead:
 Font2_LoadCharacterToVRAM:
     push {r1-r7, lr}
     ; 查询缓存是否已有字形
-    ldr r1, =@Font2VramCache
-    mov r2, 0x3 ; 计次
-    mov r5, 0
-@@CacheSearchLoop:
-    ldrh r4, [r1]
-    cmp r4, r0
-    beq @@CacheFound
-    add r1, 0x2
-    add r2, 0x2
-    add r5, 1
-    cmp r5, 128
-    bhs @@NotFound
-    b @@CacheSearchLoop
+    mov r2, r0
+    bl Font2_LookForCachedGraph
+    mov r1, 0
+    sub r1, 1
+    cmp r0, r1
+    beq @@NotCached
 @@CacheFound:
+    mov r1, r0
     mov r0, r2
+    bl Font2_UpdateGraph
+    mov r0, r1
     pop {r1-r7, pc}
-@@NotFound:
+@@NotCached:
+    mov r0, r2
     ldr r1, =FontCache_Font_CacheArea_00000002
     bl FontCommon_LoadCharacterFromCacheOrRead
     
-    ; 0x06214020
-    mov r2, r0 ; 把字库编码移到 r2
-    ldr r0, =@Font2VramCachePointer
-    ldr r0, [r0]
-    ldr r1, =@Font2VramCache
-    add r1, r0
-    strh r2, [r1]
-    mov r1, 0x40
-    lsr r0, 0x1
-    mul r0, r1
-    ldr r1, =0x06214000 + (0x20 * 3)
+    bl Font2_GetLeastUsedCachedGraphMapId
+    mov r1, r0
+    mov r0, r2
+    bl Font2_UpdateGraph
+
+    lsl r1, #0x5
+    ldr r0, =0x06214000
     add r0, r1
     
     ; 复制字模
@@ -401,43 +396,200 @@ Font2_LoadCharacterToVRAM:
     ldmia r1!, {r2-r5}
     stmia r0!, {r2-r5}
     
-    ; 更新缓存指针
-    ldr r0, =@Font2VramCachePointer
-    ldr r0, [r0]
-    mov r1, r0
-    add r0, 0x2
-    cmp r0, 0xFF
-    bcc @@End
-    mov r0, 0
 @@End:
-    ldr r2, =@Font2VramCachePointer
-    str r0, [r2]
-    mov r0, r1
-    add r0, 0x3
+    ldr r0, =@Font2VramCacheList
+    ldr r0, [r0, #0x4]
     pop {r1-r7, pc}
-    .pool
-.endautoregion
-.autoregion
-.align
-@Font2VramCachePointer:
-    .dw 0
-@Font2VramCache:
-    .fill 0xFF, Font2_VramCacheSize * 2 ; 128 个字的缓存
+.pool
 .endautoregion
 
 .autoregion
 .align
 Font2_ResetVRAMCache:
     push {r0-r7, lr}
-    ldr r0, =@Font2VramCachePointer
+    ldr r0, =@Font2VramCacheLocker
     mov r1, 0
     str r1, [r0]
-    ldr r0, =@Font2VramCache
-    mov r1, 0xFF
-    ldr r2, =Font2_VramCacheSize * 2
-    blx MI_CpuFill8
+    ; 初始化缓存列表
+    ldr r0, =((Font2_VramCacheSize) * 2) + 3
+    ldr r1, =@Font2VramCacheList
+    mov r2, 0
+    sub r2, 1
+    mov r3, 0
+@@InitCacheListLoop:
+    str r2, [r1]
+    strh r0, [r1, #0x4]
+    strh r3, [r1, #0x6]
+    cmp r0, 3
+    beq @@End
+    sub r0, 2
+    add r1, 0x8
+    b @@InitCacheListLoop
+@@End:
     pop {r0-r7, pc}
 .pool
+.endautoregion
+
+.autoregion
+.align
+; 查找缓存中是否有字形
+; 有则返回对应的 Map Id，否则返回 -1 (0xFFFFFFFF)
+; r0 = 字符编码
+Font2_LookForCachedGraph:
+    push {r1-r7, lr}
+    ldr r1, =@Font2VramCacheList
+    ldr r3, =@Font2VramCacheList + Font2_VramCacheSize * 8
+@@SearchLoop:
+    ldr r2, [r1]
+    cmp r2, r0
+    beq @@Found
+    add r1, 0x8
+    cmp r1, r3
+    bhs @@NotFound
+    b @@SearchLoop
+@@Found:
+    ldrh r0, [r1, #0x4]
+    pop {r1-r7, pc}
+@@NotFound:
+    mov r0, 0
+    sub r0, 1
+    pop {r1-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+; 获取最少使用的缓存位置
+; 但是会跳过已经上锁了的缓存
+Font2_GetLeastUsedCachedGraphMapId:
+    push {r1-r7, lr}
+    ldr r0, =@Font2VramCacheList + (Font2_VramCacheSize - 1) * 8
+    ldr r1, =Font2_VramCacheSize
+@@SearchLoop:
+    ldrh r2, [r0, #0x6]
+    ; .msg "Font2_GetLeastUsedCachedGraphMapId: %r2%"
+    cmp r2, 0
+    beq @@Found
+    sub r1, 1
+    cmp r1, 0
+    beq @@AllLocked
+    sub r0, 8
+    b @@SearchLoop
+@@AllLocked:
+    .msg "ERROR: All vram cache are locked! Can't find a free vram cache!"
+    b .
+@@Found:
+    ldrh r0, [r0, #0x4]
+    pop {r1-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+; 更新或添加字形到缓存列表
+; 更新是指将该字形排序到缓存列表的最前面
+; 添加是指将该字形排序到缓存列表的最前面
+; 如果遇到了同 Map Id 的情况则覆盖
+; r0 = 字符编码
+; r1 = 字符对应的显存 Map Id
+Font2_UpdateGraph:
+    push {r0-r7, lr}
+    ldr r3, =@Font2VramCacheList ; 检索位置
+    
+    ldr r2, [r3]
+    cmp r0, r2
+    beq @@Return ; 如果第一个就是就不用管了
+    
+    ldr r4, =@Font2VramCacheList + (Font2_VramCacheSize - 1) * 8
+    mov r6, r3
+    
+@@SearchLoop: ; 检索位置
+    ldrh r2, [r3, #0x4]
+    cmp r1, r2
+    beq @@Located
+    cmp r3, r4
+    beq @@Located
+    add r3, 0x8
+    b @@SearchLoop
+@@Located:
+    mov r4, r3
+    sub r3, 0x8
+@@CopyLoop:
+    ldr r2, [r3]
+    str r2, [r4]
+    ldr r2, [r3, #0x4]
+    str r2, [r4, #0x4]
+    cmp r3, r6
+    beq @@CopyLoopEnd
+    sub r3, 0x8
+    sub r4, 0x8
+    b @@CopyLoop
+@@CopyLoopEnd:
+    str r0, [r3]
+    strh r1, [r3, #0x4]
+    ldr r0, =@Font2VramCacheLocker
+    ldr r0, [r0]
+    strh r0, [r3, #0x6]
+    ; cmp r0, 0
+    ; beq @@Return
+    ; .msg "Locked cache with key %r0%"
+@@Return:
+    pop {r0-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+; 输入一个数字作为锁，锁定接下来更新的字符缓存不被覆盖
+; 如果锁值为 0 则不使用锁进行锁定
+; 在上锁完毕之后务必用 0 调用此函数
+; r0 = 锁值
+FontCache_Lock:
+    push {r1-r7, lr}
+    ldr r1, =@Font2VramCacheLocker
+    ldr r2, [r1]
+    cmp r0, r2
+    ; beq @@SkipMsg
+    ; .msg "Locked %r0% caches graphs"
+@@SkipMsg:
+    str r0, [r1]
+    pop {r1-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+; 将缓存中使用指定锁值上锁的字符缓存解锁
+; r0 = 锁值
+FontCache_UnlockGraphs:
+    push {r0-r7, lr}
+    ; .msg "Unlocked %r0% caches graphs"
+    ldr r1, =@Font2VramCacheList
+    ldr r2, =@Font2VramCacheList + Font2_VramCacheSize * 8
+    mov r4, 0
+@@UnlockLoop:
+    ldrh r3, [r1, #0x6]
+    cmp r0, r3
+    bne @@NotSameLocker
+    strh r4, [r1, #0x6]
+@@NotSameLocker:
+    add r1, 8
+    cmp r1, r2
+    beq @@End
+    b @@UnlockLoop
+@@End:
+    pop {r0-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+@Font2VramCacheLocker:
+    .dw 0
+; 存储已经加载的字形的字符编码和Map Id
+; |字符编码:u32|MapId:u16|覆盖锁:u16|
+@Font2VramCacheList:
+    .fill Font2_VramCacheSize * 8, 0xFF ; 256 个字的缓存
 .endautoregion
 
 

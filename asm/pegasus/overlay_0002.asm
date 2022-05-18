@@ -9,11 +9,13 @@
 .org 0x0218986E
 	mov r1, 0x8 ; 脚本内存的大小除以 1024
 
-.org 0x0218AA26
-	// .dw 0x0
-
+.org 0x0218A018
+	.dw Script_0D5520
 .org 0x0215BCE4
 	.dw Script_0D5BA4
+
+.org 0x0217FE92 ; 始终打印右侧文本
+	mov r0, 1
 
 ; sub_217AD00
 ; 在文件夹页面的显示卡片攻击值的的函数
@@ -46,8 +48,13 @@
 	b 0x02176BEE
 .endarea
 
+
 // Walk through NPCs
 // 穿过 NPC
+.org 0x02174408
+field_canWalk:
+.org 0x02174280
+field_isInNPC:
 .org 0x02173A8E
 	bl	field_walkThroughNPC
 .org 0x02173A16

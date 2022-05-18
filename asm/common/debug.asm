@@ -5,26 +5,49 @@
 Debug_GetScriptPos:
 	push {r1-r2, lr}
 	; 检查调用者是否还在使用原脚本
-	ldr r1, =0x020D0BD0
-	cmp r1, r0
+	; 天马版的脚本位置
+	ldr r1, =#0x020D0BD0
+	cmp r0, r1
 	beq @@Unhooked
-	ldr r1, =0x020D25CC
-	cmp r1, r0
+	ldr r1, =#0x020D25CC
+	cmp r0, r1
 	beq @@Unhooked
-	ldr r1, =0x020D30A4
-	cmp r1, r0
+	ldr r1, =#0x020D30A4
+	cmp r0, r1
 	beq @@Unhooked
-	ldr r1, =0x020D3C6C
-	cmp r1, r0
+	ldr r1, =#0x020D3C6C
+	cmp r0, r1
 	beq @@Unhooked
-	ldr r1, =0x020D0EC8
-	cmp r1, r0
+	ldr r1, =#0x020D0EC8
+	cmp r0, r1
 	beq @@Unhooked
-	ldr r1, =0x020D1BA4
-	cmp r1, r0
+	ldr r1, =#0x020D1520
+	cmp r0, r1
 	beq @@Unhooked
-	ldr r1, =0x020D1520
-	cmp r1, r0
+	ldr r1, =#0x020D1BA4
+	cmp r0, r1
+	beq @@Unhooked
+	; 青龙/雄狮版的脚本位置
+	ldr r1, =#0x020D0BD4
+	cmp r0, r1
+	beq @@Unhooked
+	ldr r1, =#0x020D25D0
+	cmp r0, r1
+	beq @@Unhooked
+	ldr r1, =#0x020D30A8
+	cmp r0, r1
+	beq @@Unhooked
+	ldr r1, =#0x020D3C70
+	cmp r0, r1
+	beq @@Unhooked
+	ldr r1, =#0x020D0ECC
+	cmp r0, r1
+	beq @@Unhooked
+	ldr r1, =#0x020D1524
+	cmp r0, r1
+	beq @@Unhooked
+	ldr r1, =#0x020D1BA8
+	cmp r0, r1
 	beq @@Unhooked
 	b @@End
 @@Unhooked:
@@ -72,4 +95,15 @@ Debug_ScriptError:
 	b .
 @@Return:
 	blx lr
+.endautoregion
+
+.autoregion
+.align
+Debug_PrintScriptContext:
+	push {r0-r7, lr}
+	ldr r1, [r0, #0x10]
+	ldrb r2, [r1]
+	ldrb r3, [r1, #1]
+	.msg "ScriptCTX: 0x%r0% 0x%r1% 0x%r2% 0x%r3%"
+	pop {r0-r7, pc}
 .endautoregion

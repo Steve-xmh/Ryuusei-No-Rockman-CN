@@ -42,7 +42,7 @@ FontWidthZero:
 	.fill 0x1, 0x21
 .org 0x020D4B98 + 0x20 // 8x8 小字符的缓存位置，对应原本的 0 字符
 Font8x8Zero:
-		.fill 0x20, 0x43
+	.fill 0x20, 0x43
 .org 0x020D8798 + 0x40 // 8x16 细字符的缓存位置，对应原本的 0 字符
 Font8x16Zero:
 		.fill 0x40, 0x65
@@ -67,6 +67,9 @@ FontEncodingZero:
 .include "asm/common/text_hooks.asm"
 .include "asm/common/text_input.asm"
 .include "asm/common/text_utils.asm"
+
+.org 0x02009178
+read_script_direct:
 
 ; 似乎开始显示显存字体时会被执行
 ; 可以用来重置我们自己的字体缓存
@@ -93,7 +96,7 @@ FontEncodingZero:
 ; 逆向出来的函数们（和 0xE4 相关的东西）
 ; sub_200A830 疑似是检测当前脚本位置是否还有控制指令
 ; sub_2009CCC 是测量脚本长度的函数
-; sub_20099E4 疑似是拷贝脚本内容的函数
+; sub_20099E4 疑似是拷贝脚本内容的函数（且进行了目标位置大小限制）
 ; sub_200A538 是从字库编码到脚本编码的转换
 ; sub_201C3B8 疑似是解析脚本然后复制小字体的子模的函数
 ; sub_201B0BC 梦　开　始　的　地　方（大雾） —— 打印剧情文本的函数
@@ -128,7 +131,6 @@ FontEncodingZero:
 	pop {pc}
 .endarea
 
-; 
 .org 0x0201FA5E
 .area 0x0201FA76-. , 0x00
 	mov r0, r5
@@ -222,5 +224,11 @@ FontEncodingZero:
 	push {lr}
 	bl sub_20107D0_hook
 	pop {pc}
+
+.org 0x02009A2C
+.area 0x02009A40-. , 0x00
+	bl sub_2009A2C_hook
+	b 0x02009A40
+.endarea
 
 .close

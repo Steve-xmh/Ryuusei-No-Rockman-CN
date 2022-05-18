@@ -22,7 +22,7 @@ Script_0D70A4:
 .endautoregion
 
 .autoregion
-; 百万/千兆战斗卡脚本 0x020D3C6C 6C 3C 0D 02
+; BOSS 脚本 0x020D3C6C 6C 3C 0D 02
 .align
 Script_0D7C6C:
 .import "_temp/tpl_arm9/0D7C6C.msg"

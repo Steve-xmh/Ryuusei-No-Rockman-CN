@@ -21,7 +21,6 @@ Script_RedirectScriptPositionHook:
 .endautoregion
 
 ; 将输入的内嵌脚本位置转换成我们的版本
-; TODO：可能存在不同的位置，需要支持多个位置
 ; 参数
 ; r0 = 输入的内嵌脚本位置
 ; 返回值
@@ -30,6 +29,7 @@ Script_RedirectScriptPositionHook:
 .align
 Script_RedirectScriptPosition:
   push {r1, lr}
+  .msg "Redirecting script for %r0%"
   ; 天马版的脚本位置
   ldr r1, =#0x020D0BD0
   cmp r0, r1
@@ -50,6 +50,28 @@ Script_RedirectScriptPosition:
   cmp r0, r1
   beq @@Script_0D5520
   ldr r1, =#0x020D1BA4
+  cmp r0, r1
+  beq @@Script_0D5BA4
+  ; 青龙/雄狮版的脚本位置
+  ldr r1, =#0x020D0BD4
+  cmp r0, r1
+  beq @@Script_0D4BD0
+  ldr r1, =#0x020D25D0
+  cmp r0, r1
+  beq @@Script_0D65CC
+  ldr r1, =#0x020D30A8
+  cmp r0, r1
+  beq @@Script_0D70A4
+  ldr r1, =#0x020D3C70
+  cmp r0, r1
+  beq @@Script_0D7C6C
+  ldr r1, =#0x020D0ECC
+  cmp r0, r1
+  beq @@Script_0D4EC8
+  ldr r1, =#0x020D1524
+  cmp r0, r1
+  beq @@Script_0D5520
+  ldr r1, =#0x020D1BA8
   cmp r0, r1
   beq @@Script_0D5BA4
 ; 已经在使用新的脚本了
@@ -75,7 +97,8 @@ Script_RedirectScriptPosition:
   cmp r0, r1
   beq @@End
 @@CantRedirect:
-  b @@End ; 如果在这里死循环，检查 r0 的值应该可以找到未发现的脚本
+  .msg "WARNING: Can't redirect script position for %r0%"
+  b @@End
 @@Script_0D4BD0:
   ldr r0, =Script_0D4BD0
   b @@End
@@ -479,6 +502,7 @@ sub_20107D0_hook:
 .autoregion
 .align
 ReadScriptToVramHook:
+  push {lr}
 ; 天马版
 	ldr r5, =0x020D25CC
 	cmp r0, r5
@@ -490,11 +514,11 @@ ReadScriptToVramHook:
 	ldr r5, =0x020D25D0
 	cmp r0, r5
 	beq @@Script_20D25CC
-	ldr r5, =0x020D0BD0
+	ldr r5, =0x020D0BD4
 	cmp r0, r5
 	beq @@Script_20D0BD0
-@@NotModifiedScript:
-	b @@NotModifiedScript
+  .msg "ERROR: Unmodified script %r0%"
+	b .
 @@Script_20D25CC: ; 普通战斗卡脚本 20D25CC
 	ldr r0, =Script_0D65CC
 	b @@End
@@ -505,6 +529,88 @@ ReadScriptToVramHook:
 	mov r6, r1
 	mov r7, r2
 	mov r4, r3
-	blx lr
+  pop {pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+sub_2009A2C_hook:
+  push {r2-r7, lr}
+  mov r2, r0 ; src
+  mov r3, r1 ; dest
+  
+  bl Script_ScriptEncodeToFontEncode
+@@CopyLoop:
+  cmp r1, 0
+  beq @@End
+  ldrb r0, [r2]
+  strb r0, [r3]
+  add r2, 1
+  add r3, 1
+  sub r1, 1
+  b @@CopyLoop
+@@End:
+  mov r0, r2
+  mov r1, r3
+  pop {r2-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+sub_21B514C_hook_lock:
+  mov r0, 0
+  str r0, [sp, #0x8]
+  push {r0-r7, lr}
+  mov r0, 1
+  bl FontCache_UnlockGraphs
+  bl FontCache_Lock
+  pop {r0-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+sub_21B5464_hook_lock:
+  ldrsh r0, [r4, r0]
+  add r0, r2
+  push {r0-r7, lr}
+  cmp r1, r0
+  beq @@SkipLock
+  mov r0, 3
+  bl FontCache_UnlockGraphs
+  bl FontCache_Lock
+@@SkipLock:
+  pop {r0-r7, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+sub_21B5290_hook_lock:
+  ldrsh r0, [r4, r0]
+  add r0, r2
+  push {r0-r7, lr}
+  cmp r1, r0
+  beq @@SkipLock
+  mov r0, 2
+  bl FontCache_UnlockGraphs
+  bl FontCache_Lock
+@@SkipLock:
+  pop {r0-r7, pc}
+.pool
+.endautoregion
+
+
+.autoregion
+.align
+sub_21B514C_21B514C_21B5290_hook_unlock:
+  ldr r0, [r0]
+  mov r1, 1
+  push {r0, lr}
+  mov r0, 0
+  bl FontCache_Lock
+  pop {r0, pc}
 .pool
 .endautoregion

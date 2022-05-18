@@ -3,6 +3,9 @@
 .thumb
 
 ; 商店中的物品脚本
+.org 0x021B7EA8
+  .dw Script_0D5520
+  
 .org 0x021B83D8
   .dw Script_0D65CC
   .dw Script_0D4BD0

@@ -39,16 +39,16 @@ OriginalPrintInstantFontConditionEnd equ 0x0201B2A2
 ; 字符缓存位置
 .org 0x020D09F0 + 1 // 12x12 字符的字符宽度数据，对应原本的 0 字符
 FontWidthZero:
-  .fill 0x1, 0xFF
+	.fill 0x1, 0x21
 .org 0x020D4BBC // 8x8 小字符的缓存位置，对应原本的 0 字符
 Font8x8Zero:
-    .fill 0x20, 0xFF
+	.fill 0x20, 0x43
 .org 0x020D87DC // 8x16 细字符的缓存位置，对应原本的 0 字符
 Font8x16Zero:
-    .fill 0x40, 0xFF
+	.fill 0x40, 0x65
 .org 0x020E0FDC // 8x16 粗字符的缓存位置，对应原本的 0 字符
 Font8x16BoldZero:
-    .fill 0x40, 0xFF
+	.fill 0x40, 0x87
 .org 0x020E981C // 12x12 字符的缓存位置，对应原本的 0 字符（实际占用了 16x16 的尺寸）
 Font12x12Zero:
 		; .fill 0x80, 0xFF
@@ -67,6 +67,9 @@ FontEncodingZero:
 .include "asm/common/text_hooks.asm"
 .include "asm/common/text_input.asm"
 .include "asm/common/text_utils.asm"
+
+.org 0x02009178
+read_script_direct:
 
 ; 似乎开始显示显存字体时会被执行
 ; 可以用来重置我们自己的字体缓存
@@ -98,7 +101,7 @@ FontEncodingZero:
 
 .org 0x02012B14
  	bl Fake_FS_Init
-
+	 
 .org 0x02009908
 .area 0x0200991E-., 0x00
 	push {lr}
@@ -106,7 +109,6 @@ FontEncodingZero:
 	pop {pc}
 .endarea
 
-; 
 .org 0x0201FA5E
 .area 0x0201FA76-. , 0x00
 	mov r0, r5
@@ -200,5 +202,11 @@ FontEncodingZero:
 	push {lr}
 	bl sub_20107D0_hook
 	pop {pc}
+
+.org 0x02009A2C
+.area 0x02009A40-. , 0x00
+	bl sub_2009A2C_hook
+	b 0x02009A40
+.endarea
 
 .close

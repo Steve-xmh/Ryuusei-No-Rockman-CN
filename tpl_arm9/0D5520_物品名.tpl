@@ -2,326 +2,326 @@
 @size 256
 
 script 0 rnr1 {
-	"トランサー"
+	"{传输器}"
 	end
 }
 script 1 rnr1 {
-	"ビジライザー"
+	"{显影镜}"
 	end
 }
 script 2 rnr1 {
-	"レッドキー"
+	"{红钥匙}"
 	end
 }
 script 3 rnr1 {
-	"ブルーキー"
+	"{蓝钥匙}"
 	end
 }
 script 4 rnr1 {
-	"イエローキー"
+	"{黄钥匙}"
 	end
 }
 script 5 rnr1 {
-	"テトラキーＡ"
+	"{四联钥匙}Ａ"
 	end
 }
 script 6 rnr1 {
-	"テトラキーＢ"
+	"{四联钥匙}Ｂ"
 	end
 }
 script 7 rnr1 {
-	"テトラキーＣ"
+	"{四联钥匙}Ｃ"
 	end
 }
 script 8 rnr1 {
-	"テトラキーＤ"
+	"{四联钥匙}Ｄ"
 	end
 }
 script 9 rnr1 {
-	"カンジュース"
+	"{罐装果汁}"
 	end
 }
 script 10 rnr1 {
-	"ラジコン"
+	"{无人机}"
 	end
 }
 script 11 rnr1 {
-	"にゅうじょうパス"
+	"{入场许可}"
 	end
 }
 script 12 rnr1 {
-	"しょくいんパス"
+	"{员工许可}"
 	end
 }
 script 13 rnr1 {
-	"うちゅうふく"
+	"{航天服}"
 	end
 }
 script 14 rnr1 {
-	"トビラカード"
+	"{门扉卡}"
 	end
 }
 script 15 rnr1 {
-	"スルドイキバ"
+	"{锐利牙}"
 	end
 }
 script 16 rnr1 {
-	"ヒキサクツメ"
+	"{撕裂爪}"
 	end
 }
 script 17 rnr1 {
-	"ヤマアラシノハリ"
+	"{山雾之针}"
 	end
 }
 script 18 rnr1 {
-	"ベアーリング"
+	"{轴承指环}"
 	end
 }
 script 19 rnr1 {
-	"コブラノキバ"
+	"{眼镜蛇牙}"
 	end
 }
 script 20 rnr1 {
-	"フラッシュアイ"
+	"{闪光眼}"
 	end
 }
 script 21 rnr1 {
-	"ハヤテノウデワ"
+	"{旋风臂环}"
 	end
 }
 script 22 rnr1 {
-	"パワーリング"
+	"{力量指环}"
 	end
 }
 script 23 rnr1 {
-	"アクマノヒトミ"
+	"{恶魔之瞳}"
 	end
 }
 script 24 rnr1 {
-	"マシンガンクロー"
+	"{机枪利爪}"
 	end
 }
 script 25 rnr1 {
-	"パラライザー"
+	"{噼啪激光}"
 	end
 }
 script 26 rnr1 {
-	"バブルハンド"
+	"{泡沫手}"
 	end
 }
 script 27 rnr1 {
-	"ハンマーグローブ"
+	"{铁锤手套}"
 	end
 }
 script 28 rnr1 {
-	"ゼニーサーチング"
+	"Ｚｅｎｎｙ搜索器"
 	end
 }
 script 29 rnr1 {
-	"コレクトバイザー"
+	"{收集护目镜}"
 	end
 }
 script 30 rnr1 {
-	"ゲンワクノカオリ"
+	"{幻惑之香}"
 	end
 }
 script 31 rnr1 {
-	"カイザーナックル"
+	"{凯撒拳套}"
 	end
 }
 script 32 rnr1 {
-	"マジックブレス"
+	"{魔法吐息}"
 	end
 }
 script 33 rnr1 {
-	"ＦＭブレスレット"
+	"ＦＭ{手环}"
 	end
 }
 script 34 rnr1 {
-	"リュウセイパワー"
+	"{流星之力}"
 	end
 }
 script 35 rnr1 {
-	"エグゼブラスター"
+	"ＥＸＥ{爆裂炮}"
 	end
 }
 script 36 rnr1 {
-	"星のあかし１"
+	"{星之证}１"
 	end
 }
 script 37 rnr1 {
-	"星のあかし２"
+	"{星之证}２"
 	end
 }
 script 38 rnr1 {
-	"星のあかし３"
+	"{星之证}３"
 	end
 }
 script 39 rnr1 {
-	"星のあかし４"
+	"{星之证}４"
 	end
 }
 script 40 rnr1 {
-	"星のあかし５"
+	"{星之证}５"
 	end
 }
 script 41 rnr1 {
-	"げどくざい"
+	"{解毒剂}"
 	end
 }
 script 42 rnr1 {
-	"ショベルカード"
+	"{挖机卡}"
 	end
 }
 script 43 rnr1 {
-	"レスキューソナー"
+	"{救援声呐}"
 	end
 }
 script 44 rnr1 {
-	"にがりソーダ"
+	"{卤水苏打}"
 	end
 }
 script 45 rnr1 {
-	"やきそばパン"
+	"{炒面面包}"
 	end
 }
 script 46 rnr1 {
-	"でんきゅう"
+	"{电灯泡}"
 	end
 }
 script 47 rnr1 {
-	"ゆびわ"
+	"{戒指}"
 	end
 }
 script 48 rnr1 {
-	"フロアガイド"
+	"{楼层指南}"
 	end
 }
 script 49 rnr1 {
-	"やきゅうカード"
+	"{棒球卡}"
 	end
 }
 script 50 rnr1 {
-	"まんじゅう"
+	"{馒头}"
 	end
 }
 script 51 rnr1 {
-	"フィギュア"
+	"{手办}"
 	end
 }
 script 52 rnr1 {
-	"おりょうりレシピ"
+	"{料理食谱}"
 	end
 }
 script 53 rnr1 {
-	"ニシキヘビ"
+	"{蟒蛇}"
 	end
 }
 script 54 rnr1 {
-	"キングスネーク"
+	"{国王蛇}"
 	end
 }
 script 55 rnr1 {
-	"コーンスネーク"
+	"{玉米蛇}"
 	end
 }
 script 56 rnr1 {
-	"アルバム"
+	"{相册}"
 	end
 }
 script 57 rnr1 {
-	"ぎゅうどん"
+	"{牛肉盖饭}"
 	end
 }
 script 58 rnr1 {
-	"なぞのデータ"
+	"{神秘数据}"
 	end
 }
 script 59 rnr1 {
-	"ハードトロピカル"
+	"{高度热带酒}"
 	end
 }
 script 60 rnr1 {
-	"ＮＡＸＡデータ"
+	"ＮＡＸＡ{数据}"
 	end
 }
 script 61 rnr1 {
-	"メモ"
+	"{便条}"
 	end
 }
 script 62 rnr1 {
-	"ピッチングカード"
+	"{投球卡}"
 	end
 }
 script 63 rnr1 {
-	"エアコンカード"
+	"{空调卡}"
 	end
 }
 script 64 rnr1 {
-	"ラジコンマガジン"
+	"{无人机期刊}"
 	end
 }
 script 65 rnr1 {
-	"おまもり"
+	"{护身符}"
 	end
 }
 script 66 rnr1 {
-	"あんないじょう"
+	"{请帖}"
 	end
 }
 script 67 rnr1 {
-	"りかのノート"
+	"{理科笔记本}"
 	end
 }
 script 68 rnr1 {
-	"かいいんカード"
+	"{会员卡}"
 	end
 }
 script 69 rnr1 {
 	end
 }
 script 70 rnr1 {
-	"学校あんない"
+	"{学校指南}"
 	end
 }
 script 71 rnr1 {
-	"ラジコンずかん"
+	"{无人机图鉴}"
 	end
 }
 script 72 rnr1 {
-	"クイズのほん"
+	"{谜题书}"
 	end
 }
 script 73 rnr1 {
-	"けしごむ"
+	"{橡皮擦}"
 	end
 }
 script 74 rnr1 {
-	"れんあいのほん"
+	"{恋爱书}"
 	end
 }
 script 75 rnr1 {
-	"デパートのチラシ"
+	"百货店的传单"
 	end
 }
 script 76 rnr1 {
-	"ヘビのおきもの"
+	"{蛇类装饰品}"
 	end
 }
 script 77 rnr1 {
-	"グルメざっし"
+	"{美食杂志}"
 	end
 }
 script 78 rnr1 {
-	"せっけいず"
+	"{设计图}"
 	end
 }
 script 79 rnr1 {
-	"こどくのココロ"
+	"{孤独之心}"
 	end
 }
 script 80 rnr1 {
-	"大吾のトランサー"
+	"大吾的传输器"
 	end
 }
 script 81 rnr1 {
@@ -370,74 +370,74 @@ script 95 rnr1 {
 	end
 }
 script 96 rnr1 {
-	"プチエネルギー"
+	"{小型能源}"
 	end
 }
 script 97 rnr1 {
-	"ビッグエネルギー"
+	"{大型能源}"
 	end
 }
 script 98 rnr1 {
-	"Ｄエネルギー"
+	"Ｄ{能源}"
 	end
 }
 script 99 rnr1 {
-	"オープンロック"
+	"{解除锁定}"
 	end
 }
 script 100 rnr1 {
-	"ステルスボディ"
+	"{隐形身体}"
 	end
 }
 script 101 rnr1 {
-	"サーチアイ"
+	"{检索眼}"
 	end
 }
 script 102 rnr1 {
-	"タイヨウのカギ"
+	"{太阳钥匙}"
 	end
 }
 script 103 rnr1 {
-	"Ｐロックヘッド"
+	"Ｐ{洛克头}"
 	end
 }
 script 104 rnr1 {
-	"Ｄロックボディ"
+	"Ｄ{洛克身体}"
 	end
 }
 script 105 rnr1 {
-	"Ｌロックレッグ"
+	"Ｌ{洛克腿}"
 	end
 }
 script 106 rnr1 {
-	"エンブレムオブＬ"
+	"Ｌ{的徽章}"
 	end
 }
 script 107 rnr1 {
-	"ソセイヤク"
+	"{苏生药}"
 	end
 }
 script 108 rnr1 {
-	"ガマンノミ"
+	"{忍耐果实}"
 	end
 }
 script 109 rnr1 {
-	"ホシノカケラ"
+	"{星之碎片}"
 	end
 }
 script 110 rnr1 {
-	"オリハルコン"
+	"{山铜}"
 	end
 }
 script 111 rnr1 {
 	end
 }
 script 112 rnr1 {
-	"ＨＰメモリ１０"
+	"ＨＰ{记忆体}１０"
 	end
 }
 script 113 rnr1 {
-	"ＨＰメモリ２０"
+	"ＨＰ{记忆体}２０"
 	end
 }
 script 114 rnr1 {

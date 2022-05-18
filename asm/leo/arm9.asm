@@ -70,6 +70,9 @@ FontEncodingZero:
 .include "asm/common/text_input.asm"
 .include "asm/common/text_utils.asm"
 
+.org 0x02009178
+read_script_direct:
+
 ; 似乎开始显示显存字体时会被执行
 ; 可以用来重置我们自己的字体缓存
 ; Seems to be executed when displaying the video memory font
@@ -202,5 +205,11 @@ FontEncodingZero:
 	push {lr}
 	bl sub_20107D0_hook
 	pop {pc}
+
+.org 0x02009A2C
+.area 0x02009A40-. , 0x00
+	bl sub_2009A2C_hook
+	b 0x02009A40
+.endarea
 
 .close
