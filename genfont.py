@@ -133,6 +133,7 @@ def main():
 
     rr = list(set(filter(lambda x: not (x in tbl_char_texts), r)))
     rr.sort(key=sort_chars)
+    rr.remove('昴')
 
     print('所需字形数量', len(r)) 
     print('所需生成字形数量', len(rr)) 
@@ -203,7 +204,7 @@ def main():
         if m:
             text = m[1]
             # 粗体字
-            print('生成粗体字', m[1])
+            # print('生成粗体字', m[1])
             graphs = gen_two_half_graph(text, True)
             graph = bytes(f.block_width * f.block_height * 8 * 8)
             width = f.block_width * 8
@@ -211,6 +212,21 @@ def main():
                 f.character_graphs.append(graph)
                 f.widths.append(width)
                 f.table.append(text)
+        elif c >= 'a' and c <= 'z' or c >= 'A' and c <= 'Z' or c >= '0' and c <= '9':
+            c = chr(ord(c) + 0xFEE0)
+            found_graph = False
+            graph = bytes(f.block_width * f.block_height * 8 * 8)
+            width = f.block_width * 8
+            for i in range(len(f.table)):
+                if f.table[i] == c:
+                    graph = f.character_graphs[i]
+                    width = f.widths[i]
+                    found_graph = True
+            if not found_graph:
+                print('警告：未找到可用的 8x16 粗体字形：', c, '将使用空白字形代替')
+            f.character_graphs.append(graph)
+            f.widths.append(width)
+            f.table.append(c)
         else:
             found_graph = False
             graph = bytes(f.block_width * f.block_height * 8 * 8)
@@ -257,7 +273,7 @@ def main():
     for c in rr:
         if not (c in f.table):
             replace_or_append(c)
-    print(f.table)
+            
     f.save_to_bin(os.path.join(pydir, 'fonts', 'font2.bin'))
 
     gb2312 = Font(1, 2)
@@ -270,7 +286,7 @@ def main():
         if m:
             text = m[1]
             # 粗体字
-            print('生成粗体字', m[1])
+            # print('生成粗体字', m[1])
             graphs = gen_two_half_graph(text, False)
             graph = bytes(f.block_width * f.block_height * 8 * 8)
             width = f.block_width * 8
@@ -278,6 +294,21 @@ def main():
                 f.character_graphs.append(graph)
                 f.widths.append(width)
                 f.table.append(text)
+        elif c >= 'a' and c <= 'z' or c >= 'A' and c <= 'Z' or c >= '0' and c <= '9':
+            c = chr(ord(c) + 0xFEE0)
+            found_graph = False
+            graph = bytes(f.block_width * f.block_height * 8 * 8)
+            width = f.block_width * 8
+            for i in range(len(f.table)):
+                if f.table[i] == c:
+                    graph = f.character_graphs[i]
+                    width = f.widths[i]
+                    found_graph = True
+            if not found_graph:
+                print('警告：未找到可用的 8x16 细体字形：', c, '将使用空白字形代替')
+            f.character_graphs.append(graph)
+            f.widths.append(width)
+            f.table.append(c)
         else:
             found_graph = False
             graph = bytes(f.block_width * f.block_height * 8 * 8)

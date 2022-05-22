@@ -114,7 +114,7 @@ script 27 rnr1 {
 	end
 }
 script 28 rnr1 {
-	"Ｚｅｎｎｙ搜索器"
+	"Zenny搜索器"
 	end
 }
 script 29 rnr1 {

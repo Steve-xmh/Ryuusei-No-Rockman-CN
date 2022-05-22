@@ -263,7 +263,7 @@ script 67 rnr1 {
 	end
 }
 script 68 rnr1 {
-	"２Ｆ{ろうか的电波}"
+	"２Ｆ{走廊的电波}"
 	end
 }
 script 69 rnr1 {
