@@ -3,33 +3,6 @@
 
 .thumb
 
-// 0x0201B08A
-// 0x0201B060
-
-/*
-	插入位置对应代码：
-	if ( ctx->word52 == 0xE4 )
-	ctx->word52 += ctx->current_script_data[1];
-*/
-
-/*
-	插入位置对应代码：
-	if ( ctx->current_script_code == 0xE4 )
-	{
-		ctx->dword34 = v3 | 0x2000;
-		ctx->current_script_code += ctx->current_script_data[1];
-		COM_LoadFontGraph(ctx); // 0x0201E554
-		v4 = ctx->current_script_data + 2;
-	}
-	else
-	{
-		ctx->dword34 = v3 | 0x2000;
-		COM_LoadFontGraph(ctx);
-		v4 = ctx->current_script_data + 1;
-	}
-*/
-
-
 .if OriginalPrintFontConditionStart != 0
 	.org OriginalPrintFontConditionStart // 判断 0xE4 开始的那个位置
 	.area OriginalPrintFontConditionEnd-. , 0x00

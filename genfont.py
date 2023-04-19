@@ -1,6 +1,8 @@
 '''
 扫描脚本，重组/生成字库！
 请在打包前执行这个脚本以生成新的字库，确保不会缺失字形。
+Scan the script and re-generate the font.
+Please run this script before packaging to ensure that the missing glyphs are not lost.
 '''
 
 import os, re, sys, json, math
@@ -106,6 +108,31 @@ def read_json(path: str):
         return json.load(r)
 
 def main():
+    print('正在加载预设字体')
+    font_k8x12jcn = Font(1, 2)
+    with open('./scripts/k8x12jcn.hex', 'r') as r:
+        for line in r.readlines():
+            line = line.strip()
+            if len(line) == 4 + 1 + 32:
+                [code, graph] = line.split(':')
+                data = []
+                # print(code, graph)
+                for h in graph:
+                    b = bin(int(h, 16))
+                    b = b[2:].rjust(4, '0')
+                    for p in b:
+                        data.append(int(p))
+                
+                for y in range(16 - 1):
+                    for x in range(8 - 1):
+                        if data[y * 8 + x] == 1:
+                            if data[(y + 1) * 8 + x + 1] == 0:
+                                data[(y + 1) * 8 + x + 1] = 2
+                
+                font_k8x12jcn.table.append(chr(int(code, 16)))
+                font_k8x12jcn.widths.append(8)
+                font_k8x12jcn.character_graphs.append(bytes(data))
+                
     print('正在加载原始码表')
     load_tbl(os.path.join(pydir, 'tools', 'plugins', 'rnr1-utf8-copy.tbl'))
 
@@ -137,7 +164,7 @@ def main():
 
     print('所需字形数量', len(r)) 
     print('所需生成字形数量', len(rr)) 
-    print(rr)
+    print(''.join(rr))
     print('正在生成所需字形')
 
     # 12x12
@@ -205,7 +232,7 @@ def main():
             text = m[1]
             # 粗体字
             # print('生成粗体字', m[1])
-            graphs = gen_two_half_graph(text, True)
+            graphs = gen_two_half_graph(text, False)
             graph = bytes(f.block_width * f.block_height * 8 * 8)
             width = f.block_width * 8
             for graph in graphs:
@@ -224,6 +251,7 @@ def main():
                     found_graph = True
             if not found_graph:
                 print('警告：未找到可用的 8x16 粗体字形：', c, '将使用空白字形代替')
+                print('WARNING: Cannot find 8x16 bold graph for', c, ', will use a blank graph instead')
             f.character_graphs.append(graph)
             f.widths.append(width)
             f.table.append(c)
@@ -231,10 +259,17 @@ def main():
             found_graph = False
             graph = bytes(f.block_width * f.block_height * 8 * 8)
             width = f.block_width * 8
+            
             for i in range(len(gb2312.table)):
                 if gb2312.table[i] == c:
                     graph = gb2312.character_graphs[i]
                     width = gb2312.widths[i]
+                    found_graph = True
+                    break
+            for i in range(len(font_k8x12jcn.table)):
+                if font_k8x12jcn.table[i] == c:
+                    graph = font_k8x12jcn.character_graphs[i]
+                    width = font_k8x12jcn.widths[i]
                     found_graph = True
                     break
             for i in range(len(f.table)):
@@ -247,6 +282,7 @@ def main():
                     return
             if not found_graph:
                 print('警告：未找到可用的 8x16 粗体字形：', c, '将使用空白字形代替')
+                print('WARNING: Cannot find 8x16 bold graph for', c, ', will use a blank graph instead')
             f.character_graphs.append(graph)
             f.widths.append(width)
             f.table.append(c)
@@ -306,6 +342,7 @@ def main():
                     found_graph = True
             if not found_graph:
                 print('警告：未找到可用的 8x16 细体字形：', c, '将使用空白字形代替')
+                print('WARNING: Cannot find 8x16 graph for', c, ', will use a blank graph instead')
             f.character_graphs.append(graph)
             f.widths.append(width)
             f.table.append(c)
@@ -319,6 +356,12 @@ def main():
                     width = gb2312.widths[i]
                     found_graph = True
                     break
+            for i in range(len(font_k8x12jcn.table)):
+                if font_k8x12jcn.table[i] == c:
+                    graph = font_k8x12jcn.character_graphs[i]
+                    width = font_k8x12jcn.widths[i]
+                    found_graph = True
+                    break
             for i in range(len(f.table)):
                 if f.table[i] == c:
                     if graph == bytes(len(graph)):
@@ -329,6 +372,7 @@ def main():
                     return
             if not found_graph:
                 print('警告：未找到可用的 8x16 细体字形：', c, '将使用空白字形代替')
+                print('WARNING: Cannot find 8x16 graph for', c, ', will use a blank graph instead')
             f.character_graphs.append(graph)
             f.widths.append(width)
             f.table.append(c)
@@ -356,17 +400,4 @@ def main():
 
     f.save_to_bin(os.path.join(pydir, 'fonts', 'font1.bin'))
 
-    print('字库生成完毕！请尝试打包查看效果吧！')
-'''
-try:
-    main()
-except Exception as e:
-    print('喔不！出错了！')
-    print('请查看错误信息，确认问题来由：', e)
-    print('报错堆栈')
-    print(e.with_traceback(None))
-'''
-main()
-if sys.argv[0].endswith('.exe'):
-    print('按回车键退出本程序...')
-    input()
+    print('Fonts generated successfully!')

@@ -86,12 +86,17 @@ read_script_direct:
 	
 
 ; sub_200BF94 是玩家名字的默认值被写入的函数
-;     0x20F8E98 是姓氏
-;     0x20F8E9E 是名字
+;    0x020F8E9C 是姓氏
+;    0x020F8EA2 是名字
 
-.org 0x20F8E9E
+// 姓氏 First Name
+.org 0x020F8E9C
+	// No need to modify as `星河` already the correct name.
+
+// 名字 Last Name
+.org 0x020F8EA2
 	.dh 0x1D3
-	.dh 0x1E5 ; 0xE6 + 0xFF
+	.dh 0x1E5 ; 0xE6 + 0xFF ; End of the text
 
 ; 逆向出来的函数们（和 0xE4 相关的东西）
 ; sub_200A830 疑似是检测当前脚本位置是否还有控制指令

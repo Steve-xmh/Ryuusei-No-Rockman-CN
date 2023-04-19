@@ -15,6 +15,7 @@ tools_path = os.path.join(pydir, 'tools')
 
 if os.path.isdir(workspace_path):
     print('警告：发现工作空间文件夹已存在，是否删除并重新配置？(Y/n)')
+    print('WARNING: Detected existing workspace directory, do you want to delete and re-configure it? (Y/n)')
     if input() != 'Y':
         exit()
 
@@ -25,6 +26,7 @@ ndstool_path = os.path.join(tools_path, 'ndstool.exe')
 
 def unpack_nds(nds_file: str, dest_dir: str):
     print('正在解压 ROM', nds_file, '到', dest_dir)
+    print('Unpacking ROM from', nds_file, 'to', dest_dir)
     os.makedirs(dest_dir, exist_ok=True)
     subprocess.run([
         ndstool_path,
@@ -45,6 +47,7 @@ sfarctool_path = os.path.join(tools_path, 'sfarctool.exe')
 
 def unpack_archive(bin_file: str, dest_dir: str):
     print('正在解包 SFA 归档文件', bin_file, '到', dest_dir)
+    print('Unpacking SFA archive from', bin_file, 'to', dest_dir)
     subprocess.run([
         sfarctool_path,
         '-x', '-d',
@@ -86,6 +89,7 @@ textpet_plugins_path = os.path.join(tools_path, 'plugins')
 
 def transfer_text(mess_dir: str, output_tpl_mess_file: str, output_tpl_mess_dir: str):
     print('正在转换文件夹', mess_dir, '中的脚本归档到', output_tpl_mess_dir)
+    print('Transforming text archives directory from', mess_dir, 'to', output_tpl_mess_dir)
     os.mkdir(output_tpl_mess_dir)
     subprocess.run([
         textpet_path,
@@ -136,11 +140,9 @@ unzip_fonts(os.path.join(workspace_path, 'pegasus', 'arm9.dec'), os.path.join(wo
 unpack_all_bin(os.path.join(workspace_path, 'pegasus', 'data', 'datbin', 'com'),
                os.path.join(workspace_path, 'unpacked_bins'))
 
-# 导出标题图片
-print('正在导出标题图片')
-
 # 因为三个版本中的 mess.bin 是完全一样的，所以这里只导出一个
 transfer_text(os.path.join(workspace_path, 'unpacked_bins', 'mess.bin'), os.path.join(
     workspace_path, 'mess_out.tpl'), os.path.join(workspace_path, 'mess_out_tpl'))
 
-print('工作环境配置完成！请开始汉化吧！♥')
+print('工作环境配置完成！')
+print('Configuration done!')

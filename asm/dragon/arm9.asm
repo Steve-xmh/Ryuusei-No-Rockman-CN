@@ -89,9 +89,14 @@ read_script_direct:
 ;    0x020F8E9C 是姓氏
 ;    0x020F8EA2 是名字
 
+// 姓氏 First Name
+.org 0x020F8E9C
+	// No need to modify as `星河` already the correct name.
+
+// 名字 Last Name
 .org 0x020F8EA2
 	.dh 0x1D3
-	.dh 0x1E5 ; 0xE6 + 0xFF
+	.dh 0x1E5 ; 0xE6 + 0xFF ; End of the text
 
 .org 0x02012C1E
 	bl Debug_LoadArchive

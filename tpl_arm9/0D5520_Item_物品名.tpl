@@ -1,1027 +1,868 @@
-@archive 0D70A4
+@archive 0D5520
 @size 256
 
 script 0 rnr1 {
-	"{测试病毒}"
+	"传输器"
 	end
 }
 script 1 rnr1 {
-	"{天线帽}"
+	"显影镜"
 	end
 }
 script 2 rnr1 {
-	"{天线帽}２"
+	"红钥匙"
 	end
 }
 script 3 rnr1 {
-	"{天线帽}３"
+	"蓝钥匙"
 	end
 }
 script 4 rnr1 {
-	"{天线帽}Ｇ"
+	"黄钥匙"
 	end
 }
 script 5 rnr1 {
-	"{天线帽}２Ｇ"
+	"四联钥匙Ａ"
 	end
 }
 script 6 rnr1 {
-	"{天线帽}３Ｇ"
+	"四联钥匙Ｂ"
 	end
 }
 script 7 rnr1 {
-	"{加农炮台}"
+	"四联钥匙Ｃ"
 	end
 }
 script 8 rnr1 {
-	"{重型炮台}"
+	"四联钥匙Ｄ"
 	end
 }
 script 9 rnr1 {
-	"{千兆炮台}"
+	"罐装果汁"
 	end
 }
 script 10 rnr1 {
-	"{加农炮台}Ｇ"
+	"无人机"
 	end
 }
 script 11 rnr1 {
-	"{重型炮台}Ｇ"
+	"入场许可"
 	end
 }
 script 12 rnr1 {
-	"{千兆炮台}Ｇ"
+	"员工许可"
 	end
 }
 script 13 rnr1 {
-	"{轿车乌鸦}"
+	"航天服"
 	end
 }
 script 14 rnr1 {
-	"{火箭乌鸦}"
+	"门扉卡"
 	end
 }
 script 15 rnr1 {
-	"{公交乌鸦}"
+	"锐利牙"
 	end
 }
 script 16 rnr1 {
-	"{轿车乌鸦}Ｇ"
+	"撕裂爪"
 	end
 }
 script 17 rnr1 {
-	"{火箭乌鸦}Ｇ"
+	"山雾之针"
 	end
 }
 script 18 rnr1 {
-	"{公交乌鸦}Ｇ"
+	"轴承指环"
 	end
 }
 script 19 rnr1 {
-	"{躲避灵}"
+	"眼镜蛇牙"
 	end
 }
 script 20 rnr1 {
-	"{闪动灵}"
+	"闪光眼"
 	end
 }
 script 21 rnr1 {
-	"{摇摆灵}"
+	"旋风臂环"
 	end
 }
 script 22 rnr1 {
-	"{躲避灵}Ｇ"
+	"力量指环"
 	end
 }
 script 23 rnr1 {
-	"{闪动灵}Ｇ"
+	"恶魔之瞳"
 	end
 }
 script 24 rnr1 {
-	"{摇摆灵}Ｇ"
+	"机枪利爪"
 	end
 }
 script 25 rnr1 {
-	"{引火骑手}"
+	"噼啪激光"
 	end
 }
 script 26 rnr1 {
-	"{引火马达}"
+	"泡沫手"
 	end
 }
 script 27 rnr1 {
-	"{引火车神}"
+	"铁锤手套"
 	end
 }
 script 28 rnr1 {
-	"{引火骑手}Ｇ"
+	"Zenny搜索器"
 	end
 }
 script 29 rnr1 {
-	"{引火马达}Ｇ"
+	"收集护目镜"
 	end
 }
 script 30 rnr1 {
-	"{引火车神}Ｇ"
+	"幻惑之香"
 	end
 }
 script 31 rnr1 {
-	"{水灵滴}"
+	"凯撒拳套"
 	end
 }
 script 32 rnr1 {
-	"{水灵珠}"
+	"魔法吐息"
 	end
 }
 script 33 rnr1 {
-	"{水灵球}"
+	"ＦＭ手环"
 	end
 }
 script 34 rnr1 {
-	"{水灵滴}Ｇ"
+	"流星之力"
 	end
 }
 script 35 rnr1 {
-	"{水灵珠}Ｇ"
+	"ＥＸＥ爆裂炮"
 	end
 }
 script 36 rnr1 {
-	"{水灵球}Ｇ"
+	"星之证１"
 	end
 }
 script 37 rnr1 {
-	"{戒严剑}"
+	"星之证２"
 	end
 }
 script 38 rnr1 {
-	"{戒严利剑}"
+	"星之证３"
 	end
 }
 script 39 rnr1 {
-	"{戒严重剑}"
+	"星之证４"
 	end
 }
 script 40 rnr1 {
-	"{戒严剑}Ｇ"
+	"星之证５"
 	end
 }
 script 41 rnr1 {
-	"{戒严利剑}Ｇ"
+	"解毒剂"
 	end
 }
 script 42 rnr1 {
-	"{戒严重剑}Ｇ"
+	"挖机卡"
 	end
 }
 script 43 rnr1 {
-	"{沼泽蟹}"
+	"救援声呐"
 	end
 }
 script 44 rnr1 {
-	"{河流蟹}"
+	"卤水苏打"
 	end
 }
 script 45 rnr1 {
-	"{海洋蟹}"
+	"炒面面包"
 	end
 }
 script 46 rnr1 {
-	"{沼泽蟹}Ｇ"
+	"电灯泡"
 	end
 }
 script 47 rnr1 {
-	"{河流蟹}Ｇ"
+	"戒指"
 	end
 }
 script 48 rnr1 {
-	"{海洋蟹}Ｇ"
+	"楼层指南"
 	end
 }
 script 49 rnr1 {
-	"{诗集狮子}"
+	"棒球卡"
 	end
 }
 script 50 rnr1 {
-	"{歌手狮子}"
+	"馒头"
 	end
 }
 script 51 rnr1 {
-	"{主演狮子}"
+	"手办"
 	end
 }
 script 52 rnr1 {
-	"{歌剧狮子}"
+	"料理食谱"
 	end
 }
 script 53 rnr1 {
-	"{古典狮子}"
+	"蟒蛇"
 	end
 }
 script 54 rnr1 {
-	"{诗集舞狮}Ｇ"
+	"国王蛇"
 	end
 }
 script 55 rnr1 {
-	"{歌手舞狮}Ｇ"
+	"玉米蛇"
 	end
 }
 script 56 rnr1 {
-	"{主演狮子}Ｇ"
+	"相册"
 	end
 }
 script 57 rnr1 {
-	"{歌剧狮子}Ｇ"
+	"牛肉盖饭"
 	end
 }
 script 58 rnr1 {
-	"{古典狮子}Ｇ"
+	"神秘数据"
 	end
 }
 script 59 rnr1 {
-	"{死亡计数}"
+	"高度热带酒"
 	end
 }
 script 60 rnr1 {
-	"{死亡投弹}"
+	"ＮＡＸＡ数据"
 	end
 }
 script 61 rnr1 {
-	"{死亡爆发}"
+	"便条"
 	end
 }
 script 62 rnr1 {
-	"{死亡计数}Ｇ"
+	"投球卡"
 	end
 }
 script 63 rnr1 {
-	"{死亡投弹}Ｇ"
+	"空调卡"
 	end
 }
 script 64 rnr1 {
-	"{死亡爆发}Ｇ"
+	"无人机期刊"
 	end
 }
 script 65 rnr1 {
-	"{伏特雷公}"
+	"护身符"
 	end
 }
 script 66 rnr1 {
-	"{火花雷公}"
+	"请帖"
 	end
 }
 script 67 rnr1 {
-	"{闪电雷公}"
+	"理科笔记本"
 	end
 }
 script 68 rnr1 {
-	"{伏特雷公}Ｇ"
+	"会员卡"
 	end
 }
 script 69 rnr1 {
-	"{火花雷公}Ｇ"
 	end
 }
 script 70 rnr1 {
-	"{闪电雷公}Ｇ"
+	"学校指南"
 	end
 }
 script 71 rnr1 {
-	"{哔哩王牌}"
+	"无人机图鉴"
 	end
 }
 script 72 rnr1 {
-	"{哔哩国王}"
+	"谜题书"
 	end
 }
 script 73 rnr1 {
-	"{哔哩鬼牌}"
+	"橡皮擦"
 	end
 }
 script 74 rnr1 {
-	"{哔哩王牌}Ｇ"
+	"恋爱书"
 	end
 }
 script 75 rnr1 {
-	"{哔哩国王}Ｇ"
+	"百货店的传单"
 	end
 }
 script 76 rnr1 {
-	"{哔哩鬼牌}Ｇ"
+	"蛇类装饰品"
 	end
 }
 script 77 rnr1 {
-	"{铜锣电铃}"
+	"美食杂志"
 	end
 }
 script 78 rnr1 {
-	"{裁判电铃}"
+	"设计图"
 	end
 }
 script 79 rnr1 {
-	"{拳击电铃}"
+	"孤独之心"
 	end
 }
 script 80 rnr1 {
-	"{铜锣电铃}Ｇ"
+	"大吾的传输器"
 	end
 }
 script 81 rnr1 {
-	"{裁判电铃}Ｇ"
 	end
 }
 script 82 rnr1 {
-	"{拳击电铃}Ｇ"
 	end
 }
 script 83 rnr1 {
-	"{宏伟开膛手}"
 	end
 }
 script 84 rnr1 {
-	"{宏伟巨匠}"
 	end
 }
 script 85 rnr1 {
-	"{宏伟凯撒}"
 	end
 }
 script 86 rnr1 {
-	"{宏伟开膛手}Ｇ"
 	end
 }
 script 87 rnr1 {
-	"{宏伟巨匠}Ｇ"
 	end
 }
 script 88 rnr1 {
-	"{宏伟凯撒}Ｇ"
 	end
 }
 script 89 rnr1 {
-	"{干扰兵}"
 	end
 }
 script 90 rnr1 {
-	"{干扰兵}２"
 	end
 }
 script 91 rnr1 {
-	"{干扰兵}３"
 	end
 }
 script 92 rnr1 {
-	"{干扰兵}Ｇ"
 	end
 }
 script 93 rnr1 {
-	"{干扰兵}２Ｇ"
 	end
 }
 script 94 rnr1 {
-	"{干扰兵}３Ｇ"
 	end
 }
 script 95 rnr1 {
-	"{黏黏怪}"
 	end
 }
 script 96 rnr1 {
-	"{稠稠怪}"
+	"小型能源"
 	end
 }
 script 97 rnr1 {
-	"{糊糊怪}"
+	"大型能源"
 	end
 }
 script 98 rnr1 {
-	"{黏黏怪}Ｇ"
+	"Ｄ能源"
 	end
 }
 script 99 rnr1 {
-	"{稠稠怪}Ｇ"
+	"解除锁定"
 	end
 }
 script 100 rnr1 {
-	"{糊糊怪}Ｇ"
+	"隐形身体"
 	end
 }
 script 101 rnr1 {
-	"{独角木桩}"
+	"检索眼"
 	end
 }
 script 102 rnr1 {
-	"{榔头木桩}"
+	"太阳钥匙"
 	end
 }
 script 103 rnr1 {
-	"{雄伟木桩}"
+	"Ｐ洛克头"
 	end
 }
 script 104 rnr1 {
-	"{独角木桩}Ｇ"
+	"Ｄ洛克身体"
 	end
 }
 script 105 rnr1 {
-	"{榔头木桩}Ｇ"
+	"Ｌ洛克腿"
 	end
 }
 script 106 rnr1 {
-	"{雄伟木桩}Ｇ"
+	"Ｌ的徽章"
 	end
 }
 script 107 rnr1 {
-	"{蓬头士兵}"
+	"苏生药"
 	end
 }
 script 108 rnr1 {
-	"{蓬头中士}"
+	"忍耐果实"
 	end
 }
 script 109 rnr1 {
-	"{蓬头元帅}"
+	"星之碎片"
 	end
 }
 script 110 rnr1 {
-	"{蓬头士兵}Ｇ"
+	"山铜"
 	end
 }
 script 111 rnr1 {
-	"{蓬头中士}Ｇ"
 	end
 }
 script 112 rnr1 {
-	"{蓬头元帅}Ｇ"
+	"ＨＰ记忆体１０"
 	end
 }
 script 113 rnr1 {
-	"{狸喵}"
+	"ＨＰ记忆体２０"
 	end
 }
 script 114 rnr1 {
-	"{模仿狸喵}"
 	end
 }
 script 115 rnr1 {
-	"{妖怪狸喵}"
 	end
 }
 script 116 rnr1 {
-	"{狸喵}Ｇ"
 	end
 }
 script 117 rnr1 {
-	"{模仿狸喵}Ｇ"
 	end
 }
 script 118 rnr1 {
-	"{妖怪狸喵}Ｇ"
 	end
 }
 script 119 rnr1 {
-	"{狂战客}"
 	end
 }
 script 120 rnr1 {
-	"{狂战兵}"
 	end
 }
 script 121 rnr1 {
-	"{狂战屠}"
 	end
 }
 script 122 rnr1 {
-	"{狂战客}Ｇ"
 	end
 }
 script 123 rnr1 {
-	"{狂战兵}Ｇ"
 	end
 }
 script 124 rnr1 {
-	"{狂战屠}Ｇ"
 	end
 }
 script 125 rnr1 {
-	"{岩石炮丸}"
 	end
 }
 script 126 rnr1 {
-	"{丘陵炮丸}"
 	end
 }
 script 127 rnr1 {
-	"{山峰炮丸}"
 	end
 }
 script 128 rnr1 {
-	"{岩石炮丸}Ｇ"
 	end
 }
 script 129 rnr1 {
-	"{丘陵炮丸}Ｇ"
 	end
 }
 script 130 rnr1 {
-	"{山峰炮丸}Ｇ"
 	end
 }
 script 131 rnr1 {
-	"{八爪鱼}"
 	end
 }
 script 132 rnr1 {
-	"{冰块八爪鱼}"
 	end
 }
 script 133 rnr1 {
-	"{毒素八爪鱼}"
 	end
 }
 script 134 rnr1 {
-	"{八爪鱼}Ｇ"
 	end
 }
 script 135 rnr1 {
-	"{冰块八爪鱼}Ｇ"
 	end
 }
 script 136 rnr1 {
-	"{毒素八爪鱼}Ｇ"
 	end
 }
 script 137 rnr1 {
-	"{眼滋}"
 	end
 }
 script 138 rnr1 {
-	"{守卫眼滋}"
 	end
 }
 script 139 rnr1 {
-	"{防护眼滋}"
 	end
 }
 script 140 rnr1 {
-	"{眼滋}Ｇ"
 	end
 }
 script 141 rnr1 {
-	"{守卫眼滋}Ｇ"
 	end
 }
 script 142 rnr1 {
-	"{防护眼滋}Ｇ"
 	end
 }
 script 143 rnr1 {
-	"{燃烧爬虫}"
 	end
 }
 script 144 rnr1 {
-	"{燃烧蜥蜴}"
 	end
 }
 script 145 rnr1 {
-	"{燃烧巨蜥}"
 	end
 }
 script 146 rnr1 {
-	"{燃烧爬虫}Ｇ"
 	end
 }
 script 147 rnr1 {
-	"{燃烧蜥蜴}Ｇ"
 	end
 }
 script 148 rnr1 {
-	"{燃烧巨蜥}Ｇ"
 	end
 }
 script 149 rnr1 {
-	"{萤火团}"
 	end
 }
 script 150 rnr1 {
-	"{萤火球}"
 	end
 }
 script 151 rnr1 {
-	"{萤火弹}"
 	end
 }
 script 152 rnr1 {
-	"{萤火团}Ｇ"
 	end
 }
 script 153 rnr1 {
-	"{萤火球}Ｇ"
 	end
 }
 script 154 rnr1 {
-	"{萤火弹}Ｇ"
 	end
 }
 script 155 rnr1 {
-	"{摩艾人像}"
 	end
 }
 script 156 rnr1 {
-	"{石块头部}"
 	end
 }
 script 157 rnr1 {
-	"{巨人之颜}"
 	end
 }
 script 158 rnr1 {
-	"{摩艾人像}Ｇ"
 	end
 }
 script 159 rnr1 {
-	"{石块头部}Ｇ"
 	end
 }
 script 160 rnr1 {
-	"{巨人之颜}Ｇ"
 	end
 }
 script 161 rnr1 {
-	"{败类瓜}"
 	end
 }
 script 162 rnr1 {
-	"{恶党瓜}"
 	end
 }
 script 163 rnr1 {
-	"{混混瓜}"
 	end
 }
 script 164 rnr1 {
-	"{败类瓜}Ｇ"
 	end
 }
 script 165 rnr1 {
-	"{恶党瓜}Ｇ"
 	end
 }
 script 166 rnr1 {
-	"{混混瓜}Ｇ"
 	end
 }
 script 167 rnr1 {
-	"{废品工}"
 	end
 }
 script 168 rnr1 {
-	"{废品工}２"
 	end
 }
 script 169 rnr1 {
-	"{废品工}３"
 	end
 }
 script 170 rnr1 {
-	"{废品工}Ｇ"
 	end
 }
 script 171 rnr1 {
-	"{废品工}２Ｇ"
 	end
 }
 script 172 rnr1 {
-	"{废品工}３Ｇ"
 	end
 }
 script 173 rnr1 {
-	"{魔法使徒}"
 	end
 }
 script 174 rnr1 {
-	"{魔法大师}"
 	end
 }
 script 175 rnr1 {
-	"{魔法帝王}"
 	end
 }
 script 176 rnr1 {
-	"{魔法使徒}Ｇ"
 	end
 }
 script 177 rnr1 {
-	"{魔法大师}Ｇ"
 	end
 }
 script 178 rnr1 {
-	"{魔法帝王}Ｇ"
 	end
 }
 script 179 rnr1 {
-	"{地狱黑暗}"
 	end
 }
 script 180 rnr1 {
-	"{杀手黑暗}"
 	end
 }
 script 181 rnr1 {
-	"{恶魔黑暗}"
 	end
 }
 script 182 rnr1 {
-	"{地狱黑暗}Ｇ"
 	end
 }
 script 183 rnr1 {
-	"{杀手黑暗}Ｇ"
 	end
 }
 script 184 rnr1 {
-	"{恶魔黑暗}Ｇ"
 	end
 }
 script 185 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 186 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 187 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 188 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 189 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 190 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 191 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 192 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 193 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 194 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 195 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 196 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 197 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 198 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 199 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 200 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 201 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 202 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 203 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 204 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 205 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 206 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 207 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 208 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 209 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 210 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 211 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 212 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 213 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 214 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 215 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 216 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 217 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 218 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 219 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 220 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 221 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 222 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 223 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 224 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 225 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 226 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 227 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 228 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 229 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 230 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 231 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 232 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 233 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 234 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 235 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 236 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 237 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 238 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 239 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 240 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 241 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 242 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 243 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 244 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 245 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 246 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 247 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 248 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 249 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 250 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 251 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 252 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 253 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 254 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }
 script 255 rnr1 {
-	"未定　　　　　　　　　"
 	end
 }

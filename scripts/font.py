@@ -304,3 +304,28 @@ if __name__ == '__main__' and False:
     f.gen_character(' ', 12)
     f.gen_character('　', 12)
     f.save_to_bin('fontus.bin')
+
+if __name__ == '__main__' and False:
+    f = Font(1, 2)
+    with open('./scripts/k8x12jcn.hex', 'r') as r:
+        for line in r.readlines():
+            line = line.strip()
+            if len(line) == 4 + 1 + 32:
+                [code, graph] = line.split(':')
+                f.table.append(chr(int(code, 16)))
+                f.widths.append(8)
+                data = []
+                # print(code, graph)
+                for h in graph:
+                    b = bin(int(h, 16))
+                    b = b[2:].rjust(4, '0')
+                    for p in b:
+                        data.append(int(p))
+                
+                for y in range(16 - 1):
+                    for x in range(8 - 1):
+                        if data[y * 8 + x] == 1:
+                            if data[(y + 1) * 8 + x + 1] == 0:
+                                data[(y + 1) * 8 + x + 1] = 2
+                
+                f.character_graphs.append(bytes(data))

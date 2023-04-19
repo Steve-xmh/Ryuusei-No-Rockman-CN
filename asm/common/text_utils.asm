@@ -602,7 +602,6 @@ sub_21B5290_hook_lock:
 .pool
 .endautoregion
 
-
 .autoregion
 .align
 sub_21B514C_21B514C_21B5290_hook_unlock:

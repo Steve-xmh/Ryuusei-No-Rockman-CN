@@ -1,6 +1,7 @@
 '''
 从当前的解包文件中重组成 NDS 游戏文件
-目前只能将文字进行重组，其余的玩意还在研究（大雾）
+目前只能将文字进行重组，其余的玩意还在研究
+Pack current workspace into ROM file(s).
 '''
 
 from distutils import dir_util
@@ -19,6 +20,7 @@ tpl_path = os.path.join(pydir, 'tpl')
 txt_path = os.path.join(pydir, 'txt')
 
 print('正在清理临时文件夹')
+print('Cleaning up temporary directory')
 shutil.rmtree(temp_path, ignore_errors=True)
 os.mkdir(temp_path)
 
@@ -32,6 +34,7 @@ def run_armips(args: list):
     subprocess.run(a).check_returncode()
 
 print('正在复制工作空间到临时文件夹')
+print('Setting up temporary directory')
 # shutil.copytree(workspace_path, os.path.join(temp_path, 'workspace'))
 print('_workspace/dragon -> _temp/workspace/dragon')
 shutil.copytree(os.path.join(workspace_path, 'dragon'), os.path.join(temp_path, 'workspace', 'dragon'))

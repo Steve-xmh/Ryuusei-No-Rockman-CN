@@ -1,3 +1,18 @@
+Place the following ROMs here:
+
+pegasus.nds
+    Mega Man Star Force: Pegasus (JP)
+
+leo.nds
+    Mega Man Star Force: Leo (JP)
+
+dragon.nds
+    Mega Man Star Force: Dragon (JP)
+
+Pegasus: pegasus.nds
+Dragon: dragon.nds
+Leo: leo.nds
+
 请把日版的三个游戏 ROM 以以下方式命名后放入此文件夹：
 
 天马：pegasus.nds

@@ -8,7 +8,7 @@
 ; The larger the number, the faster the game can display the same character.
 ; 修改这些数字可以调整字体缓存大小。
 ; 数字可以不完全相等，但必须大于 1。
-; 唯一一个例外是 Font2_VramCacheSize，不得大于 254
+; 唯一一个例外是 Font2_VramCacheSize，必须小于 255
 ; 这些数字设置得越大，游戏就能更快地显示相同的字符。
 Font0_CacheSize equ 128
 Font1_CacheSize equ 128

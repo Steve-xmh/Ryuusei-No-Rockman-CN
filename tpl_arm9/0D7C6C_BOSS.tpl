@@ -2,151 +2,151 @@
 @size 256
 
 script 0 rnr1 {
-	"{洛克人}"
+	"洛克人"
 	end
 }
 script 1 rnr1 {
-	"{火焰公牛}"
+	"火焰公牛"
 	end
 }
 script 2 rnr1 {
-	"{火焰公牛}[EX]"
+	"火焰公牛[EX]"
 	end
 }
 script 3 rnr1 {
-	"{火焰公牛}[SP]"
+	"火焰公牛[SP]"
 	end
 }
 script 4 rnr1 {
-	"{火焰公牛}４"
+	"火焰公牛４"
 	end
 }
 script 5 rnr1 {
-	"{火焰公牛}５"
+	"火焰公牛５"
 	end
 }
 script 6 rnr1 {
-	"{火焰公牛}６"
+	"火焰公牛６"
 	end
 }
 script 7 rnr1 {
-	"{飞翼天鹅}"
+	"飞翼天鹅"
 	end
 }
 script 8 rnr1 {
-	"{飞翼天鹅}[EX]"
+	"飞翼天鹅[EX]"
 	end
 }
 script 9 rnr1 {
-	"{飞翼天鹅}[SP]"
+	"飞翼天鹅[SP]"
 	end
 }
 script 10 rnr1 {
-	"{飞翼天鹅}４"
+	"飞翼天鹅４"
 	end
 }
 script 11 rnr1 {
-	"{飞翼天鹅}５"
+	"飞翼天鹅５"
 	end
 }
 script 12 rnr1 {
-	"{飞翼天鹅}６"
+	"飞翼天鹅６"
 	end
 }
 script 13 rnr1 {
-	"{音符竖琴}"
+	"音符竖琴"
 	end
 }
 script 14 rnr1 {
-	"{音符竖琴}[EX]"
+	"音符竖琴[EX]"
 	end
 }
 script 15 rnr1 {
-	"{音符竖琴}[SP]"
+	"音符竖琴[SP]"
 	end
 }
 script 16 rnr1 {
-	"{音符竖琴}４"
+	"音符竖琴４"
 	end
 }
 script 17 rnr1 {
-	"{音符竖琴}５"
+	"音符竖琴５"
 	end
 }
 script 18 rnr1 {
-	"{音符竖琴}６"
+	"音符竖琴６"
 	end
 }
 script 19 rnr1 {
-	"{平衡天秤}"
+	"平衡天秤"
 	end
 }
 script 20 rnr1 {
-	"{平衡天秤}[EX]"
+	"平衡天秤[EX]"
 	end
 }
 script 21 rnr1 {
-	"{平衡天秤}[SP]"
+	"平衡天秤[SP]"
 	end
 }
 script 22 rnr1 {
-	"{平衡天秤}４"
+	"平衡天秤４"
 	end
 }
 script 23 rnr1 {
-	"{平衡天秤}５"
+	"平衡天秤５"
 	end
 }
 script 24 rnr1 {
-	"{平衡天秤}６"
+	"平衡天秤６"
 	end
 }
 script 25 rnr1 {
-	"{女王蛇夫}"
+	"女王蛇夫"
 	end
 }
 script 26 rnr1 {
-	"{女王蛇夫}[EX]"
+	"女王蛇夫[EX]"
 	end
 }
 script 27 rnr1 {
-	"{女王蛇夫}[SP]"
+	"女王蛇夫[SP]"
 	end
 }
 script 28 rnr1 {
-	"{女王蛇夫}４"
+	"女王蛇夫４"
 	end
 }
 script 29 rnr1 {
-	"{女王蛇夫}５"
+	"女王蛇夫５"
 	end
 }
 script 30 rnr1 {
-	"{女王蛇夫}６"
+	"女王蛇夫６"
 	end
 }
 script 31 rnr1 {
-	"{火花双子}＿Ｂ"
+	"火花双子＿Ｂ"
 	end
 }
 script 32 rnr1 {
-	"{火花双子}[EX]＿Ｂ"
+	"火花双子[EX]＿Ｂ"
 	end
 }
 script 33 rnr1 {
-	"{火花双子}[SP]＿Ｂ"
+	"火花双子[SP]＿Ｂ"
 	end
 }
 script 34 rnr1 {
-	"{火花双子}＿Ｗ"
+	"火花双子＿Ｗ"
 	end
 }
 script 35 rnr1 {
-	"{火花双子}[EX]＿Ｗ"
+	"火花双子[EX]＿Ｗ"
 	end
 }
 script 36 rnr1 {
-	"{火花双子}[SP]＿Ｗ"
+	"火花双子[SP]＿Ｗ"
 	end
 }
 script 37 rnr1 {
@@ -174,147 +174,147 @@ script 42 rnr1 {
 	end
 }
 script 43 rnr1 {
-	"{泡沫巨蟹}"
+	"泡沫巨蟹"
 	end
 }
 script 44 rnr1 {
-	"{泡沫巨蟹}[EX]"
+	"泡沫巨蟹[EX]"
 	end
 }
 script 45 rnr1 {
-	"{泡沫巨蟹}[SP]"
+	"泡沫巨蟹[SP]"
 	end
 }
 script 46 rnr1 {
-	"{泡沫巨蟹}４"
+	"泡沫巨蟹４"
 	end
 }
 script 47 rnr1 {
-	"{泡沫巨蟹}５"
+	"泡沫巨蟹５"
 	end
 }
 script 48 rnr1 {
-	"{泡沫巨蟹}６"
+	"泡沫巨蟹６"
 	end
 }
 script 49 rnr1 {
-	"{森林野狼}"
+	"森林野狼"
 	end
 }
 script 50 rnr1 {
-	"{森林野狼}[EX]"
+	"森林野狼[EX]"
 	end
 }
 script 51 rnr1 {
-	"{森林野狼}[SP]"
+	"森林野狼[SP]"
 	end
 }
 script 52 rnr1 {
-	"{森林野狼}４"
+	"森林野狼４"
 	end
 }
 script 53 rnr1 {
-	"{森林野狼}５"
+	"森林野狼５"
 	end
 }
 script 54 rnr1 {
-	"{森林野狼}６"
+	"森林野狼６"
 	end
 }
 script 55 rnr1 {
-	"{雷电王冠}"
+	"雷电王冠"
 	end
 }
 script 56 rnr1 {
-	"{雷电王冠}[EX]"
+	"雷电王冠[EX]"
 	end
 }
 script 57 rnr1 {
-	"{雷电王冠}[SP]"
+	"雷电王冠[SP]"
 	end
 }
 script 58 rnr1 {
-	"{雷电王冠}４"
+	"雷电王冠４"
 	end
 }
 script 59 rnr1 {
-	"{雷电王冠}５"
+	"雷电王冠５"
 	end
 }
 script 60 rnr1 {
-	"{雷电王冠}６"
+	"雷电王冠６"
 	end
 }
 script 61 rnr1 {
-	"{魔幻天马}"
+	"魔幻天马"
 	end
 }
 script 62 rnr1 {
-	"{魔幻天马}[EX]"
+	"魔幻天马[EX]"
 	end
 }
 script 63 rnr1 {
-	"{魔幻天马}[SP]"
+	"魔幻天马[SP]"
 	end
 }
 script 64 rnr1 {
-	"{天马之影}"
+	"天马之影"
 	end
 }
 script 65 rnr1 {
-	"{魔幻天马}５"
+	"魔幻天马５"
 	end
 }
 script 66 rnr1 {
-	"{魔幻天马}６"
+	"魔幻天马６"
 	end
 }
 script 67 rnr1 {
-	"{王城雄狮}"
+	"王城雄狮"
 	end
 }
 script 68 rnr1 {
-	"{王城雄狮}[EX]"
+	"王城雄狮[EX]"
 	end
 }
 script 69 rnr1 {
-	"{王城雄狮}[SP]"
+	"王城雄狮[SP]"
 	end
 }
 script 70 rnr1 {
-	"{雄狮之影}"
+	"雄狮之影"
 	end
 }
 script 71 rnr1 {
-	"{王城雄狮}５"
+	"王城雄狮５"
 	end
 }
 script 72 rnr1 {
-	"{王城雄狮}６"
+	"王城雄狮６"
 	end
 }
 script 73 rnr1 {
-	"{苍穹青龙}"
+	"苍穹青龙"
 	end
 }
 script 74 rnr1 {
-	"{苍穹青龙}[EX]"
+	"苍穹青龙[EX]"
 	end
 }
 script 75 rnr1 {
-	"{苍穹青龙}[SP]"
+	"苍穹青龙[SP]"
 	end
 }
 script 76 rnr1 {
-	"{青龙之影}"
+	"青龙之影"
 	end
 }
 script 77 rnr1 {
-	"{苍穹青龙}５"
+	"苍穹青龙５"
 	end
 }
 script 78 rnr1 {
-	"{苍穹青龙}６"
+	"苍穹青龙６"
 	end
 }
 script 79 rnr1 {
@@ -1022,6 +1022,6 @@ script 254 rnr1 {
 	end
 }
 script 255 rnr1 {
-	"{火花双子}"
+	"火花双子"
 	end
 }

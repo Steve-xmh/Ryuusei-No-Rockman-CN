@@ -130,7 +130,7 @@ script 21 rnr1 {
 	end
 }
 script 22 rnr1 {
-	"{我太}ＤＳ{之力}"
+	"我太ＤＳ之力"
 	end
 }
 script 23 rnr1 {
@@ -138,15 +138,15 @@ script 23 rnr1 {
 	end
 }
 script 24 rnr1 {
-	"{星之力}"
+	"星之力"
 	end
 }
 script 25 rnr1 {
-	"{星之力}"
+	"星之力"
 	end
 }
 script 26 rnr1 {
-	"{星之力}"
+	"星之力"
 	end
 }
 script 27 rnr1 {
@@ -170,31 +170,31 @@ script 31 rnr1 {
 	end
 }
 script 32 rnr1 {
-	"{雄狮烈火}"
+	"雄狮烈火"
 	end
 }
 script 33 rnr1 {
-	"{毒苹果}"
+	"毒苹果"
 	end
 }
 script 34 rnr1 {
-	"{精灵之怒}"
+	"精灵之怒"
 	end
 }
 script 35 rnr1 {
-	"{千兆地雷}"
+	"千兆地雷"
 	end
 }
 script 36 rnr1 {
-	"{空手接白刃}"
+	"空手接白刃"
 	end
 }
 script 37 rnr1 {
-	"{青龙旋风}"
+	"青龙旋风"
 	end
 }
 script 38 rnr1 {
-	"{天马冻结}"
+	"天马冻结"
 	end
 }
 script 39 rnr1 {
