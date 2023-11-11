@@ -132,6 +132,11 @@ int __fastcall sub_201B21C(struct_a1 *a1)
 
 .thumb
 
+.autoregion
+.align
+Font2_Numbers:
+  .incbin "fonts/font2.bin", 0, 0x280
+.endautoregion
 
 .autoregion
 .align

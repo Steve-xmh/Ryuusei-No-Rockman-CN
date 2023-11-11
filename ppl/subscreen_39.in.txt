@@ -1,0 +1,9 @@
+Import-Bytes "_workspace\unpacked_bins\subscreen.bin\subscreen_121.bin"
+Deserialize-Palettes GBA
+Import-Bitmap "images\subscreen_39.png"
+Convert-Bitmap GBA --sloppy
+Generate-Tilemap GBA-4BPP
+Serialize-Tileset
+Export-Bytes "_temp\workspace\unpacked_bins\subscreen.bin\subscreen_120.bin"
+Serialize-Tilemap --base-tile 1
+Export-Bytes "_temp\workspace\unpacked_bins\subscreen.bin\subscreen_122.bin"

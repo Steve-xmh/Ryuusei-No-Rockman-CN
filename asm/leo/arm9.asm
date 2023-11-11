@@ -63,12 +63,55 @@ FontEncodingZero:
 .include "asm/common/scripts.asm"
 .include "asm/common/text.asm"
 .include "asm/common/debug.asm"
+.include "asm/common/input.asm"
+.include "asm/common/splash_screen.asm"
 .include "asm/common/init.asm"
 .include "asm/common/dx.asm"
+.include "asm/common/arena_hooks.asm"
 .include "asm/common/text_cache.asm"
 .include "asm/common/text_hooks.asm"
 .include "asm/common/text_input.asm"
 .include "asm/common/text_utils.asm"
+
+; sub_2029758 写入三位数的数字字体函数
+.org 0x020297C2
+	bl sub_2029758_hook
+
+; sub_20297E4 写入两位数的数字字体函数
+.org 0x02029846
+	bl sub_20297E4_hook
+
+; sub_20398F0 写入精灵图的数字信息
+.org 0x020399B0
+	.dw Font2_Numbers
+
+; OS_AllocFromArenaLo
+; sub_2022A34
+; 扩大加载脚本函数的分配内存区域大小
+.org 0x02022A62
+	mov r2, 0x20 ; 0x20 * 0x100
+
+; sub_2008B7C
+; 尝试增加限制以加载更大的脚本
+.org 0x02008B96
+	mov r1, 0x1
+	lsl r1, 0xF
+.org 0x02008C18
+	.dw Temp_LoadScriptBuffer ; 更换临时加载脚本的缓冲位置到一个更大的地方
+; sub_2008DE0
+; 尝试增加限制以加载更大的脚本
+.org 0x02008DFA
+	mov r1, 0x1
+	lsl r1, 0xF
+.org 0x02008E88
+	.dw Temp_LoadScriptBuffer ; 更换临时加载脚本的缓冲位置到一个更大的地方
+; sub_2008F78
+; 尝试增加限制以加载更大的脚本
+.org 0x02008F96
+	mov r1, 0x1
+	lsl r1, 0xF
+.org 0x02009030
+	.dw Temp_LoadScriptBuffer ; 更换临时加载脚本的缓冲位置到一个更大的地方
 
 .org 0x02009178
 read_script_direct:

@@ -1,0 +1,9 @@
+Import-Bytes "_workspace\unpacked_bins\result.bin\result_06.bin"
+Deserialize-Palettes GBA
+Import-Bitmap "images\result_6.png"
+Convert-Bitmap GBA --sloppy
+Generate-Tilemap GBA-4BPP
+Serialize-Tileset
+Export-Bytes "_temp\workspace\unpacked_bins\result.bin\result_14.bin"
+Serialize-Tilemap --base-tile 0
+Export-Bytes "_temp\workspace\unpacked_bins\result.bin\result_22.bin"

@@ -2,7 +2,7 @@
 @size 256
 
 script 0 rnr1 {
-	"洛克暴击炮"
+	"洛克爆击炮"
 	end
 }
 script 1 rnr1 {
@@ -474,15 +474,15 @@ script 117 rnr1 {
 	end
 }
 script 118 rnr1 {
-	"绿色暴击炮"
+	"绿色爆击炮"
 	end
 }
 script 119 rnr1 {
-	"冰块暴击炮"
+	"冰块爆击炮"
 	end
 }
 script 120 rnr1 {
-	"毒素暴击炮"
+	"毒素爆击炮"
 	end
 }
 script 121 rnr1 {
@@ -810,15 +810,15 @@ script 201 rnr1 {
 	end
 }
 script 202 rnr1 {
-	"森林野狼"
+	"森林苍狼"
 	end
 }
 script 203 rnr1 {
-	"森林野狼[EX]"
+	"森林苍狼[EX]"
 	end
 }
 script 204 rnr1 {
-	"森林野狼[SP]"
+	"森林苍狼[SP]"
 	end
 }
 script 205 rnr1 {

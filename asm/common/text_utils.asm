@@ -29,7 +29,7 @@ Script_RedirectScriptPositionHook:
 .align
 Script_RedirectScriptPosition:
   push {r1, lr}
-  .msg "Redirecting script for %r0%"
+  ; .msg "Redirecting script for %r0%"
   ; 天马版的脚本位置
   ldr r1, =#0x020D0BD0
   cmp r0, r1
@@ -49,6 +49,9 @@ Script_RedirectScriptPosition:
   ldr r1, =#0x020D1520
   cmp r0, r1
   beq @@Script_0D5520
+  ldr r1, =#0x020D090C
+  cmp r0, r1
+  beq @@Script_0D490C
   ldr r1, =#0x020D1BA4
   cmp r0, r1
   beq @@Script_0D5BA4
@@ -71,6 +74,9 @@ Script_RedirectScriptPosition:
   ldr r1, =#0x020D1524
   cmp r0, r1
   beq @@Script_0D5520
+  ldr r1, =#0x020D0910
+  cmp r0, r1
+  beq @@Script_0D490C
   ldr r1, =#0x020D1BA8
   cmp r0, r1
   beq @@Script_0D5BA4
@@ -116,6 +122,9 @@ Script_RedirectScriptPosition:
   b @@End
 @@Script_0D5BA4:
   ldr r0, =Script_0D5BA4
+  b @@End
+@@Script_0D490C:
+  ldr r0, =Script_0D490C
   b @@End
 @@Script_0D5520:
   ldr r0, =Script_0D5520
@@ -403,7 +412,7 @@ sub_2176BA4_hook:
   mov r0, r2
   ; .msg "Script2Font %r0%"
   bl Script_ScriptEncodeToFontEncode
-  .msg "Script2FontR ScriptPointer %r2% -> FontEncode %r0% Length %r1%"
+  ; .msg "Script2FontR ScriptPointer %r2% -> FontEncode %r0% Length %r1%"
   strh r0, [r4]
   add r2, r1
   cmp r0, 0

@@ -10,7 +10,7 @@
 ; 数字可以不完全相等，但必须大于 1。
 ; 唯一一个例外是 Font2_VramCacheSize，必须小于 255
 ; 这些数字设置得越大，游戏就能更快地显示相同的字符。
-Font0_CacheSize equ 128
+Font0_CacheSize equ 64
 Font1_CacheSize equ 128
 Font2_CacheSize equ 128
 Font3_CacheSize equ 128

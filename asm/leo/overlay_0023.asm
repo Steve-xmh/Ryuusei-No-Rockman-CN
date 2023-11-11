@@ -2,6 +2,16 @@
 .thumb
 .open TEMP+"/overlay/overlay_0023.bin",readu32(TEMP+"/y9.bin", 23 * 0x20 + 0x4)
 
+; 存放战斗卡说明文本的内存区域
+; 因为翻译完成后大小已经超过原定的 0x17440
+; 所以需要二次扩大
+.org 0x021B3DA4
+	.dw 95296 + 4096
+.org 0x021B4668
+	mov r1, 0x5
+.org 0x021B466C
+	lsl r1, 0xC
+
 ; 写入纯数字显存字体相关的函数
 .org 0x021B56EC
 .area 0x021B56F4-. , 0x00

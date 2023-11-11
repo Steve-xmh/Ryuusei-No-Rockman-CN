@@ -176,7 +176,7 @@ script 44 rnr1 {
 	end
 }
 script 45 rnr1 {
-	"第}２{实验舱"
+	"第２实验舱"
 	end
 }
 script 46 rnr1 {
@@ -301,7 +301,7 @@ script 77 rnr1 {
 	end
 }
 script 78 rnr1 {
-	"１０３百货}１Ｆ{的电波"
+	"１０３百货１Ｆ的电波"
 	end
 }
 script 79 rnr1 {
@@ -335,11 +335,11 @@ script 86 rnr1 {
 	end
 }
 script 87 rnr1 {
-	"废弃物存放处}１{的电波"
+	"废弃物存放处１的电波"
 	end
 }
 script 88 rnr1 {
-	"废弃物存放处}２{的电波"
+	"废弃物存放处２的电波"
 	end
 }
 script 89 rnr1 {

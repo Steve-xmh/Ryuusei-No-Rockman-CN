@@ -2,6 +2,29 @@
 .thumb
 .open TEMP+"/overlay/overlay_0002.bin",readu32(TEMP+"/y9.bin", 2 * 0x20 + 0x4)
 
+.org 0x0217FBA4
+	.dw Script_0D490C
+.org 0x021788F8
+	.dw Script_0D490C
+
+; 扩大邮件页面相关的脚本存放内存区域
+.org 0x021835E4
+	.dw 0xB720 + 4096
+.org 0x021833DE;
+	mov r1, 0x6
+.org 0x02183440
+	mov r1, 0x6
+	lsl r1, 0xC
+
+; sub_2177C10
+; 在加载自定义战斗卡时分配内存
+.org 0x02177D04
+	.dw 0x1D750 + 0x4000 + 0x4000
+.org 0x02178200
+	lsl r1, 0xF
+.org 0x0217820C
+	lsl r1, 0xF
+
 ; 扩大战洛克武器说明脚本的内存区域大小到 8KB （原 6KB）
 ; 内存大小必须大于 mess_1220.msg 的大小，否则会溢出花屏
 .org 0x02189BB8

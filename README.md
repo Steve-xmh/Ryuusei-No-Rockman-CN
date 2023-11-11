@@ -35,6 +35,7 @@ Second, you need to prepare some tools and place them in `_tools` folder:
 - PixelPet by Prof. 9
 - TextPet by Prof. 9
 - [SFArcTool-rs by myself](https://github.com/Steve-xmh/sfarctool) ([Prof.9's version](https://github.com/Prof9/SFArcTool) may work too?)
+- [SFSPatcher by myself](https://github.com/Steve-xmh/sfspatcher)
 - Python 3.x (Just install it to your computer.)
 - Pillow for Python (Install it by `pip3 install pillow`)
 
@@ -115,7 +116,7 @@ Then you can check your built ROM(s) in `_build` folder.
 
 This hack replaced the original text rendering logic. So the hard-coded fonts data in arm9 is free and can be used in any purpose.
 
-And for me, I want to share my hacking experience to everyone who wants to translate your favourite game into your language. So I open-sourced this with almost all code full of comments.
+And for me, I want to share my hacking experience to everyone who wants to translate your favourite game into your language. So I open-sourced this with almost all code full of comments (although all of them are Chinese).
 
 ## Other
 

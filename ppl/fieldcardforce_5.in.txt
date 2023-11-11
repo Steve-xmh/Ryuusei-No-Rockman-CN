@@ -1,0 +1,9 @@
+Import-Bytes "_workspace\unpacked_bins\fieldcardforce.bin\fieldcardforce_03.bin"
+Deserialize-Palettes GBA
+Import-Bitmap "images\fieldcardforce_5.png"
+Convert-Bitmap GBA --sloppy
+Generate-Tilemap NDS-8BPP
+Serialize-Tileset
+Export-Bytes "_temp\workspace\unpacked_bins\fieldcardforce.bin\fieldcardforce_12.bin"
+Serialize-Tilemap --base-tile 0
+Export-Bytes "_temp\workspace\unpacked_bins\fieldcardforce.bin\fieldcardforce_13.bin"

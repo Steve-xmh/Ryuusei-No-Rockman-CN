@@ -71,16 +71,26 @@ Debug_LoadArchive:
 	lsr r0, r2, #0x10
 	cmp r0, #0x4
 	beq @@IsLoadingMessBin
-	; ldr r0, [sp, #0x8 + 0x4*12]
-	; .msg "Loading archive 0x%r2% to 0x%r1%, caller 0x%r0%"
+	ldr r0, [sp, #0x8 + 0x4*12]
+	.msg "Loading archive 0x%r2% to 0x%r1%, caller 0x%r0%"
 	b @@End
 @@IsLoadingMessBin:
 	lsl r2, #0x10
 	lsr r2, #0x10
 	ldr r0, [sp, #0x8 + 0x4*12]
 	.msg "Loading script 0x%r2% to 0x%r1%, caller 0x%r0%"
+	ldr r3, =95
+	cmp r2, r3
+	beq @@Break
+	ldr r3, =13
+	cmp r2, r3
+	beq @@Break
+	b @@End
+@@Break:
+	; mov r11, r11
 @@End:
 	pop {r0-r7, pc}
+.pool
 .endautoregion
 
 .autoregion

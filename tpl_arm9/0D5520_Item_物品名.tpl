@@ -54,7 +54,7 @@ script 12 rnr1 {
 	end
 }
 script 13 rnr1 {
-	"航天服"
+	"宇航服"
 	end
 }
 script 14 rnr1 {
@@ -170,7 +170,7 @@ script 41 rnr1 {
 	end
 }
 script 42 rnr1 {
-	"挖机卡"
+	"铲车卡"
 	end
 }
 script 43 rnr1 {

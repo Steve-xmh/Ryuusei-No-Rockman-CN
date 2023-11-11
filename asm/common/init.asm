@@ -15,5 +15,9 @@ Fake_FS_Init:
 	.msg "Initializing fonts..."
 	bl ReadScript_Init
 	.msg "Patch initialization finished!"
+	bl SplashScreen_PrintInfo
+    bl Video_FadeIn
+    bl Input_WaitForButtonA
+	bl Video_FadeOut
 	pop {pc}
 .endautoregion

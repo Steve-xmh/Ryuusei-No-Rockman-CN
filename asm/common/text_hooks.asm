@@ -88,6 +88,32 @@
 
 .autoregion
 .align
+sub_2029758_hook:
+	push {r0, lr}
+	add r5, 0x60
+	asr r5, 0x6
+	mov r0, r5
+	bl Font2_LoadCharacterToVRAM
+	mov r5, r0
+	pop {r0, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
+sub_20297E4_hook:
+	push {r0, lr}
+	lsl r7, r3, 0x1
+	asr r6, r1, 0x6
+	mov r0, r6
+	bl Font2_LoadCharacterToVRAM
+	mov r6, r0
+	pop {r0, pc}
+.pool
+.endautoregion
+
+.autoregion
+.align
 @OriginalPrintInstantFontConditionHook:
 	push {r0-r7, lr}
 

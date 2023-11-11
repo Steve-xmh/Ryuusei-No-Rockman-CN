@@ -1,0 +1,9 @@
+Import-Bytes "_workspace\unpacked_bins\shop.bin\shop_0.bin"
+Deserialize-Palettes GBA
+Import-Bitmap "images\shop.png"
+Convert-Bitmap GBA --sloppy
+Generate-Tilemap NDS-8BPP
+Serialize-Tileset
+Export-Bytes "_temp\workspace\unpacked_bins\shop.bin\shop_2.bin"
+Serialize-Tilemap --base-tile 1
+Export-Bytes "_temp\workspace\unpacked_bins\shop.bin\shop_1.bin"

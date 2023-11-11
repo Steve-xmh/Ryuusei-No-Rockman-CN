@@ -48,3 +48,16 @@ Script_0D5BA4:
 Script_0D5520:
 .import "_temp/tpl_arm9/0D5520.msg"
 .endautoregion
+
+.autoregion
+; 初始战斗卡文件夹相关文字脚本 0x020D090C 0C 09 0D 02
+.align
+Script_0D490C:
+.import "_temp/tpl_arm9/0D490C.msg"
+.endautoregion
+
+.autoregion
+.align
+Temp_LoadScriptBuffer:
+	.fill 0x8000, 0x00
+.endautoregion

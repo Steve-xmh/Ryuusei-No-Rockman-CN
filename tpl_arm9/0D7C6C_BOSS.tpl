@@ -150,27 +150,27 @@ script 36 rnr1 {
 	end
 }
 script 37 rnr1 {
-	"Ａｎｄｒｏｍｅｄａ"
+	"安德罗米达"
 	end
 }
 script 38 rnr1 {
-	"Ａｎｄｒｏｍｅｄａ２"
+	"安德罗米达２"
 	end
 }
 script 39 rnr1 {
-	"Ａｎｄｒｏｍｅｄａ∞"
+	"安德罗米达∞"
 	end
 }
 script 40 rnr1 {
-	"Ａｎｄｒｏｍｅｄａ４"
+	"安德罗米达４"
 	end
 }
 script 41 rnr1 {
-	"Ａｎｄｒｏｍｅｄａ５"
+	"安德罗米达５"
 	end
 }
 script 42 rnr1 {
-	"Ａｎｄｒｏｍｅｄａ６"
+	"安德罗米达６"
 	end
 }
 script 43 rnr1 {
@@ -198,27 +198,27 @@ script 48 rnr1 {
 	end
 }
 script 49 rnr1 {
-	"森林野狼"
+	"森林苍狼"
 	end
 }
 script 50 rnr1 {
-	"森林野狼[EX]"
+	"森林苍狼[EX]"
 	end
 }
 script 51 rnr1 {
-	"森林野狼[SP]"
+	"森林苍狼[SP]"
 	end
 }
 script 52 rnr1 {
-	"森林野狼４"
+	"森林苍狼４"
 	end
 }
 script 53 rnr1 {
-	"森林野狼５"
+	"森林苍狼５"
 	end
 }
 script 54 rnr1 {
-	"森林野狼６"
+	"森林苍狼６"
 	end
 }
 script 55 rnr1 {

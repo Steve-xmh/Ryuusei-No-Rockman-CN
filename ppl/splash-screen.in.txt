@@ -1,0 +1,78 @@
+
+Import-Bitmap "images/splash-screen.pegasus.png"
+Convert-Bitmap GBA --sloppy
+
+Extract-Palettes --palette-size 256 --palette-count 1
+
+Serialize-Palettes
+Export-Bytes "_temp/workspace/pegasus/data/splash_screen.pal.bin"
+
+Generate-Tilemap GBA-8BPP -x 0 -y 0 -w 256 -h 192
+
+Serialize-Tileset
+Export-Bytes "_temp/workspace/pegasus/data/splash_screen.tst.t.bin"
+
+Serialize-Tilemap
+Export-Bytes "_temp/workspace/pegasus/data/splash_screen.tmp.t.bin"
+
+Generate-Tilemap GBA-8BPP -x 0 -y 192 -w 256 -h 192
+
+Serialize-Tileset
+Export-Bytes "_temp/workspace/pegasus/data/splash_screen.tst.b.bin"
+
+Serialize-Tilemap
+Export-Bytes "_temp/workspace/pegasus/data/splash_screen.tmp.b.bin"
+
+
+
+
+Import-Bitmap "images/splash-screen.leo.png"
+Convert-Bitmap GBA --sloppy
+
+Extract-Palettes --palette-size 256 --palette-count 1
+
+Serialize-Palettes
+Export-Bytes "_temp/workspace/leo/data/splash_screen.pal.bin"
+
+Generate-Tilemap GBA-8BPP -x 0 -y 0 -w 256 -h 192
+
+Serialize-Tileset
+Export-Bytes "_temp/workspace/leo/data/splash_screen.tst.t.bin"
+
+Serialize-Tilemap
+Export-Bytes "_temp/workspace/leo/data/splash_screen.tmp.t.bin"
+
+Generate-Tilemap GBA-8BPP -x 0 -y 192 -w 256 -h 192
+
+Serialize-Tileset
+Export-Bytes "_temp/workspace/leo/data/splash_screen.tst.b.bin"
+
+Serialize-Tilemap
+Export-Bytes "_temp/workspace/leo/data/splash_screen.tmp.b.bin"
+
+
+
+
+Import-Bitmap "images/splash-screen.dragon.png"
+Convert-Bitmap GBA --sloppy
+
+Extract-Palettes --palette-size 256 --palette-count 1
+
+Serialize-Palettes
+Export-Bytes "_temp/workspace/dragon/data/splash_screen.pal.bin"
+
+Generate-Tilemap GBA-8BPP -x 0 -y 0 -w 256 -h 192
+
+Serialize-Tileset
+Export-Bytes "_temp/workspace/dragon/data/splash_screen.tst.t.bin"
+
+Serialize-Tilemap
+Export-Bytes "_temp/workspace/dragon/data/splash_screen.tmp.t.bin"
+
+Generate-Tilemap GBA-8BPP -x 0 -y 192 -w 256 -h 192
+
+Serialize-Tileset
+Export-Bytes "_temp/workspace/dragon/data/splash_screen.tst.b.bin"
+
+Serialize-Tilemap
+Export-Bytes "_temp/workspace/dragon/data/splash_screen.tmp.b.bin"
