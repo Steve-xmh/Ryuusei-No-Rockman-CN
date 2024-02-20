@@ -219,13 +219,6 @@
     ldr r1,=0x4001008
     str r0, [r1]
     
-    
-    ldr r0,=60
-@@WaitSec:
-    sub r0, 1
-    cmp r0, 0
-    bgt @@WaitSec
-    
     add sp, 0x3C
     pop {r0-r7, pc}
 .endfunc

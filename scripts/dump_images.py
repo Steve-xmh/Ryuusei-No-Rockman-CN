@@ -599,9 +599,21 @@ dump_image(
     palette_path=os.path.join(subscreen_path, 'subscreen_225.bin'),
     dest_path=os.path.join(workspace_path, 'subscreen_18.png'),
     tiles_per_row=32,
+    tiles_per_column=32,
     reimport_image=os.path.join(images_path, 'subscreen_18.png'),
-    reimport_tilemap=os.path.join(temp_path, 'workspace/unpacked_bins/subscreen.bin/subscreen_223.bin'),
-    reimport_tileset=os.path.join(temp_path, 'workspace/unpacked_bins/subscreen.bin/subscreen_222.bin'),
+    # reimport_tilemap=os.path.join(temp_path, 'workspace/unpacked_bins/subscreen.bin/subscreen_223.bin'),
+    # reimport_tileset=os.path.join(temp_path, 'workspace/unpacked_bins/subscreen.bin/subscreen_222.bin'),
+)
+dump_image(
+    tileset_path=os.path.join(subscreen_path, 'subscreen_222.bin'),
+    tilemap_path=os.path.join(subscreen_path, 'subscreen_224.bin'),
+    palette_path=os.path.join(subscreen_path, 'subscreen_225.bin'),
+    dest_path=os.path.join(workspace_path, 'subscreen_18_1.png'),
+    tiles_per_row=16,
+    tiles_per_column=14,
+    # reimport_image=os.path.join(images_path, 'subscreen_18_1.png'),
+    # reimport_tilemap=os.path.join(temp_path, 'workspace/unpacked_bins/subscreen.bin/subscreen_224.bin'),
+    # reimport_tileset=os.path.join(temp_path, 'workspace/unpacked_bins/subscreen.bin/subscreen_222.bin'),
 )
 dump_image(
     tileset_path=os.path.join(subscreen_path, 'subscreen_235.bin'),

@@ -1,9 +1,17 @@
 Import-Bytes "_workspace\unpacked_bins\subscreen.bin\subscreen_225.bin"
 Deserialize-Palettes GBA
-Import-Bitmap "images\subscreen_18.png"
+Import-Bitmap "images\subscreen_18-2.png"
 Convert-Bitmap GBA --sloppy
-Generate-Tilemap NDS-8BPP
-Serialize-Tileset
-Export-Bytes "_temp\workspace\unpacked_bins\subscreen.bin\subscreen_222.bin"
+
+Generate-Tilemap NDS-8BPP -x 0 -y 0 -w 256 -h 192
 Serialize-Tilemap --base-tile 1
 Export-Bytes "_temp\workspace\unpacked_bins\subscreen.bin\subscreen_223.bin"
+
+Clear-Tilemap
+Generate-Tilemap NDS-8BPP -x 0 -y 192 -w 128 -h 112 --append
+Serialize-Tilemap --base-tile 1
+Export-Bytes "_temp\workspace\unpacked_bins\subscreen.bin\subscreen_224.bin"
+
+Serialize-Tileset
+Export-Bytes "_temp\workspace\unpacked_bins\subscreen.bin\subscreen_222.bin"
+
